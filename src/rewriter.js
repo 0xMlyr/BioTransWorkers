@@ -51,9 +51,31 @@ export function applyRewriter(rewriter, targetUrl, workerOrigin) {
   rewriter.on("source[src]",  new AttributeRewriter("src",    base, workerOrigin));
   rewriter.on("source[srcset]", new SrcsetRewriter("srcset",  base, workerOrigin));
   rewriter.on("link[href]",   new AttributeRewriter("href",   base, workerOrigin));
-  rewriter.on("script[src]",  new AttributeRewriter("src",    base, workerOrigin));
+  rewriter.on("script[src]",  new ScriptRewriter("src", base, workerOrigin));
   rewriter.on("form[action]", new AttributeRewriter("action", base, workerOrigin));
   rewriter.on("iframe[src]",  new AttributeRewriter("src",    base, workerOrigin));
+}
+
+// 动态加载库黑名单：这些库会在运行时用相对路径请求子文件，无法被代理
+const SCRIPT_BLOCKLIST = [
+  /cdnjs\.cloudflare\.com\/ajax\/libs\/mathjax/i,
+];
+
+class ScriptRewriter {
+  constructor(attr, base, workerOrigin) {
+    this.attr = attr;
+    this.base = base;
+    this.workerOrigin = workerOrigin;
+  }
+  element(el) {
+    const val = el.getAttribute(this.attr);
+    if (!val) return;
+    if (SCRIPT_BLOCKLIST.some(re => re.test(val))) {
+      el.remove();
+      return;
+    }
+    el.setAttribute(this.attr, toProxyUrl(val, this.base, this.workerOrigin));
+  }
 }
 
 class SrcsetRewriter {
