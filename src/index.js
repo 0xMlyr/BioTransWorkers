@@ -8,6 +8,24 @@ const CSP_HEADERS = [
   "x-frame-options",
 ];
 
+// 允许代理的学术出版商域名（支持子域名）
+const ALLOWED_HOSTS = [
+  "pensoft.net",
+  "zookeys.pensoft.net",
+  "pmc.ncbi.nlm.nih.gov",
+  "www.ncbi.nlm.nih.gov",
+  "academic.oup.com",
+  "www.journals.uchicago.edu",
+  "onlinelibrary.wiley.com",
+  "link.springer.com",
+  "www.mapress.com",
+  "resjournals.onlinelibrary.wiley.com",
+];
+
+function isAllowedHost(hostname) {
+  return ALLOWED_HOSTS.some(h => hostname === h || hostname.endsWith('.' + h));
+}
+
 export default {
   async fetch(request, env, ctx) {
     const reqUrl = new URL(request.url);
@@ -24,6 +42,22 @@ export default {
     const targetRaw = params.get("url");
 
     if (!targetRaw) {
+      // 仅对非导航请求（子资源）尝试 Referer 自动补全
+      const fetchDest = request.headers.get('sec-fetch-dest') || '';
+      const isNavigation = fetchDest === 'document' || fetchDest === 'iframe' || fetchDest === '';
+      const referer = request.headers.get('referer');
+      if (!isNavigation && referer) {
+        try {
+          const refUrl = new URL(referer);
+          const proxiedBase = refUrl.searchParams.get('url');
+          if (proxiedBase) {
+            const proxiedUrl = new URL(proxiedBase);
+            const originalUrl = proxiedUrl.origin + reqUrl.pathname + reqUrl.search + reqUrl.hash;
+            const proxyUrl = `${workerOrigin}/?url=${encodeURIComponent(originalUrl)}`;
+            return Response.redirect(proxyUrl, 302);
+          }
+        } catch {}
+      }
       return htmlResponse(errorPage("400", "缺少 ?url= 参数"));
     }
 
@@ -35,15 +69,36 @@ export default {
       return htmlResponse(errorPage("400", "无效的目标 URL"));
     }
 
+    if (!isAllowedHost(targetUrl.hostname)) {
+      return htmlResponse(errorPage("403", "该域名不在支持列表内"));
+    }
+
     let upstream;
     try {
+      const upstreamHeaders = {
+        "User-Agent": request.headers.get("User-Agent") || "Mozilla/5.0",
+        "Referer": targetUrl.origin + "/",
+      };
+      const cookie = request.headers.get("Cookie");
+      if (cookie) upstreamHeaders["Cookie"] = cookie;
+
       upstream = await fetch(targetUrl.href, {
-        headers: { "User-Agent": request.headers.get("User-Agent") || "Mozilla/5.0" },
+        headers: upstreamHeaders,
         redirect: "follow",
       });
+
+      // 上游 404 且路径包含 .php，尝试用根路径重试
+      if (!upstream.ok && targetUrl.pathname.includes('.php') && targetUrl.pathname !== '/' + targetUrl.pathname.split('/').pop()) {
+        const rootUrl = targetUrl.origin + '/' + targetUrl.pathname.split('/').pop() + targetUrl.search;
+        const retryUpstream = await fetch(rootUrl, { headers: upstreamHeaders, redirect: "follow" });
+        if (retryUpstream.ok) upstream = retryUpstream;
+      }
     } catch {
       return htmlResponse(errorPage("502", "无法连接到目标页面"));
     }
+
+    // 使用重定向后的最终 URL 作为 rewriter 的 base
+    const finalUrl = upstream.url || targetUrl.href;
 
     // 清理响应头
     const headers = new Headers(upstream.headers);

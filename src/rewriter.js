@@ -56,6 +56,8 @@ export function applyRewriter(rewriter, targetUrl, workerOrigin) {
   rewriter.on("iframe[src]",  new AttributeRewriter("src",    base, workerOrigin));
 }
 
+const IFRAME_BLOCKLIST = [];
+
 // 动态加载库黑名单：这些库会在运行时用相对路径请求子文件，无法被代理
 const SCRIPT_BLOCKLIST = [
   /cdnjs\.cloudflare\.com\/ajax\/libs\/mathjax/i,
