@@ -30,6 +30,18 @@ class BaseRemover {
 export function applyRewriter(rewriter, targetUrl, workerOrigin) {
   const base = targetUrl;
 
+  // 注入 Service Worker 注册脚本
+  rewriter.on("head", {
+    element(el) {
+      el.prepend(`<script>
+(function(){
+  if (!navigator.serviceWorker) return;
+  navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function(){});
+})();
+</script>`, { html: true });
+    }
+  });
+
   // 移除 <base> 标签避免干扰路径解析
   rewriter.on("base", new BaseRemover());
 

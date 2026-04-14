@@ -1,5 +1,6 @@
 import { errorPage } from "./error.js";
 import { applyRewriter } from "./rewriter.js";
+import { swScript } from "./sw.js";
 
 const CSP_HEADERS = [
   "content-security-policy",
@@ -9,8 +10,17 @@ const CSP_HEADERS = [
 
 export default {
   async fetch(request, env, ctx) {
-    const workerOrigin = new URL(request.url).origin;
-    const params = new URL(request.url).searchParams;
+    const reqUrl = new URL(request.url);
+    const workerOrigin = reqUrl.origin;
+
+    // Service Worker 脚本路由
+    if (reqUrl.pathname === "/sw.js") {
+      return new Response(swScript, {
+        headers: { "content-type": "application/javascript;charset=UTF-8" },
+      });
+    }
+
+    const params = reqUrl.searchParams;
     const targetRaw = params.get("url");
 
     if (!targetRaw) {
