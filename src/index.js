@@ -35,21 +35,25 @@ export default {
       return htmlResponse(errorPage("502", "无法连接到目标页面"));
     }
 
-    const contentType = upstream.headers.get("content-type") || "";
-    const isHtml = contentType.includes("text/html");
-
     // 清理响应头
     const headers = new Headers(upstream.headers);
     CSP_HEADERS.forEach(h => headers.delete(h));
     headers.delete("x-content-type-options");
 
-    if (!isHtml) {
-      // 子资源直接透传（包括失败状态）
+    // 用请求 URL 扩展名判断是否为子资源，避免依赖上游 404 页的 content-type
+    const reqPath = targetUrl.pathname;
+    const isSubResource = /\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|json|xml|mp4|mp3)$/i.test(reqPath);
+
+    if (isSubResource) {
       return new Response(upstream.body, { status: upstream.status, headers });
     }
 
-    if (!upstream.ok) {
-      return htmlResponse(errorPage(upstream.status, `目标页面返回 ${upstream.status}`));
+    const contentType = upstream.headers.get("content-type") || "";
+    const isHtml = contentType.includes("text/html");
+
+    if (!isHtml || !upstream.ok) {
+      if (!upstream.ok) return htmlResponse(errorPage(upstream.status, `目标页面返回 ${upstream.status}`));
+      return new Response(upstream.body, { status: upstream.status, headers });
     }
 
     // 主 HTML：重写路径
