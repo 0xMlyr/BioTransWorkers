@@ -1,8 +1,16 @@
 {
-  "name": "biotransworkers",
-  "main": "src/index.js",
-  "compatibility_date": "2026-04-14",
-  "observability": {
-    "enabled": true
-  }
+	"name": "bio-trans-workers",
+	"main": "src/index.js",
+	"compatibility_date": "2026-04-14",
+	"observability": {
+		"enabled": true
+	},
+	"kv_namespaces": [
+		{
+			"binding": "TERM_GLOSSARY",
+			"id": "c312cd561f654c4ca2fcebf40160070a",
+            "preview_id": "c312cd561f654c4ca2fcebf40160070a",
+			"remote": true
+		}
+	]
 }
