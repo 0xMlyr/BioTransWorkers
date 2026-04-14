@@ -7,29 +7,37 @@ self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // 已经是代理请求、或是 SW 自身、或是 worker origin 的非代理路径
   if (url.origin !== WORKER_ORIGIN) return;
   if (url.pathname === '/sw.js') return;
   if (url.searchParams.has('url')) return;
 
-  // 从 Referer 或 client URL 里找到当前代理的原始 base
-  const referer = e.request.referrer;
-  if (!referer) return;
+  e.respondWith((async () => {
+    // 优先从 Referer 提取 base
+    let base = null;
+    const referer = e.request.referrer;
+    if (referer) {
+      try {
+        const proxied = new URL(referer).searchParams.get('url');
+        if (proxied) base = new URL(proxied).origin;
+      } catch {}
+    }
 
-  let base;
-  try {
-    const refUrl = new URL(referer);
-    const proxied = refUrl.searchParams.get('url');
-    if (!proxied) return;
-    base = new URL(proxied).origin;
-  } catch {
-    return;
-  }
+    // Referer 无效时，从当前活跃页面 URL 提取 base
+    if (!base) {
+      try {
+        const clients = await self.clients.matchAll({ type: 'window' });
+        for (const client of clients) {
+          const proxied = new URL(client.url).searchParams.get('url');
+          if (proxied) { base = new URL(proxied).origin; break; }
+        }
+      } catch {}
+    }
 
-  // 拼出原始绝对路径，再包装为代理 URL
-  const originalUrl = base + url.pathname + url.search + url.hash;
-  const proxyUrl = WORKER_ORIGIN + '/?url=' + encodeURIComponent(originalUrl);
+    if (!base) return fetch(e.request);
 
-  e.respondWith(fetch(proxyUrl, { headers: e.request.headers }));
+    const originalUrl = base + url.pathname + url.search + url.hash;
+    const proxyUrl = WORKER_ORIGIN + '/?url=' + encodeURIComponent(originalUrl);
+    return fetch(proxyUrl, { headers: e.request.headers });
+  })());
 });
 `;
