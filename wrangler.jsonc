@@ -1,0 +1,8 @@
+{
+  "name": "biotransworkers",
+  "main": "src/index.js",
+  "compatibility_date": "2026-04-14",
+  "observability": {
+    "enabled": true
+  }
+}
