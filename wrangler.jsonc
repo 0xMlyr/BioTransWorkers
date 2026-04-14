@@ -1,5 +1,5 @@
 {
-  "name": "biotransworkers",
+  "name": "bio-trans-workers",
   "main": "src/index.js",
   "compatibility_date": "2026-04-14",
   "observability": {
