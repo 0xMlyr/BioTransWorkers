@@ -11,33 +11,18 @@ self.addEventListener('fetch', e => {
   if (url.pathname === '/sw.js') return;
   if (url.searchParams.has('url')) return;
 
-  e.respondWith((async () => {
-    // 优先从 Referer 提取 base
-    let base = null;
-    const referer = e.request.referrer;
-    if (referer) {
-      try {
-        const proxied = new URL(referer).searchParams.get('url');
-        if (proxied) base = new URL(proxied).origin;
-      } catch {}
-    }
+  const referer = e.request.referrer;
+  if (!referer) return;
 
-    // Referer 无效时，从当前活跃页面 URL 提取 base
-    if (!base) {
-      try {
-        const clients = await self.clients.matchAll({ type: 'window' });
-        for (const client of clients) {
-          const proxied = new URL(client.url).searchParams.get('url');
-          if (proxied) { base = new URL(proxied).origin; break; }
-        }
-      } catch {}
-    }
+  let base;
+  try {
+    const proxied = new URL(referer).searchParams.get('url');
+    if (!proxied) return;
+    base = new URL(proxied).origin;
+  } catch { return; }
 
-    if (!base) return fetch(e.request);
-
-    const originalUrl = base + url.pathname + url.search + url.hash;
-    const proxyUrl = WORKER_ORIGIN + '/?url=' + encodeURIComponent(originalUrl);
-    return fetch(proxyUrl, { headers: e.request.headers });
-  })());
+  const originalUrl = base + url.pathname + url.search + url.hash;
+  const proxyUrl = WORKER_ORIGIN + '/?url=' + encodeURIComponent(originalUrl);
+  e.respondWith(fetch(proxyUrl, { headers: e.request.headers }));
 });
 `;
