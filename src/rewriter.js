@@ -25,6 +25,21 @@ class AttributeRewriter {
   }
 }
 
+// 专门的 href 处理器：跳过锚点链接和 javascript: 协议
+class HrefRewriter {
+  constructor(base, workerOrigin) {
+    this.base = base;
+    this.workerOrigin = workerOrigin;
+  }
+  element(el) {
+    const val = el.getAttribute("href");
+    if (!val) return;
+    // 锚点链接和 javascript: 协议不需要代理
+    if (val.startsWith("#") || val.startsWith("javascript:")) return;
+    el.setAttribute("href", toProxyUrl(val, this.base, this.workerOrigin));
+  }
+}
+
 class BaseRemover {
   element(el) { el.remove(); }
 }
@@ -80,14 +95,17 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {})
 
   rewriter.on("base", new BaseRemover());
 
-  rewriter.on("a[href]",          new AttributeRewriter("href",     base, workerOrigin));
-  rewriter.on("img[src]",         new AttributeRewriter("src",      base, workerOrigin));
-  rewriter.on("img[srcset]",      new SrcsetRewriter("srcset",      base, workerOrigin));
-  rewriter.on("img[data-src]",    new AttributeRewriter("data-src", base, workerOrigin));
-  rewriter.on("source[src]",      new AttributeRewriter("src",      base, workerOrigin));
-  rewriter.on("source[srcset]",   new SrcsetRewriter("srcset",      base, workerOrigin));
-  rewriter.on("link[href]",       new AttributeRewriter("href",     base, workerOrigin));
-  rewriter.on("script[src]",      new ScriptRewriter("src",         base, workerOrigin, scriptBlocklist));
-  rewriter.on("form[action]",     new AttributeRewriter("action",   base, workerOrigin));
-  rewriter.on("iframe[src]",      new AttributeRewriter("src",      base, workerOrigin));
+  rewriter.on("a[href]",                    new HrefRewriter(base, workerOrigin));
+  rewriter.on("div[href]",                  new HrefRewriter(base, workerOrigin)); // MDPI 特殊用法
+  rewriter.on("*[data-counterslinkmanual]", new AttributeRewriter("data-counterslinkmanual", base, workerOrigin));
+  rewriter.on("img[src]",                   new AttributeRewriter("src",      base, workerOrigin));
+  rewriter.on("img[srcset]",                new SrcsetRewriter("srcset",      base, workerOrigin));
+  rewriter.on("img[data-src]",              new AttributeRewriter("data-src", base, workerOrigin));
+  rewriter.on("img[data-lsrc]",             new AttributeRewriter("data-lsrc", base, workerOrigin));
+  rewriter.on("source[src]",                new AttributeRewriter("src",      base, workerOrigin));
+  rewriter.on("source[srcset]",             new SrcsetRewriter("srcset",      base, workerOrigin));
+  rewriter.on("link[href]",                 new AttributeRewriter("href",     base, workerOrigin));
+  rewriter.on("script[src]",                new ScriptRewriter("src",         base, workerOrigin, scriptBlocklist));
+  rewriter.on("form[action]",               new AttributeRewriter("action",   base, workerOrigin));
+  rewriter.on("iframe[src]",                new AttributeRewriter("src",      base, workerOrigin));
 }

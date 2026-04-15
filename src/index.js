@@ -54,11 +54,17 @@ export default {
     let upstream;
     try {
       const upstreamHeaders = {
-        "User-Agent": request.headers.get("User-Agent") || "Mozilla/5.0",
+        "User-Agent": request.headers.get("User-Agent") || "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Referer": targetUrl.origin + "/",
-        "Accept": request.headers.get("Accept") || "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": request.headers.get("Accept-Language") || "en-US,en;q=0.9",
+        "Accept": request.headers.get("Accept") || "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Language": request.headers.get("Accept-Language") || "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
         "Accept-Encoding": "identity",
+        "Upgrade-Insecure-Requests": "1",
+        "Sec-Fetch-Dest": "document",
+        "Sec-Fetch-Mode": "navigate",
+        "Sec-Fetch-Site": "none",
+        "Sec-Fetch-User": "?1",
+        "Cache-Control": "max-age=0",
       };
       const cookie = request.headers.get("Cookie");
       if (cookie) upstreamHeaders["Cookie"] = cookie;
