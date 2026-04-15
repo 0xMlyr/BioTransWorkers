@@ -183,7 +183,6 @@ export const landingPage = () => `<!DOCTYPE html>
 </style>
 </head>
 <body>
-  <div class="brand">Bio-Trans</div>
   <div class="container">
     <h1>Bio-Trans</h1>
     <div class="badge">🚧 施工中...</div>
@@ -195,43 +194,24 @@ export const landingPage = () => `<!DOCTYPE html>
     <div class="supported-sites">
       <div class="supported-sites-title">已支持的网站</div>
       <table class="site-table">
-        <thead>
-          <tr>
-            <th>网站</th>
-            <th>中文名</th>
-            <th>首页</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
-            <td><strong>MDPI</strong></td>
-            <td>多学科数字出版机构</td>
-            <td><a href="https://www.mdpi.com" target="_blank" rel="noopener noreferrer">mdpi.com</a></td>
+            <td><a href="https://www.mdpi.com" target="_blank" rel="noopener noreferrer">MDPI</a></td>
           </tr>
           <tr>
-            <td><strong>PLOS</strong></td>
-            <td>公共科学图书馆</td>
-            <td><a href="https://plos.org" target="_blank" rel="noopener noreferrer">plos.org</a></td>
+            <td><a href="https://plos.org" target="_blank" rel="noopener noreferrer">PLOS</a></td>
           </tr>
           <tr>
-            <td><strong>ZooKeys</strong></td>
-            <td>动物分类学钥匙</td>
-            <td><a href="https://zookeys.pensoft.net" target="_blank" rel="noopener noreferrer">zookeys.pensoft.net</a></td>
+            <td><a href="https://zookeys.pensoft.net" target="_blank" rel="noopener noreferrer">ZooKeys</a></td>
           </tr>
           <tr>
-            <td><strong>NCBI</strong></td>
-            <td>美国国家生物技术信息中心</td>
-            <td><a href="https://www.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer">ncbi.nlm.nih.gov</a></td>
+            <td><a href="https://www.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer">NCBI</a></td>
           </tr>
           <tr>
-            <td><strong>EJT</strong></td>
-            <td>欧洲分类学学报</td>
-            <td><a href="https://europeanjournaloftaxonomy.eu" target="_blank" rel="noopener noreferrer">europeanjournaloftaxonomy.eu</a></td>
+            <td><a href="https://europeanjournaloftaxonomy.eu" target="_blank" rel="noopener noreferrer">EJT</a></td>
           </tr>
           <tr>
-            <td><strong>Zootaxa</strong></td>
-            <td>动物分类学</td>
-            <td><a href="https://www.mapress.com/zootaxa" target="_blank" rel="noopener noreferrer">mapress.com/zootaxa</a></td>
+            <td><a href="https://www.mapress.com/zootaxa" target="_blank" rel="noopener noreferrer">Zootaxa</a></td>
           </tr>
         </tbody>
       </table>
