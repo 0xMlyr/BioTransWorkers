@@ -1,4 +1,4 @@
-import { errorPage } from "./error.js";
+import { errorPage, landingPage } from "./webpage.js";
 import { applyRewriter } from "./rewriter.js";
 import { swScript } from "./sw.js";
 import { getSiteConfig } from "./sites/index.js";
@@ -17,7 +17,10 @@ export default {
 
     if (reqUrl.pathname === "/sw.js") {
       return new Response(swScript, {
-        headers: { "content-type": "application/javascript;charset=UTF-8" },
+        headers: { 
+          "content-type": "application/javascript;charset=UTF-8",
+          "cache-control": "public, max-age=86400"
+        },
       });
     }
 
@@ -38,7 +41,7 @@ export default {
           }
         } catch {}
       }
-      return htmlResponse(errorPage("400", "缺少 ?url= 参数"));
+      return htmlResponse(landingPage());
     }
 
     let targetUrl;
@@ -78,9 +81,12 @@ export default {
         targetUrl.pathname.includes(".php") &&
         targetUrl.pathname !== "/" + targetUrl.pathname.split("/").pop()
       ) {
-        const rootUrl = targetUrl.origin + "/" + targetUrl.pathname.split("/").pop() + targetUrl.search;
-        const retry = await fetch(rootUrl, { headers: upstreamHeaders, redirect: "follow" });
-        if (retry.ok) upstream = retry;
+        const filename = targetUrl.pathname.split("/").pop();
+        if (filename) {
+          const rootUrl = targetUrl.origin + "/" + filename + targetUrl.search;
+          const retry = await fetch(rootUrl, { headers: upstreamHeaders, redirect: "follow" });
+          if (retry.ok) upstream = retry;
+        }
       }
     } catch {
       return htmlResponse(errorPage("502", "无法连接到目标页面"));
@@ -92,7 +98,7 @@ export default {
     CSP_HEADERS.forEach(h => headers.delete(h));
     headers.delete("x-content-type-options");
 
-    const isSubResource = /\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|json|xml|mp4|mp3)$/i.test(targetUrl.pathname);
+    const isSubResource = /\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf|eot|webp|json|xml|mp4|mp3)$/i.test(targetUrl.pathname);
 
     if (isSubResource) {
       return new Response(upstream.body, { status: upstream.status, headers });
