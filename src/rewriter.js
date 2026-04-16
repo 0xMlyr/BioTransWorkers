@@ -98,10 +98,13 @@ const GLOBAL_SCRIPT_BLOCKLIST = [
   /maps\.gstatic\.com/i,
 ];
 
-export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}) {
+export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}, terms = [], termRegex = null) {
   const base = finalUrl;
   const scriptBlocklist = [...GLOBAL_SCRIPT_BLOCKLIST, ...(siteConfig.scriptBlocklist ?? [])];
   console.log(`[REWRITER] Base: ${base}, Blocklist count: ${scriptBlocklist.length}`);
+
+  // 创建术语处理器
+  const termHandler = createTermHandler(terms, termRegex);
 
   rewriter.on("head", {
     element(el) {
@@ -130,4 +133,71 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {})
   rewriter.on("script[src]",                new ScriptRewriter("src",         base, workerOrigin, scriptBlocklist));
   rewriter.on("form[action]",               new AttributeRewriter("action",   base, workerOrigin));
   rewriter.on("iframe[src]",                new AttributeRewriter("src",      base, workerOrigin));
+
+  // 术语注入：在 body 内的所有文本节点进行处理
+  if (termRegex) {
+    console.log("[TERM-READ] Setting up text handlers for term injection");
+    rewriter.on("body", {
+      text(text) {
+        termHandler.handleText(text);
+      }
+    });
+    
+    // 也对 iframe 内容进行处理（如果页面内有内联内容）
+    rewriter.on("*", {
+      text(text) {
+        termHandler.handleText(text);
+      }
+    });
+  } else {
+    console.log("[TERM-READ] No term regex, skipping text handlers");
+  }
+}
+
+// 创建术语处理器
+function createTermHandler(terms, regex) {
+  if (!regex || !terms || terms.length === 0) {
+    return {
+      handleText(text) {
+        // 不处理
+      }
+    };
+  }
+
+  // 创建术语到翻译的映射
+  const termMap = new Map();
+  for (const term of terms) {
+    termMap.set(term.key, term.translation || "");
+  }
+
+  let matchCount = 0;
+
+  return {
+    handleText(text) {
+      const content = text.text;
+      if (!content || typeof content !== 'string') return;
+      
+      // 简单过滤：检查是否包含可能的大写或小写英文单词
+      if (!/[a-zA-Z]{3,}/.test(content)) return;
+      
+      // 检查是否包含任何术语
+      regex.lastIndex = 0;
+      if (!regex.test(content)) return;
+      
+      // 重置并执行替换
+      regex.lastIndex = 0;
+      
+      const replaced = content.replace(regex, (match) => {
+        matchCount++;
+        const translation = termMap.get(match) || "";
+        return `<span class="bio-term" data-term="${match}" title="${translation}">${match}</span>`;
+      });
+      
+      text.replace(replaced, { html: true });
+      
+      if (matchCount > 0 && matchCount <= 5) {
+        console.log(`[TERM-READ] Injected ${matchCount} terms in text segment`);
+      }
+    }
+  };
 }

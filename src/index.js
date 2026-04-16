@@ -2,6 +2,7 @@ import { errorPage, landingPage } from "./webpage.js";
 import { applyRewriter } from "./rewriter.js";
 import { swScript } from "./sw.js";
 import { getSiteConfig } from "./sites/index.js";
+import { getTerms, buildTermRegex } from "./term-handler.js";
 
 const CSP_HEADERS = [
   "content-security-policy",
@@ -130,8 +131,14 @@ export default {
     }
 
     console.log("[REWRITE] Applying HTMLRewriter...");
+    
+    // 加载术语并构建正则
+    const terms = await getTerms(env);
+    const termRegex = buildTermRegex(terms);
+    console.log(`[TERM-READ] Terms loaded: ${terms.length}, Regex available: ${!!termRegex}`);
+    
     const rewriter = new HTMLRewriter();
-    applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig);
+    applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, terms, termRegex);
 
     console.log("[DONE] Returning transformed response");
     return rewriter.transform(new Response(upstream.body, { status: upstream.status, headers }));
