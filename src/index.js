@@ -14,8 +14,10 @@ export default {
   async fetch(request, env, ctx) {
     const reqUrl = new URL(request.url);
     const workerOrigin = reqUrl.origin;
+    console.log(`[REQ] ${request.method} ${reqUrl.pathname}${reqUrl.search}`);
 
     if (reqUrl.pathname === "/sw.js") {
+      console.log("[SW] Serving service worker script");
       return new Response(swScript, {
         headers: { 
           "content-type": "application/javascript;charset=UTF-8",
@@ -25,6 +27,7 @@ export default {
     }
 
     const targetRaw = reqUrl.searchParams.get("url");
+    console.log(`[TARGET] url param: ${targetRaw || "(none - landing page)"}`);
 
     if (!targetRaw) {
       const fetchDest = request.headers.get("sec-fetch-dest") || "";
@@ -49,9 +52,11 @@ export default {
       targetUrl = new URL(targetRaw);
       if (!["http:", "https:"].includes(targetUrl.protocol)) throw new Error();
     } catch {
+      console.log("[ERROR] Invalid target URL");
       return htmlResponse(errorPage("400", "无效的目标 URL"));
     }
 
+    console.log(`[CONFIG] Host: ${targetUrl.hostname}, SiteConfig: ${JSON.stringify(getSiteConfig(targetUrl.hostname))}`);
     const siteConfig = getSiteConfig(targetUrl.hostname);
 
     let upstream;
@@ -72,7 +77,9 @@ export default {
       const cookie = request.headers.get("Cookie");
       if (cookie) upstreamHeaders["Cookie"] = cookie;
 
+      console.log(`[UPSTREAM] Fetching: ${targetUrl.href}`);
       upstream = await fetch(targetUrl.href, { headers: upstreamHeaders, redirect: "follow" });
+      console.log(`[UPSTREAM] Response: ${upstream.status} ${upstream.statusText}, Final URL: ${upstream.url || targetUrl.href}`);
 
       // pensoft 特有：PHP 路径重试
       if (
@@ -85,10 +92,14 @@ export default {
         if (filename) {
           const rootUrl = targetUrl.origin + "/" + filename + targetUrl.search;
           const retry = await fetch(rootUrl, { headers: upstreamHeaders, redirect: "follow" });
-          if (retry.ok) upstream = retry;
+          if (retry.ok) {
+            console.log(`[RETRY] PHP retry succeeded: ${rootUrl}`);
+            upstream = retry;
+          }
         }
       }
-    } catch {
+    } catch (err) {
+      console.log(`[ERROR] Upstream fetch failed: ${err.message}`);
       return htmlResponse(errorPage("502", "无法连接到目标页面"));
     }
 
@@ -99,21 +110,30 @@ export default {
     headers.delete("x-content-type-options");
 
     const isSubResource = /\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|otf|eot|webp|json|xml|mp4|mp3)$/i.test(targetUrl.pathname);
+    console.log(`[TYPE] isSubResource: ${isSubResource}, ContentType: ${upstream.headers.get("content-type") || "(none)"}`);
 
     if (isSubResource) {
+      console.log("[PASS] Subresource - direct pass through");
       return new Response(upstream.body, { status: upstream.status, headers });
     }
 
     const contentType = upstream.headers.get("content-type") || "";
+    console.log(`[HTML] Processing HTML response, ContentType: ${contentType}`);
 
     if (!contentType.includes("text/html") || !upstream.ok) {
-      if (!upstream.ok) return htmlResponse(errorPage(upstream.status, `目标页面返回 ${upstream.status}`));
+      if (!upstream.ok) {
+        console.log(`[ERROR] Upstream returned ${upstream.status}`);
+        return htmlResponse(errorPage(upstream.status, `目标页面返回 ${upstream.status}`));
+      }
+      console.log("[PASS] Non-HTML content - direct pass through");
       return new Response(upstream.body, { status: upstream.status, headers });
     }
 
+    console.log("[REWRITE] Applying HTMLRewriter...");
     const rewriter = new HTMLRewriter();
     applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig);
 
+    console.log("[DONE] Returning transformed response");
     return rewriter.transform(new Response(upstream.body, { status: upstream.status, headers }));
   },
 };

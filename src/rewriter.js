@@ -35,8 +35,15 @@ class HrefRewriter {
     const val = el.getAttribute("href");
     if (!val) return;
     // 锚点链接和 javascript: 协议不需要代理
-    if (val.startsWith("#") || val.startsWith("javascript:")) return;
-    el.setAttribute("href", toProxyUrl(val, this.base, this.workerOrigin));
+    if (val.startsWith("#") || val.startsWith("javascript:")) {
+      console.log(`[REWRITE] Skipping anchor/js href: ${val.substring(0, 50)}`);
+      return;
+    }
+    const newVal = toProxyUrl(val, this.base, this.workerOrigin);
+    if (newVal !== val) {
+      console.log(`[REWRITE] href: ${val.substring(0, 60)}... -> ${newVal.substring(0, 60)}...`);
+    }
+    el.setAttribute("href", newVal);
   }
 }
 
@@ -54,8 +61,16 @@ class ScriptRewriter {
   element(el) {
     const val = el.getAttribute(this.attr);
     if (!val) return;
-    if (this.blocklist.some(re => re.test(val))) { el.remove(); return; }
-    el.setAttribute(this.attr, toProxyUrl(val, this.base, this.workerOrigin));
+    if (this.blocklist.some(re => re.test(val))) {
+      console.log(`[BLOCK] Script removed: ${val.substring(0, 80)}...`);
+      el.remove();
+      return;
+    }
+    const newVal = toProxyUrl(val, this.base, this.workerOrigin);
+    if (newVal !== val) {
+      console.log(`[REWRITE] script src: ${val.substring(0, 50)}... -> ${newVal.substring(0, 50)}...`);
+    }
+    el.setAttribute(this.attr, newVal);
   }
 }
 
@@ -86,14 +101,21 @@ const GLOBAL_SCRIPT_BLOCKLIST = [
 export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}) {
   const base = finalUrl;
   const scriptBlocklist = [...GLOBAL_SCRIPT_BLOCKLIST, ...(siteConfig.scriptBlocklist ?? [])];
+  console.log(`[REWRITER] Base: ${base}, Blocklist count: ${scriptBlocklist.length}`);
 
   rewriter.on("head", {
     element(el) {
+      console.log("[REWRITER] <head> found - injecting SW registration");
       el.prepend(`<script>(function(){if(!navigator.serviceWorker)return;navigator.serviceWorker.register('/sw.js',{scope:'/'}).catch(function(){});})();</script>`, { html: true });
     }
   });
 
-  rewriter.on("base", new BaseRemover());
+  rewriter.on("base", {
+    element(el) {
+      console.log("[REWRITER] <base> found - removing");
+      el.remove();
+    }
+  });
 
   rewriter.on("a[href]",                    new HrefRewriter(base, workerOrigin));
   rewriter.on("div[href]",                  new HrefRewriter(base, workerOrigin)); // MDPI 特殊用法

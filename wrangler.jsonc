@@ -3,7 +3,14 @@
 	"main": "src/index.js",
 	"compatibility_date": "2026-04-14",
 	"observability": {
-		"enabled": true
+		"enabled": true,
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": false
+		}
 	},
 	"kv_namespaces": [
 		{
