@@ -184,7 +184,7 @@ export const landingPage = () => `<!DOCTYPE html>
 </head>
 <body>
   <div class="container">
-    <h1>Bio-Trans</h1>
+    <h1>🪲🐛🦋<br>Bio-Trans</h1>
     <div class="badge">🚧 施工中...</div>
     <p class="description">这是专为昆虫形态学研究打造的网页术语翻译器，基于 Cloudflare Workers 边缘计算部署，代理诸如 ZooKeys 等目标网页并实现 HTMLRewriter 流式注入，为英文专业术语提供基于 KV 键值匹配的中文释义与悬停说明。</p>
     <div class="input-wrap">
