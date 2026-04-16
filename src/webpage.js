@@ -7,8 +7,8 @@ export const errorPage = (code, message) => `<!DOCTYPE html>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: #0e0e0e;
-    color: #c8c8c8;
+    background: #fafafa;
+    color: #333;
     font-family: 'SF Mono', 'Fira Code', monospace;
     min-height: 100vh;
     display: flex;
@@ -22,25 +22,25 @@ export const errorPage = (code, message) => `<!DOCTYPE html>
   .code {
     font-size: 4rem;
     font-weight: 700;
-    color: #3a3a3a;
+    color: #0056b3;
     letter-spacing: 0.1em;
   }
   .message {
     margin-top: 1rem;
     font-size: 0.9rem;
-    color: #666;
+    color: #555;
     letter-spacing: 0.05em;
   }
   .hint {
     margin-top: 2rem;
     font-size: 0.75rem;
-    color: #3a3a3a;
+    color: #0056b3;
   }
   .copyright {
     margin-top: 2rem;
     text-align: center;
     font-size: 0.7rem;
-    color: #444;
+    color: #888;
     line-height: 1.6;
   }
 </style>
@@ -64,8 +64,8 @@ export const landingPage = () => `<!DOCTYPE html>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: #0e0e0e;
-    color: #fff;
+    background: #fafafa;
+    color: #1a1a1a;
     font-family: 'SF Mono', 'Fira Code', monospace;
     min-height: 100vh;
     display: flex;
@@ -78,7 +78,7 @@ export const landingPage = () => `<!DOCTYPE html>
     top: 2rem;
     right: 2rem;
     font-size: 0.9rem;
-    color: #888;
+    color: #0056b3;
     letter-spacing: 0.1em;
   }
   .container {
@@ -88,26 +88,26 @@ export const landingPage = () => `<!DOCTYPE html>
   h1 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 0.6rem;
     letter-spacing: 0.05em;
   }
   .badge {
     font-size: 0.75rem;
-    color: #777;
+    color: #0056b3;
     margin-bottom: 1.2rem;
   }
   .description {
     font-size: 0.85rem;
     line-height: 1.8;
-    color: #aaa;
+    color: #555;
     margin-bottom: 1.5rem;
   }
   .input-wrap {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 2px solid #0056b3;
     padding-bottom: 6px;
     margin-bottom: 1.5rem;
   }
@@ -115,24 +115,24 @@ export const landingPage = () => `<!DOCTYPE html>
     flex: 1;
     background: transparent;
     border: none;
-    color: #fff;
+    color: #1a1a1a;
     font-family: inherit;
     font-size: 0.9rem;
     padding: 4px 0;
     outline: none;
   }
-  input::placeholder { color: #555; }
+  input::placeholder { color: #999; }
   button {
     background: transparent;
     border: none;
-    color: #888;
+    color: #0056b3;
     font-family: inherit;
     font-size: 0.85rem;
     cursor: pointer;
     padding: 0;
     white-space: nowrap;
   }
-  button:hover { color: #fff; }
+  button:hover { color: #003d80; }
   .supported-sites {
     margin-bottom: 1.5rem;
   }
@@ -149,21 +149,21 @@ export const landingPage = () => `<!DOCTYPE html>
   }
   .site-table th {
     text-align: left;
-    color: #555;
+    color: #444;
     font-weight: 400;
     padding: 0.4rem 0.6rem 0.4rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #e0e0e0;
   }
   .site-table td {
     padding: 0.5rem 0.6rem 0.5rem 0;
-    color: #aaa;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
   }
   .site-table td a {
-    color: #aaa;
+    color: #0056b3;
     text-decoration: none;
   }
-  .site-table td a:hover { color: #fff; }
+  .site-table td a:hover { color: #003d80; }
   .links {
     font-size: 0.8rem;
     margin-bottom: 0.4rem;
@@ -172,12 +172,12 @@ export const landingPage = () => `<!DOCTYPE html>
     color: #666;
     text-decoration: none;
   }
-  .links a:hover { color: #aaa; }
+  .links a:hover { color: #0056b3; }
   .copyright {
     margin-top: 2rem;
     text-align: center;
     font-size: 0.7rem;
-    color: #444;
+    color: #888;
     line-height: 1.6;
   }
 </style>
