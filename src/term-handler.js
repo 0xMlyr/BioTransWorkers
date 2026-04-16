@@ -35,10 +35,21 @@ async function loadAllTerms(env) {
           
           // 解析 value JSON
           const parsed = JSON.parse(value);
+          
+          // 兼容新旧格式：优先使用 chinese_name，其次 translation
+          const chineseName = parsed.chinese_name || parsed.translation || "";
+          // 处理占位符格式 "汉译HAO:00000xx" — 如果包含 "汉译HAO:" 则视为未翻译
+          const isPlaceholder = chineseName.startsWith("汉译HAO:") || chineseName.startsWith("汉译");
+          
           return {
             key: keyObj.name,
-            translation: parsed.translation || "",
-            phonetic: parsed.phonetic || ""
+            id: parsed.id || "",                    // HAO ID
+            translation: isPlaceholder ? "" : chineseName,  // 中文翻译（空表示未翻译）
+            phonetic: parsed.phonetic || "/null/",    // 音标
+            definition: parsed.def || "",             // 英文定义
+            synonyms: parsed.synonyms || [],          // 同义词数组
+            isA: parsed.is_a || [],                   // 分类层级
+            source: parsed.source || "hao"            // 数据来源
           };
         } catch (err) {
           console.log(`[TERM-READ] ERROR parsing key "${keyObj.name}": ${err.message}`);
@@ -53,8 +64,13 @@ async function loadAllTerms(env) {
     
     // 打印前5个作为示例
     if (validTerms.length > 0) {
-      const sample = validTerms.slice(0, 5).map(t => t.key).join(", ");
-      console.log(`[TERM-READ] Sample terms: ${sample}...`);
+      const sample = validTerms.slice(0, 5);
+      console.log(`[TERM-READ] Sample terms:`);
+      sample.forEach(t => {
+        const hasTranslation = t.translation && t.translation !== "";
+        const synCount = t.synonyms ? t.synonyms.length : 0;
+        console.log(`[TERM-READ]   - ${t.key} (ID:${t.id}, 翻译:${hasTranslation ? '✓' : '✗'}, 同义词:${synCount})`);
+      });
     }
     
     return validTerms;
