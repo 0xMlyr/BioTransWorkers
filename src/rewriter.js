@@ -108,8 +108,27 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
 
   rewriter.on("head", {
     element(el) {
-      console.log("[REWRITER] <head> found - injecting SW registration");
+      console.log("[REWRITER] <head> found - injecting SW registration and term styles");
+      // 注入 Service Worker 注册
       el.prepend(`<script>(function(){if(!navigator.serviceWorker)return;navigator.serviceWorker.register('/sw.js',{scope:'/'}).catch(function(){});})();</script>`, { html: true });
+      
+      // 注入术语高亮样式
+      const termStyles = `<style>
+.bio-term {
+  background: linear-gradient(180deg, rgba(0,86,179,0.15) 0%, rgba(0,86,179,0.25) 100%);
+  border-bottom: 1px dotted #0056b3;
+  padding: 0 2px;
+  border-radius: 2px;
+  cursor: help;
+  transition: background 0.2s ease;
+}
+.bio-term:hover {
+  background: linear-gradient(180deg, rgba(0,86,179,0.25) 0%, rgba(0,86,179,0.35) 100%);
+  border-bottom: 1px solid #0056b3;
+}
+</style>`;
+      el.append(termStyles, { html: true });
+      console.log("[TERM-READ] Injected term highlight styles");
     }
   });
 
@@ -134,21 +153,31 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   rewriter.on("form[action]",               new AttributeRewriter("action",   base, workerOrigin));
   rewriter.on("iframe[src]",                new AttributeRewriter("src",      base, workerOrigin));
 
-  // 术语注入：在 body 内的所有文本节点进行处理
+  // 术语注入：只在安全的文本元素中处理
   if (termRegex) {
     console.log("[TERM-READ] Setting up text handlers for term injection");
-    rewriter.on("body", {
-      text(text) {
-        termHandler.handleText(text);
-      }
-    });
     
-    // 也对 iframe 内容进行处理（如果页面内有内联内容）
-    rewriter.on("*", {
-      text(text) {
-        termHandler.handleText(text);
-      }
-    });
+    // 明确列出要处理的文本元素（白名单模式）
+    // 排除：script, style, noscript, code, pre, textarea, kbd, samp, title, alt属性等
+    const textSelectors = [
+      'p', 'div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+      'li', 'td', 'th', 'figcaption', 'caption', 'blockquote',
+      'article', 'section', 'aside', 'header', 'footer', 'main',
+      'em', 'strong', 'i', 'b', 'u', 'mark', 'small', 'del', 'ins',
+      'sub', 'sup', 'time', 'label', 'summary', 'figcaption'
+    ];
+    
+    // 为每个选择器注册文本处理器
+    for (const selector of textSelectors) {
+      rewriter.on(selector, {
+        text(text) {
+          termHandler.handleText(text);
+        }
+      });
+    }
+    
+    console.log(`[TERM-READ] Registered text handlers for ${textSelectors.length} element types`);
+    
   } else {
     console.log("[TERM-READ] No term regex, skipping text handlers");
   }
@@ -189,8 +218,9 @@ function createTermHandler(terms, regex) {
       
       const replaced = content.replace(regex, (match) => {
         matchCount++;
-        const translation = termMap.get(match) || "";
-        return `<span class="bio-term" data-term="${match}" title="${translation}">${match}</span>`;
+        // 只保留 data-term，不显示 title 避免默认 tooltip
+        // 翻译数据通过 data-term 后续从 KV 查询
+        return `<span class="bio-term" data-term="${match}">${match}</span>`;
       });
       
       text.replace(replaced, { html: true });
