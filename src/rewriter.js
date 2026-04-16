@@ -115,16 +115,16 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       // 注入术语高亮样式
       const termStyles = `<style>
 .bio-term {
-  background: linear-gradient(180deg, rgba(0,86,179,0.15) 0%, rgba(0,86,179,0.25) 100%);
-  border-bottom: 1px dotted #0056b3;
+  background: linear-gradient(180deg, rgba(46,125,50,0.15) 0%, rgba(46,125,50,0.25) 100%);
+  border-bottom: 1px dotted #2e7d32;
   padding: 0 2px;
   border-radius: 2px;
   cursor: help;
   transition: background 0.2s ease;
 }
 .bio-term:hover {
-  background: linear-gradient(180deg, rgba(0,86,179,0.25) 0%, rgba(0,86,179,0.35) 100%);
-  border-bottom: 1px solid #0056b3;
+  background: linear-gradient(180deg, rgba(46,125,50,0.25) 0%, rgba(46,125,50,0.35) 100%);
+  border-bottom: 1px solid #2e7d32;
 }
 </style>`;
       el.append(termStyles, { html: true });

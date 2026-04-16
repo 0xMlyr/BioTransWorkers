@@ -103,8 +103,12 @@ export function buildTermRegex(terms) {
     return null;
   }
   
+  // 过滤长度小于 3 的术语（避免匹配 "1", "A", "1A" 等编号）
+  const validTerms = terms.filter(t => t.key && t.key.length >= 3);
+  console.log(`[TERM-READ] Filtered ${terms.length - validTerms.length} short terms (<3 chars), ${validTerms.length} remaining`);
+  
   // 转义特殊字符并按长度降序排序（优先匹配长术语）
-  const escaped = terms
+  const escaped = validTerms
     .map(t => t.key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
     .sort((a, b) => b.length - a.length);
   
