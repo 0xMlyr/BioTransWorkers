@@ -27,6 +27,44 @@ export default {
       });
     }
 
+    // API: 查询术语翻译
+    if (reqUrl.pathname === "/api/term") {
+      const key = reqUrl.searchParams.get("key");
+      if (!key) {
+        return new Response(JSON.stringify({ error: "Missing key parameter" }), {
+          status: 400,
+          headers: { "content-type": "application/json;charset=UTF-8" }
+        });
+      }
+      
+      console.log(`[API] Querying term: ${key}`);
+      const value = await env.TERM_GLOSSARY.get(key);
+      
+      if (!value) {
+        return new Response(JSON.stringify({ error: "Term not found" }), {
+          status: 404,
+          headers: { "content-type": "application/json;charset=UTF-8" }
+        });
+      }
+      
+      const parsed = JSON.parse(value);
+      const response = {
+        key: key,
+        name: parsed.name || key,
+        translation: parsed.chinese_name || parsed.translation || "",
+        phonetic: parsed.phonetic || "/null/",
+        def: parsed.def || ""
+      };
+      
+      console.log(`[API] Found term: ${key} -> ${response.translation}`);
+      return new Response(JSON.stringify(response), {
+        headers: { 
+          "content-type": "application/json;charset=UTF-8",
+          "access-control-allow-origin": "*"
+        }
+      });
+    }
+
     const targetRaw = reqUrl.searchParams.get("url");
     console.log(`[TARGET] url param: ${targetRaw || "(none - landing page)"}`);
 

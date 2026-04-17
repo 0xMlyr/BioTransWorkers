@@ -9,6 +9,7 @@ self.addEventListener('fetch', e => {
 
   if (url.origin !== WORKER_ORIGIN) return;
   if (url.pathname === '/sw.js') return;
+  if (url.pathname.startsWith('/api/')) return;  // 放行 API 请求
   if (url.searchParams.has('url')) return;
 
   const referer = e.request.referrer;
