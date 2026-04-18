@@ -1,0 +1,2324 @@
+[
+  {
+    "key": "abdomen",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "abdomen",
+            "translation": "腹部"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Symphyta",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Symphyta",
+            "translation": "广腰亚目"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "abscissa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "abscissa",
+            "translation": "(脉段)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "adventitions vein",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "adventitions vein",
+            "translation": "(不定脉; 偶脉)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "annulate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "annulate",
+            "translation": "(色环; 环纹; 环状的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "antenna",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "antenna",
+            "translation": "触角"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "appendage",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "appendage",
+            "translation": "附肢"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "intrinsic muscle",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "intrinsic muscle",
+            "translation": "内在肌; 固有肌"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Ichneumonidae",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Ichneumonidae",
+            "translation": "姬蜂科"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "propodeum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "propodeum",
+            "translation": "并胸腹节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "areola",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "areola",
+            "translation": "(并胸腹节腹侧中区)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "areolet",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "areolet",
+            "translation": "前翅小室; (径分脉第一翅室)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "arolium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "arolium",
+            "translation": "爪垫"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tarasal claws",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "tarasal claws",
+            "translation": "跗爪"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "lobe",
+            "translation": "(叶状)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "axilla",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "axilla",
+            "translation": "腋片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "articulation",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "articulation",
+            "translation": "(关节; 并接; 连接处)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "triangular",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "triangular",
+            "translation": "(三角形)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "subdivision",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "subdivision",
+            "translation": "(细分)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "longitudinal",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "longitudinal",
+            "translation": "(纵向的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "axillula",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "axillula",
+            "translation": "腋侧片; 小盾片侧区"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesoscutum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "mesoscutum",
+            "translation": "中胸盾片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tegula",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "tegula",
+            "translation": "翅基片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scutellum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "scutellum",
+            "translation": "小盾片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pronotum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "pronotum",
+            "translation": "前胸背板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metanotum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "metanotum",
+            "translation": "后胸背板; 后小盾片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesosoma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "mesosoma",
+            "translation": "中体; 中躯"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metasoma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "metasoma",
+            "translation": "后体; 后躯"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "propleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "propleuron",
+            "translation": "前胸侧板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesopleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "mesopleuron",
+            "translation": "中胸侧板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metapleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "metapleuron",
+            "translation": "后胸侧板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "-notum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "-notum",
+            "translation": "(胸背板)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "-pleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "-pleuron",
+            "translation": "(胸侧板)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "sternum",
+            "translation": "腹板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tergum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "tergum",
+            "translation": "背板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ovipositor",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "ovipositor",
+            "translation": "产卵器"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sting",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "sting",
+            "translation": "蜇针"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Apoidea",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Apoidea",
+            "translation": "蜜蜂总科"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "basitibial plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "basitibial plate",
+            "translation": "基胫板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "bulla",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "bulla",
+            "translation": "脉缺; 透明斑"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "unpigmented",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "unpigmented",
+            "translation": "(未着色的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "wing fold",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "wing fold",
+            "translation": "翅褶"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "line of flexion",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "line of flexion",
+            "translation": "屈曲线; (翅关节线)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "maxilla",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "maxilla",
+            "translation": "下颚"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cardo",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "cardo",
+            "translation": "轴节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "carina",
+            "translation": "脊; 隆线"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metascutum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "metascutum",
+            "translation": "后胸盾片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sublateral",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "sublateral",
+            "translation": "(侧面但不位于边缘的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cnchus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "cnchus",
+            "translation": "淡色斑; 附片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "circular",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "circular",
+            "translation": "(圆形)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "oval",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "oval",
+            "translation": "(椭圆形)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cercus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "cercus",
+            "translation": "尾须"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "morphological",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "morphological",
+            "translation": "(形态学意义上的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "setae",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "setae",
+            "translation": "刚毛"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "chela",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "chela",
+            "translation": "(螯; 钳)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Dryinidae",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Dryinidae",
+            "translation": "螯蜂科"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "modified",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "modified",
+            "translation": "(特化的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tarsus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "tarsus",
+            "translation": "跗节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tarsomere",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "tarsomere",
+            "translation": "跗分节; 跗小节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "opposable",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "opposable",
+            "translation": "(可对合的; 对握的; 相对的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "club",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "club",
+            "translation": "棒节; 触角棒"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "flagellomere",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "flagellomere",
+            "translation": "鞭小节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "anellus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "anellus",
+            "translation": "环节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "parallel with",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "parallel with",
+            "translation": "(平行于)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "extend to",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "extend to",
+            "translation": "(延伸至)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "notch",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "notch",
+            "translation": "(切口; 缺口; 缺刻)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "clypeus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "clypeus",
+            "translation": "唇基"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "immediately above",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "immediately above",
+            "translation": "(紧挨着)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "groove",
+            "translation": "(线状凹痕; 沟)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "furrow",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "furrow",
+            "translation": "(沟; 凹槽; 刻痕; 缝)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "suture",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "suture",
+            "translation": "(关节缝; 缝线)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "labrum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "labrum",
+            "translation": "上唇"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "compressed",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "compressed",
+            "translation": "(左右扁平的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "depressed",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "depressed",
+            "translation": "(上下扁平的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "concave",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "concave",
+            "translation": "凹"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "convex",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "convex",
+            "translation": "凸"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "corbicula",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "corbicula",
+            "translation": "花粉篮"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Apiformes",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Apiformes",
+            "translation": "蜜蜂类"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "arise from",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "arise from",
+            "translation": "(从···长出)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pollen",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "pollen",
+            "translation": "花粉"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "costal notch",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "costal notch",
+            "translation": "前缘缺刻"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "stigma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "stigma",
+            "translation": "翅痣; 痣室"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "coxa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "coxa",
+            "translation": "基节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "trochanter",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "trochanter",
+            "translation": "转节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tibia",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "tibia",
+            "translation": "胫节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "femur",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "femur",
+            "translation": "股节"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "disc",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "disc",
+            "translation": "(中盘; 中间区域)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "emarginate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "emarginate",
+            "translation": "(具缺刻的; 凹缺的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "endodont mandible",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "endodont mandible",
+            "translation": "内齿型上颚"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epicnemial carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "epicnemial carina",
+            "translation": "前基腹隆线; (中胸侧板前腹侧脊)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "delineate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "delineate",
+            "translation": "(界定; 划分出)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesepisternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "mesepisternum",
+            "translation": "中胸前侧片"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epicnemium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "epicnemium",
+            "translation": "(前基腹区)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "claval fold",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "claval fold",
+            "translation": "臀前褶"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "jugal fold",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "jugal fold",
+            "translation": "轭褶"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "claval lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "claval lobe",
+            "translation": "臀叶"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "jugal lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "jugal lobe",
+            "translation": "轭叶"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pleural groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "pleural groove",
+            "translation": "胸侧沟"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epimeron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "epimeron",
+            "translation": "后侧片; (侧板后片)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "episternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "episternum",
+            "translation": "(侧板前片)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Chalcidoidea",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Chalcidoidea",
+            "translation": "小蜂总科"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sclerotization",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "sclerotization",
+            "translation": "骨化; 硬化"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sclerotin",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "sclerotin",
+            "translation": "骨化蛋白"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "flap",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "flap",
+            "translation": "(瓣)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epipygium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "epipygium",
+            "translation": "上肛板"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epistomal groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "epistomal groove",
+            "translation": "口上沟; (唇基基沟)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epomia",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "epomia",
+            "translation": "前胸侧隆线"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "oblique",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "oblique",
+            "translation": "(倾斜的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "transverse",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "transverse",
+            "translation": "(横向的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "exodont mandible",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "exodont mandible",
+            "translation": "外齿型上颚"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Parasitica",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Parasitica",
+            "translation": "寄生类"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Aculeata",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Aculeata",
+            "translation": "针尾下目"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "toruli",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "toruli",
+            "translation": "触角窝"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "oral cavity",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "oral cavity",
+            "translation": "(口窝)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ocelli",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "ocelli",
+            "translation": "单眼"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "facial fovea",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "facial fovea",
+            "translation": "颜面凹; 面窝"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "finely and densely",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "finely and densely",
+            "translation": "(细密地)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pubescent",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "pubescent",
+            "translation": "(被有短毛的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "orbit",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "orbit",
+            "translation": "眼缘; 眼周区"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "felt line",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "felt line",
+            "translation": "(毯毛线; 毡毛线)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Mutillidae",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Mutillidae",
+            "translation": "蚁蜂科"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "Bradynobaenidae",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "Bradynobaenidae",
+            "translation": "裸蜂科"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "longitudinal",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "longitudinal",
+            "translation": "(纵向的)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pore",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "pore",
+            "translation": "(孔隙)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "secretory",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "secretory",
+            "translation": "(分泌)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "acute",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "acute",
+            "translation": "(尖锐)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "apex",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "apex",
+            "translation": "(末端; 端部)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "base",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "base",
+            "translation": "(近端; 基部)"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cell",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "my_term_202604",
+            "ver": "1.0.0",
+            "date": "20260419"
+          },
+          "detailed": {
+            "original": "cell",
+            "translation": "翅室"
+          }
+        }
+      ]
+    }
+  }
+]

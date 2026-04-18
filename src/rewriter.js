@@ -310,7 +310,38 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       console.log('[BioTrans] Popup displayed with 5s countdown');
     }
     
-    // 接收来自 iframe 的术语点击消息
+    // 术语点击处理函数（复用）
+    function handleTermClick(termKey) {
+      console.log('[BioTrans] Term clicked, fetching:', termKey);
+      
+      fetch('/api/term?key=' + encodeURIComponent(termKey))
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          console.log('[BioTrans] Got term data:', data);
+          showPopup(data);
+        })
+        .catch(function(err) {
+          console.error('[BioTrans] Failed to fetch term:', err);
+          showPopup({ key: termKey, name: termKey, translation: '', phonetic: '/null/', def: '' });
+        });
+    }
+    
+    // 处理直接点击（普通网站，术语在主页面）
+    document.addEventListener('click', function(e) {
+      const termEl = e.target.closest('.bio-term');
+      if (!termEl) return;
+      
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const termKey = termEl.getAttribute('data-term');
+      if (!termKey) return;
+      
+      console.log('[BioTrans] Direct term click on main page:', termKey);
+      handleTermClick(termKey);
+    });
+    
+    // 接收来自 iframe 的术语点击消息（Pensoft 等）
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'BIOTERM_SHOW') {
         console.log('[BioTrans] Received term from iframe:', e.data.term);
@@ -318,7 +349,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       }
     });
     
-    console.log('[BioTrans] Main page popup ready');
+    console.log('[BioTrans] Main page popup ready (direct click + iframe message)');
     
     // ===== 首屏欢迎弹窗 =====
     const welcomeStyles = document.createElement('style');
@@ -434,6 +465,10 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     const welcomePopup = document.getElementById('bio-welcome-popup');
     
     function closeWelcome() {
+      // 强制转移焦点，避免关闭按钮残留焦点干扰下一次点击
+      if (document.activeElement && document.activeElement.blur) {
+        document.activeElement.blur();
+      }
       welcomePopup.classList.remove('active');
       console.log('[BioTrans] Welcome popup closed by user');
     }
@@ -480,7 +515,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
           console.error('[BioTrans] Failed to fetch term:', err);
           window.parent.postMessage({ 
             type: 'BIOTERM_SHOW', 
-            term: { key: termKey, name: termKey, translation: '', phonetic: '/null/' }
+            term: { key: termKey, name: termKey, translation: '', phonetic: '/null/', def: '' }
           }, '*');
         });
     });
