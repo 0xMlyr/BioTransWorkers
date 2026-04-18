@@ -27,7 +27,7 @@ export default {
       });
     }
 
-    // API: 查询术语翻译
+    // API: 查询术语翻译（多源整合版）
     if (reqUrl.pathname === "/api/term") {
       const key = reqUrl.searchParams.get("key");
       if (!key) {
@@ -48,15 +48,75 @@ export default {
       }
       
       const parsed = JSON.parse(value);
-      const response = {
-        key: key,
-        name: parsed.name || key,
-        translation: parsed.chinese_name || parsed.translation || "",
-        phonetic: parsed.phonetic || "/null/",
-        def: parsed.def || ""
+      
+      // 新格式：parsed.data 是数组
+      let dataArray = parsed.data || [];
+      if (!Array.isArray(dataArray)) {
+        // 兼容旧格式
+        dataArray = [{ metadata: { source: parsed.source || 'legacy' }, detailed: parsed }];
+      }
+      
+      // 字段优先级配置
+      const FIELD_PRIORITY = {
+        translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
+        phonetic: ['hao_core_2023', 'my_term_202604'],
+        def: ['hao_core_2023', 'my_term_202604']
       };
       
-      console.log(`[API] Found term: ${key} -> ${response.translation}`);
+      // 按优先级选择最佳字段
+      function pickBestField(fieldName) {
+        const priority = FIELD_PRIORITY[fieldName] || [];
+        
+        // 按优先级排序
+        const sorted = [...dataArray].sort((a, b) => {
+          const aIdx = priority.indexOf(a.metadata?.source);
+          const bIdx = priority.indexOf(b.metadata?.source);
+          return (aIdx === -1 ? 999 : aIdx) - (bIdx === -1 ? 999 : bIdx);
+        });
+        
+        for (const item of sorted) {
+          const d = item.detailed || {};
+          const val = fieldName === 'translation' 
+            ? (d.translation || d.chinese_name || '')
+            : (d[fieldName] || '');
+          if (val && !val.startsWith('汉译')) return { value: val, source: item.metadata?.source };
+        }
+        return { value: null, source: null };
+      }
+      
+      const translation = pickBestField('translation');
+      const phonetic = pickBestField('phonetic');
+      const def = pickBestField('def');
+      
+      // 获取 name（优先从 HAO 取）
+      let name = key;
+      const haoEntry = dataArray.find(d => d.metadata?.source === 'hao_core_2023');
+      if (haoEntry?.detailed?.name) {
+        name = haoEntry.detailed.name;
+      } else {
+        const anyName = dataArray.find(d => d.detailed?.name);
+        if (anyName) name = anyName.detailed.name;
+      }
+      
+      // 构建完整响应
+      const response = {
+        key: key,
+        name: name,
+        // 核心展示字段（带来源标注）
+        translation: translation.value || "暂无翻译",
+        translation_source: translation.source,
+        phonetic: phonetic.value || "/暂无音标/",
+        phonetic_source: phonetic.source,
+        def: def.value || "暂无定义",
+        def_source: def.source,
+        // 展卷数据：全量原始数据
+        sources: dataArray.map(item => ({
+          metadata: item.metadata,
+          detailed: item.detailed
+        }))
+      };
+      
+      console.log(`[API] Found term: ${key} -> translation:${translation.source || 'none'}, phonetic:${phonetic.source || 'none'}, def:${def.source || 'none'}`);
       return new Response(JSON.stringify(response), {
         headers: { 
           "content-type": "application/json;charset=UTF-8",

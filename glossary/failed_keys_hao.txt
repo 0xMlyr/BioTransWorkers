@@ -1,0 +1,1139 @@
+abdominal laterotergite 5
+abdominal laterotergite 10
+abdominal laterotergite 6
+abdominal laterotergite 7
+abdominal laterotergite 9
+abdominal mediotergite 1
+lateral coxal articular process of the mesopleuron
+abdominal mediotergite 10
+intrinsic leg muscle
+intertarsomeral joint
+abdominal mediotergite 7
+abdominal mediotergite 8
+abdominal mediotergite 9
+dilator muscle of the 5th abdominal spiracle
+dilator muscle of the 4th abdominal spiracle
+dilator muscle of the 3rd abdominal spiracle
+dilator muscle of the 2nd abdominal spiracle
+cup-shaped socket on pleuron
+corbicula
+basitarsal articular process of the protibia
+basitarsal fossa of the metatibia
+basitarsal articular process of the mesotibia
+basitarsal fossa of the mesotibia
+axillar phragma
+auricle
+dilator muscle of the 6th abdominal spiracle
+pollen press
+articular surface
+articular membrane of the protibio-probasitarsal joint
+articular membrane of the metacoxo-metatrochanteral joint
+arcus
+anteroventral mesoscutal inflection
+anteromesoscutum
+anterolateral metapleuro-metanotal muscle
+anterolateral metacoxo-metatrochanteral muscle
+anterolateral mesopectal inflection
+anterior trochanteral fossa of the mesocoxa
+anterior trochanteral articular process of the procoxa
+anterior trochanteral condyle of the procoxa
+anterior trochanteral articular process of the metacoxa
+anterior trochanteral condyle of the mesocoxa
+anterior mesocoxo-mesotrochanteral articulation
+anterior coxal fossa of the protrochanter
+anterior coxal fossa of the metatrochanter
+anterior trochanteral condyle of the metacoxa
+dilator muscle of the 7th abdominal spiracle
+dilator muscle of the 8th abdominal spiracle
+dilator of the propodeal spiracle muscle
+distal fossa of the tarsomere
+dorsal metapleuro-third axillary sclerite of hind wing muscle
+syntergum
+episternal foveae
+epistomal line
+femoral articular process of the mesotrochanter
+femoral articular process of the metatrochanter
+femoral articular process of the protrochanter
+femoral condyle of the protibia
+femoral condyle of the tibia
+femoral fossa of the metatrochanter
+femoro-tibial joint
+first mesopleuro-third axillary sclerite of fore wing muscle
+flexor of the pretarsal claws of the fore leg
+flexor of the pretarsal claws of the hind leg
+flexor of the pretarsal claws of the middle leg
+retinaculum
+frons
+humeral complex of the fore wing
+groove
+genuflexor plate of the mid leg
+genuflexor plate of the hind leg
+genuflexor plate of the fore leg
+genuflexor plate
+frontal sulcus
+abdominal sternum 8
+inner orbit
+frontal carina
+fore wing blade
+basitarsal fossa of the protibia
+4th abdominal spiracle
+articular membrane of the mesotibio-mesobasitarsal joint
+2nd abdominal spiracle
+supraorbital suture
+supraorbital trabecula
+surcoxal depression
+pronoto-propleural arm muscle
+lateral pronoto-prophragmal muscle
+median pronoto-prophragmal muscle
+adipose system
+alary muscle
+chorion
+laminated bridge
+labral muscle
+labral apodeme
+labial muscle
+knee
+intrinsic muscle of the propleuron
+intrinsic muscle of the metapleuron
+intrinsic muscle of the mesopleuron
+intrinsic muscle of the harpe
+intrinsic maxillary palp muscle
+intervalvifer articulation
+interorbital plane
+interocular separation
+intermalar distance
+interarticular ridge of the first valvifer
+infrabuccal pouch
+inferior pronotal spine
+hypopharyngeal lobe
+hind wing third axillary muscle
+hind wing base
+vertical epomia
+dorsal T9-second valvifer muscle
+endite
+dorsal T8-T9 muscle
+dorsal surface of the mesoscutellum
+dorsal salivarial wall
+digital spine
+distal hypopharynx
+dorsal aperture of the phallobase
+dorsal flange of the second valvifer
+dorsal pronoto-procoxal muscle
+dorsal ramus of the first valvula
+digestive system
+metacoxo-metabasalar muscle
+mesocoxo-mesobasalar muscle
+central nervous system
+circulatory system
+cordate apodeme
+line
+lobe
+lower mesepimeron
+macrotergite
+malar carina
+coxopleurite
+occipito-cardinal muscle
+occipito-lacinial muscle
+occlusor of posterior thoracic spiracle
+ocellar hair patch
+vertexal sulcus
+preorbital suture
+orbital furrow
+organ system
+ovipositor apparatus
+paraclypeal margin
+parapsidal hair line of mesoscutum
+parapsidal ridge
+parapsidal furrow
+paraspiracular carina
+pars articulares
+acrosternite 3
+acrosternite 4
+acrosternite 2
+acrosternite 5
+acrosternite 6
+acrosternite 7
+acrosternite 8
+acrosternite 9
+ventral pronoto-procoxal muscle
+ventral T9-second valvifer muscle
+ventral plaque
+venter
+valvillus
+upper mesepisternum
+trochantinal lobe
+transverse suture
+transscutal impression
+transoccipital suture
+transepimeral sulcus
+transepimeral line
+frenal carina
+frenal sulcus
+mesotrochantero-mesobasalar muscle
+torma
+third axillary sclerite of the hind wing
+third axillary sclerite of the fore wing
+third axillary sclerite
+terminal spine
+tergosternal sulcus
+tergo-valvifer articulation
+tentorio-mandibular muscle
+tentorio-cardinal muscle
+T9-genital membrane muscle
+T8-first valvifer muscle
+anterior metanoto-metacoxal muscle
+metanoto-metabasalar muscle
+mesonoto-mesolaterophragmal muscle
+mesonoto-mesocoxal muscle
+mesonoto-mesobasalar muscle
+subsalivarial gland
+mesosternal shelf
+subpetiolar process
+subocular area
+submetapleural ridge
+submedian groove
+submedian carina of propodeum
+sublateral groove
+mediosternite
+subglossal brush
+subcoxa
+stylus of the third valvula
+dorsal valve
+stridulatory organ
+stipito-lacinial muscle
+stipito-galeal muscle
+sternopleurite
+sternaular area
+prospinasterno-profurcal muscle
+paraspiracular sulcus
+spiracular groove
+speculum
+S7-first valvula muscle
+setal line
+serrula
+sensillar patch of the second valvifer
+second valvifer-genital membrane muscle
+second axillary sclerite of the fore wing
+second abdominal tergal muscle
+second abdominal sternal muscle
+scutum
+scutellar tubercular projection
+glandular release pit of the scutellum
+scrobal sulcus
+scapular flange
+sawtooth
+salivarial sclerite
+salivarial orifice
+metasterno-second abdominal sternal muscle
+second sterno-metacoxal muscle
+row of spurs
+rod-like sensilla
+ramus
+radix
+pteralia of the fore wing
+protuberance on malar space
+protrochanteral muscle
+protibial apical pegs
+prospinasternum
+propodeal spine
+propodeal areola
+propleural muscle
+mesofurco-propleural arm muscle
+prophragmal muscle
+pronotal triangle
+pronotal ridge
+pronotal disc
+processus musculares
+processus articularis
+mesopleural muscle
+mesopleural suture
+mesopleuro-anterior thoracic spiracle muscle
+mesospinasternum
+mesotarsal pegs
+mesothoracic venter
+mesotibial apical peg
+metabasalar muscle
+metacoxal muscle
+metafurcal muscle
+metalaterophragma
+metalaterophragmal muscle
+metanotal flange
+metanotal muscle
+metanoto-metatrochantinal muscle
+metaphragmal muscle
+metapleural muscle
+metasomal spiracle
+metasubalare muscle
+metatrochanteral muscle
+metatrochantin
+metatrochantinal muscle
+mouth margin
+mucro
+multiporous gustatory sensillum
+multiporous olfactory sensillum
+multiporous plate
+nervous system
+notal membrane
+peduncle
+petiolar flange
+prophragmo-laterocervical muscle
+mesolaterophragmo-metabasalar muscle
+metalaterophragmo-metafurcal muscle
+pharyngeal wall
+pharynx
+posterior propleuro-postoccipital muscle
+second mesopleuro-third axillary sclerite of fore wing muscle
+mesopleuro-mesosubalar muscle
+anterior metapleuro-metafurcal muscle
+posterior metapleuro-metafurcal muscle
+first valvifer-genital membrane muscle
+fore wing base
+fore wing third axillary muscle
+fore wing venation
+lateral mesofurco-metafurcal muscle
+lateral metafurco-metacoxal muscle
+median metafurco-metacoxal muscle
+funicular segment
+gastral tail
+genal carina
+genal space
+genital membrane
+dorsal profurco-procoxal muscle
+hairy lobe
+hairy ring of the metasoma
+lamnium
+lateral fovea
+lateral frontal septum
+epicuticle
+epipharyngeal brush
+epipharyngeal muscle
+ventral clypeal margin
+external female genitalia
+extrinsic muscle of the antenna
+periepistomal striation
+first abdominal tergal spiracle muscle
+first axillary sclerite of the fore wing
+preorbital trabecula
+profurco-prophragmal muscle
+lateral scapo-pedicellar muscle
+lateral T8-T9 muscle
+lateral tentorio-scapal muscle
+laterodorsal projection of mesoscutellum
+mandibular muscle
+median bridge of the second valvifers
+median mesoscutal keel
+median scapo-pedicellar muscle
+mediotergite
+mesobasalar muscle
+mesocoxal foramen
+mesocoxal muscle
+mesofurcal muscle
+mesolaterophragma
+mesolaterophragmal muscle
+mesonotal muscle
+mesopectus-pronotum intersegmental membrane
+mesophragmal muscle
+lateral metapleuro-second abdominal sternal muscle
+metapleuro-propodeal muscle
+mandibular appendage
+marginal rim of scutellum
+median frontal septum
+median tentorio-scapal muscle
+intervolsellar process
+prespiracular carina
+prepecto-anterior thoracic spiracle muscle
+prepectal shelf
+prepectal carina
+prealare
+prepecto-mesobasalar muscle
+propleural arm-postoccipital muscle
+propleural arm-procoxal muscle
+pouch
+postscutellum
+postoccipital carina
+occipital suture
+posterior tentorio-scapal muscle
+posterior T9-second valvifer muscle
+posterior stipito-palpal muscle
+posterior second valvifer-second valvula muscle
+posterior scutellum
+posterior pronoto-laterocervical muscle
+posterior projection of mesoscutellum
+posterior metanoto-metacoxal muscle
+frontal lobe
+frontal triangle
+frontofacial ridge
+frontovertex
+transverse trabecula
+frontal line
+callus
+proctiger
+mesosubalare muscle
+mediosternite 2
+mediosternite 3
+mediosternite 4
+mediosternite 5
+mediosternite 6
+mediosternite 7
+mediosternite 8
+mediosternite 9
+mediosternite 10
+laterosternite
+laterosternite 2
+laterosternite 3
+laterosternite 5
+laterosternite 6
+laterosternite 7
+laterosternite 8
+laterosternite 9
+laterosternite 10
+metasomal spiracle
+laterosternite 4
+interscrobal surface
+frontofacial sulcus
+posterolateral tooth-like section of the anterior part of the pronotal plate
+submedian pronotal apodeme
+antecostal sulcus of the first abdominal tergum
+ventral impressed area of metanotum
+dorsal plate
+ventral spine of hypopygium
+posterior carina of subaxillular bar
+mesotrochantellus
+metatrochantellus
+mediotergite
+laterotergite
+axillary cord of the hind wing
+axillary cord of the fore wing
+fifth tarsomere
+fourth tarsomere
+palpomere
+second tarsomere
+third tarsomere
+metapleuron
+lateral metapleuro-metanotal muscle
+transverse carina of T2
+mesepisternum
+abdominal tergite 9
+abdominal tergite 10
+abdominal sternite 8
+postspiracular furrow
+metapostnotum
+median longitudinal carina of first metasomal sternum
+median longitudinal carina of the metasomal tergum
+median longitudinal furrow of mesoscutellum
+sublateral carina of tergum
+transverse carina on S2
+second flagellomere
+tenth flagellomere
+fifth flagellomere
+frontal ledge
+transmetapectal carina
+dorsal area of the metapectus
+stridulitrum
+abdominal sternum 10
+profurco-procoxal muscle
+profurco-postoccipital muscle
+release and spread structure
+mesonoto-mesotrochanteral muscle
+third flagellomere
+fourth flagellomere
+sixth flagellomere
+seventh flagellomere
+eighth flagellomere
+ninth flagellomere
+eleventh flagellomere
+notaular ridge
+mesoscutellar arm
+acropleural ridge
+posterior rim of the propodeum
+profurcal bridge
+flexor apodeme
+dorsal prepectal inflection
+posterior prepectal inflection
+anus
+transverse carina on T2
+mesoscutum length
+lateral pectal fossa of the coxa
+lateral coxal condyle of the pleuron
+pectal fossa of the coxa
+medial pectal fossa of the coxa
+coxal condyle of the pectus
+medial coxal condyle of the pectus
+lateral propodeal carina
+inner orbit
+Metanoto-propodeo-metapecto-mesopectal complex
+skeletal muscle
+visceral muscle
+cuticular evagination
+protarsal claw
+mesotarsal claw
+metatarsal claw
+anterior extension of lateral axillar area
+central keel
+transverse propodeal carina
+metasternum
+mucro
+gastral scrobe
+lateral carina of the gastral scrobe
+interantennal area
+longitudinal sensillum
+remigium
+interocular distance
+anterior cranio-mandibular articulation
+annulus of petiole
+anterior metatibial spur
+calyptra
+circumscutellar carina
+facial impression
+hairy ring of T3
+intertergal suture
+lateroventral mesopleural carina
+longitudinal scutellar carina
+longitudinal ridge on the posterior surface of metatibia
+median carina of lower face
+median mesoscutal impression
+mesopleural impression
+metafemoral spine
+metapleural cavity
+metepimeron
+pronotal crest
+facial triangle
+setal pit
+posteroventral cavity of female T7
+scutellar spine
+transverse median carina on scutellar plate
+ventral keel of petiole
+occipital margin
+aporous sensillum
+scutellar sensillum
+secretory pore
+specialized area of mesoscutellum
+anterior propodeal projection
+metasomal segment
+thorax
+subantennal carina
+apical tooth of mandible
+campaniform sensillum
+medial tooth
+lateral projection
+basal tooth of mandible
+costal margin
+palpal fossa of the prementum
+cardo
+anatomical region
+margin
+dorsal area of the metapectal-propodeal complex
+dorsal pronotal corner
+anteclypeal setal pair
+antespiracular setal patch
+basal node
+genal pilosity
+lateral occipital carina
+lateral epomia
+pilosity
+orbital carina
+S2 felt field
+S3 felt field
+propodeum
+mandibular lancea
+precoxal sulcus
+anterior area of the second abdominal sternite
+dorsal petiolar carina
+dorsope
+lateral petiolar carina
+coeloconic sensillum
+gastral spiracles
+gastral tergite
+abdominal sternite 3
+metasomal tergite
+epimeral notch
+sternal apodeme
+areola
+anterior declivity of mesoscutum
+dorsal tendon attachment
+face
+facial midridge
+supra-marginal carina
+lateral longitudinal carina
+lower tooth
+transfacial sulcus
+upper ocular sulcus
+petiolar lamina
+postgenal groove
+postgenal lamella
+cuticular invagination
+vertical ocellar sulcus
+gastral sternum
+gastral tergum
+lateral panel of pronotum
+horn of T1
+mid ocellar diameter
+posterior mesoscutellar ridge
+antennal sclerite
+cercal plate
+cercal seta
+cercus
+gonostyle/volsella complex
+distodorsal submedian notch of gonostyle/volsella complex
+distolateral projection of the harpe
+dorsal apodeme of penisvalva
+dorsal submedian impression of cupula
+cupulo-gonostyle/volsella complex muscle
+dorsomedian apodeme of the aedeagus
+dorsomedian conjunctiva of the gonostyle/volsella complex
+gonostyle/volsella complex-parossiculal muscle
+gonostyle/volsella complex-volsellal muscle
+gonostyle/volsella complex-harpal muscle
+gonostyle/volsella complex-penisvalval muscle
+gonossiculal muscle
+medioventral conjunctiva of the gonostyle/volsella complex
+proximal lobe of vas deferens
+proximodorsal notch of cupula
+proximodorsal notch of harpe
+proximomedian apodeme of the harpe
+penisvalval muscle
+ventral gonostyle/volsella complex-penisvalval muscle
+S9
+semen
+submedial notch on distoventral margin of gonostyle/volsella complex
+submedian conjunctiva on the distoventral margin of gonostyle/volsella complex
+T10
+T8
+T9
+T9-T10 muscle
+ventral rod of aedeagus
+dorsalmost digital spine
+gonostyle/volsella complex-gonossiculus articulation
+ventromedian apodeme of the aedeagus
+sternite
+fore wing vein
+flagellomere 14
+inner spur
+mesotibial outer spur
+metatarsomere
+anterior plate of pronotum
+anterior conjunctival thickening
+maxillary process of the hypostoma
+cardinal articular condyle of the cranium
+cardinal lever
+cardino-stipital hinge
+outer cardinal process
+inner cardinal process
+fragmental articulation
+loral fossa of cardo
+cardinal condyle of lorum
+cardinal ridge
+basal cardinal ridge
+laterodistal cardinal ridge
+mediodistal cardinal ridge
+distal cardinal cavity
+median cardinal cavity
+lateral cardinal cavity
+cardinal macula
+basistipital process
+stipital fossa of the cardo
+medial stipital wall
+basal lacinial sclerite
+stipital thickening
+medial dististipital process
+stipital sclerite
+posterior stipital wall
+posterior stipital sclerite
+principal carina of stipes
+maxillary palpal socket
+cardinal condyle of the stipes
+ventral dististipital process
+anterior tentorio-stipital muscle
+posterior tentorio-stipital muscle
+cardinal fragmentum
+medial stipital groove
+ocellar diameter
+palpal formula
+first sclerite of the maxillary palp
+stipito-palpal muscle
+second sclerite of the maxillary palp
+third sclerite of the maxillary palp
+fourth sclerite of the maxillary palp
+first intrinsic muscle of the maxillary palp
+second intrinsic muscle of the maxillary palp
+third intrinsic muscle of the maxillary palp
+lacinial bar
+occipital margin
+acantha
+outer lobe of the lacinia
+inner lobe of the lacinia
+anterior lacinial fimbriae
+posterior lacinial fimbriae
+lacinial comb
+stipito-premental conjunctiva
+galeo-lacinial complex
+distolateral galeal sclerite
+distolateral galeal setiferous patch
+proximolateral galeal setiferous patch
+proximolateral galeal sclerite
+lateral galeal crease
+galeal crown
+galeal fringe
+galeal comb
+proximal galeal brush
+galeal lamina
+galeal midrib
+spiculate patch of lacinia
+spiculate patch of the galea
+velum
+coeloconic sensillum of the galea
+apicomedial galeal plate
+basal galeal sclerite
+postmental area
+intercardinal area
+interstipital area
+postmental articular zone
+intercardinal sclerite
+postarticular portion of the postmentum
+prearticular portion of the postmentum
+basal process of the prementum
+lateral premental face
+labial palpal excision
+subligular process
+premental arm
+ventral premental face
+premental carina
+first valvifer-first valvula complex
+posterior margin of the first valvifer
+ninth tergal condyle of the first valvifer
+first valviferal fossa of the ninth tergite
+transvalviferal conjunctiva
+dorsal sclerite of the first valvifer
+ventral sclerite of the first valvifer
+intravalvifer articulation
+anterior flange of the first valvifer
+second valviferal condyle of the first valvifer
+anterior angle of the first valvifer
+anterior area of the second valvifer
+posterior area of the second valvifer
+basal line of the second valvifer
+dorsal projection of the second valvifer
+anterior section of dorsal flange of second valvifer
+posterior section of dorsal flange of second valvifer
+second valvifer-second valvula-third valvula complex
+venom gland reservoir of the second valvifer
+bulb
+anterior notch of the dorsal valve
+distal notch of the dorsal valve
+distal vertical conjunctiva of the second valvifer-third valvula complex
+second valvifer-third valvula complex
+anterior ridge of T9
+sclerite of the maxillary palp
+muscle attachment site
+S7
+T9
+lateral T9-second valvifer muscle
+female T8
+first valvifer-second valvifer muscle
+dorsal ramus of the second valvula
+egg canal
+medial conjunctiva of the first valvula
+length of dorsal projection
+first sclerite of the labial palp
+second sclerite of the labial palp
+third sclerite of the labial palp
+ligula
+basiparaglossa
+basiparaglossal brush
+paraglossal sclerite
+basiparaglossal sclerite
+ventrolateral basiglossal arm
+median conjunctiva of the anterior glossal plate
+glossal annulus
+annular hair
+distal glossal edge
+posterior surface of the glossa
+anterior surface of the glossa
+apical glossal hairs
+apical glossal setae
+styloconic sensillum
+campaniform sensillum of the glossa
+distal hypopharyngeal invagination
+hypopharyngeal pecten
+anterolateral wall of the stipes
+marginal fringe of the stipes
+distomedial stipital flange
+proximomedial stipital flange
+cranial fossa of the cardo
+fifth sclerite of the maxillary palp
+uniporous sensillum
+fourth intrinsic muscle of the maxillary palp
+interstipital sclerite
+Stipital articular surface of the postmentum
+median postmental ridge
+postmento-premental hinge
+premental ditch
+distal hypopharyngeal sclerite
+ligament
+ventral glossal lines
+basal glossal invagination
+paraglossal acroglossal button
+paraglossal annulus
+hypopharyngeal button
+salivary gland
+salivary duct
+first intrinsic muscle of the labial palp
+second intrinsic muscle of the labial palp
+posteroventral corner of the first valvifer
+length of anterior area of second valvifer
+length of female T9
+mandibular dentition
+galeal comb
+campaniform sensillum of the premenum
+distolateral premental incision
+labial palpomere
+glossal styloconic sensillum
+medial apodeme of female S7
+tubular A9
+metapleural sulcus
+mesosoma height
+posterior tooth of the mandible
+clypeo-compound eye distance
+eye height
+cranial scrobe of mesoscutum
+scrobal carina of the mesoscutum
+metanoto-metapectal-propodeal conjunctiva
+profemoral scrobe of the mesopectus
+dorsolateral setal patch of propodeum
+anterodistal notch of the fore wing
+posterodistal notch of the fore wing
+petiole length
+epistomal distance
+anterolateral mesopectal projection
+petiolar scrobe
+lateroventral carina of the petiole
+median conjunctiva of abdominal tergum 9
+head width
+facet
+ventral margin of the mesopectus
+ventral margin of the metapectus
+median anatomical line
+proximodistal anatomical line
+head+mesosoma length
+head+mesosoma length
+mesosoma height
+posterior mesoscutellar area
+posterior mesoscutellar carina
+posterolateral mesoscutellar area
+posterolateral mesoscutellar carina
+anterior part of pronotal plate
+anteroventral depression of pronotum
+anteroventral foramen of metapleuron
+propodeo-second abdominal segment muscle
+scutellar rim
+dorsal rim of pronotal plate
+pronotal fovea
+median septum of scutellum
+ovipositor clip
+posterior lobe of scutellum
+posterior part of pronotal plate
+subcalyptral area
+window under lateral bar
+posteroventral corner of metapleuron
+pronoto-mesoscutal suture
+pronoto-mesopectal suture
+mesopleural line
+metapleuron
+seta
+sensillum basiconicum
+lateral clypeal seta
+large volcano sensilla
+large disc sensilla
+sensillum coeloconicum A
+sensillum coeloconicum B
+axillar crescent
+appendage segment
+width
+mesosoma length
+anterior petiolar length
+anterior pronotal slope
+anterior setal pit
+dorsal petiolar scrobe
+dorsal head width
+dorsal head width
+distal clypeal line
+diagonal petiolar length
+caudal cylinder
+apical spine distance
+external area of the scape
+facial area of the scape
+transverse torular line
+frontal carina line
+lateral carina of clypeus
+maximum cephalic length
+maximum diameter of the compound eye
+maximum height of petiolar node
+maximum petiole height
+angle
+setal angle
+maximum cephalic length in median line
+median clypeal notch
+median clypeal notch depth
+Maximum spiracle distance of propodeum
+pronotum width
+length of petiolar node
+anterodorsal spine of the petiolar node
+apical petiolar spine distance
+petiole width
+postocular distance
+postpetiole length
+postpetiole width
+cranial scrobe of the pronotum
+pronotal spine
+apical distance of pronotal spines
+scape length
+minimum spine distance
+spine length
+arithmetic mean
+absolute cephalic size
+anterodorsal rim of petiole
+circumantennal carinae
+anterior profile of petiolar node
+dorsal petiolar profile
+caudal petiolar profile
+portion of epithelium
+postocular area
+postocular contour line
+postocular head width
+metapleural area of the mesonoto-metanoto-mesopecto-metapecto-propodeal complex
+mesonoto-metanoto-mesopecto-metapecto-propodeal complex
+metanotal depression
+mesopleural area of the mesonoto-metanoto-mesopecto-metapecto-propodeal complex
+median carina of clypeus
+submedian area of clypeus
+ventral head line
+torular head width
+ventral head width
+contour line
+gena contour line
+anterior profile of petiolar node contour line
+dorsal petiolar profile contour line
+malar striae
+pleural pit line
+width
+facial striae
+maximum width
+minimum width
+reticulate
+supraclypeal depression
+ventromedian setiferous patch
+ventrolateral setiferous patch
+intertorular area
+facial process
+postocellar carina
+distal projection of the parossiculus
+facial apodeme
+median facial keel
+median flange of occipital carina
+submedial flange of occipital carina
+distal projection of the penisvalva
+sensillar ring of harpe
+anterior discrimenal pit
+proximolateral projection of the cupula
+proximoventral notch of cupula
+transverse line of the metanotum/propodeum
+anteromedian projection of the metanoto-propodeo-metapecto-mesopectal complex
+transverse frontal carina
+torulo-clypeal carina
+subtorular carina
+ventrolateral invagination of the pronotum
+sternaulus length
+mesopleuron length
+anterior mesoscutal width
+posterior mesoscutal width
+harpe width
+head height
+head length
+harpe length
+axillary muscle
+petiole neck
+buccal lobe
+body length
+distoventral submedian corner of the cupula
+trachea
+atrium
+resilin rich articulation of the ramus
+posteromedian process of the mesoscutellum
+sensillar plate of the aedeagus
+metapecto-propodeal conjunctiva
+posterodorsal metapleural area
+odontoid process
+specillum
+twelfth flagellomere
+axillular spine
+anterior ocellar-orbital line
+apical setae of T3
+stigmal vein
+postpetiole height
+scute
+lateral mesosoma length
+transverse carina of the metasomal depression
+coriaceous
+alutaceous
+dorsomedian area of the mesoscutellar-axillar complex
+prepalpal ventral premental area
+postpalpal ventral premental area
+latero-proximal stipital process
+cranial condyle of cardo
+Distal lateral projection of cardo
+Distal mesal projection of cardo
+lateral flange of the principal carina of the stipes
+distal lobe of the lateral flange of the principal carina of the stipes
+proximal lobe of lateral flange of the principal carina of the stipes
+lateral galeal sclerite
+trichoid sensillum of the glossa
+campaniform stipital sensillum
+triangular mesopleural furrow
+anteroposterior anatomical line
+eye-torulus distance
+thirteenth flagellomere
+maximum diameter
+minimum diameter
+microtrichia
+maximum height
+posterodorsal metapleural sulcus
+subacropleural sulcus
+postepomial sulcus
+anterior mesepisternal area
+dorsal length of pronotum
+length of mesoscutellar-axillar complex
+length of metanotum
+dorsal length of propodeum
+length of 1st flagellomere
+width of 1st flagellomere
+width of pedicel
+lateral eye height
+length of malar sulcus
+lateral head length
+dorsal length of mesoscutum
+width of mesoscutellar-axillar complex
+propodeal spiracle-metanotum distance
+diameter of propodeal spiracle
+length of T1
+length of hypopygium
+T7+8
+prospinasterno-procoxal muscle
+metanoto-metalaterophragmal muscle
+corpotendon
+mola
+mandibular rod
+apical peg
+hind wing tegula
+lateral incision of metanoum
+cup-shaped apodeme of metabasalare
+articular inflection
+posterior paracoxal ridge
+metapectal plate
+articular notch
+anterior metafurcal arm
+sturdy spines of the hind femur
+preapical tibial spurs
+median antecostal projection
+lateral antecostal projection
+metalaterophragmal lobe
+T2 longitudinal internal ridge
+abdominal segment 2-abdominal segment 1 articulation
+furcula
+meconium
+prothoracic katepisternum
+laterosternal sclerite
+transscutal ridge
+internal median longitudinal scutoscutellar ridge
+internal septum
+basalar apodeme
+supramesopleural sclerite
+prospinasternal apodeme
+mesospinasternal apodeme
+metepisternal anapleural cleft
+paracoxal notch
+nygma
+anterior metapleural carina
+basal longitudinal carinae of the syntergum
+flagellar scrobe of scape
+median conjunctiva of cardines
+mesoscutellar comb
+mesonotal fossa of the pronotum
+pronotal condyle of the mesoscutum
+pronoto-mesonotal articulation
+posterior mesosomal comb
+posterodorsal branch of pronotal Y
+proximodorsal apodeme of cupula
+Proximodorsal inflection of cupulal margin
+proximodorsal projection of harpe
+Proximomedial brush of the harpe
+transverse row of setae of cercus
+Ventral invagination of mesometapleural sulcus
+ventral invagination of the metapleural carina
+clypeus-torulus distance
+anterior ocellus-torulus distance
+sixth maxillary palpal sclerite
+horizontal plate
+labio-hypopharyngeal lobe
+palpiger
+second lateral area
+Heitler's lump
+tibial flexor sclerite
+tibial flexor muscle
+lock
+ventral lock of the femoro-tibial joint
+tibial flexor tendon
+genuflexor apodeme
+proximodorsal process of the tibia
+tibial extensor muscle
+internal protrusion
+medial tooth of the mandible
+acrosternal calyx
+acrotergal calyx
+medio-ventral concavity of T6
+tergal apodeme
+intertergal extensor muscle
+dorsal intertergal retractor
+lateral intertergal retractor muscle
+bulla of the Waterston's evaporatorium
+caudal setal row on T7
+distal crenulate carina
+submedian patch on abdominal T7
+proximomedian lamella of the Waterston's evaporatorium
+anterior mesofurcal pit
+anterior mesofurcal invagination
+mesofurcal invagination
+postacetabular pits
+labral digit
+pleated membrane
+subapical genal tooth
+socketed spine peg
+posterior cranio-mandibular articulation
+median pronotal line
+posteroventral mesal projection of pronotum
+pronotal fossa of the mesopectus
+ventral pronoto-mesopectal articulation
+submedian lines of scutellum
+Membranous region anterior to each mesocoxa
+hyaline break
+hypochaeta
+hairless streak
+muscle nd
+medial penisvalvo-gonossiculal muscle
+lateral penisvalvo-gonossiculal muscle
+lateral gonostyle/volsella complex-volsella muscle
+intragonostyle muscle
+penisvalvo-median sclerotized style muscle
+carina mandibularis
+intertegular distance
+venom gland
+vagina
+2nd valvifer-vagina muscle
+2nd valvifer-venom gland reservoir muscle
+ventral wall of the second valvulae
+sperone
+Dufour's gland
+sensillar row of the 2nd valvifer
+post-ramus flap
+Medial ridge of the 2nd valvifer
+7th abdominal sternum-vagina muscle
+part_of

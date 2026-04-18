@@ -196,19 +196,31 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   margin: 0;
   opacity: 0.8;
 }
+#bio-term-popup .popup-meta {
+  font-size: 10px;
+  color: #4caf50;
+  opacity: 0.7;
+  margin-left: 6px;
+  font-weight: normal;
+}
 #bio-term-popup .popup-def {
   font-size: 11px;
-  color: #666;
+  color: #999;
   line-height: 1.5;
   margin: 8px 0 0 0;
-  max-height: 80px;
+  max-height: 60px;
   overflow-y: auto;
 }
 #bio-term-popup .popup-def:empty {
   display: none;
 }
+#bio-term-popup .popup-def::before {
+  content: "Def: ";
+  color: #666;
+  font-size: 10px;
+}
 #bio-term-popup .popup-body { 
-  padding: 12px 16px 14px; 
+  padding: 12px 16px 10px; 
   background: #1a1a1a;
 }
 #bio-term-popup .popup-translation { 
@@ -218,10 +230,126 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   font-weight: 400;
   line-height: 1.7;
 }
-#bio-term-popup .popup-translation:empty::before {
+#bio-term-popup .popup-translation.empty::before {
   content: "暂无翻译";
   color: #666;
   font-style: italic;
+}
+#bio-term-popup .popup-expand-btn {
+  width: 100%;
+  padding: 8px 16px;
+  background: #1a1a1a;
+  border: none;
+  border-top: 1px solid #2a2a2a;
+  color: #888;
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: color 0.15s ease;
+}
+#bio-term-popup .popup-expand-btn:hover {
+  color: #4caf50;
+}
+#bio-term-popup .popup-expand-btn::before {
+  content: "▼";
+  font-size: 8px;
+  transition: transform 0.2s ease;
+}
+#bio-term-popup .popup-expand-btn.expanded::before {
+  transform: rotate(180deg);
+}
+#bio-term-popup .popup-details {
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #141414;
+  border-top: 1px solid #2a2a2a;
+}
+#bio-term-popup .popup-details.active {
+  display: block;
+}
+#bio-term-popup .popup-source-section {
+  padding: 10px 16px;
+  border-bottom: 1px solid #222;
+}
+#bio-term-popup .popup-source-section:last-child {
+  border-bottom: none;
+}
+#bio-term-popup .popup-source-header {
+  font-size: 10px;
+  color: #4caf50;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #2a2a2a;
+}
+#bio-term-popup .popup-source-meta {
+  font-size: 9px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+#bio-term-popup .popup-source-field {
+  font-size: 10px;
+  color: #888;
+  margin: 2px 0;
+  line-height: 1.4;
+}
+#bio-term-popup .popup-detail-list {
+  padding: 4px 0;
+}
+#bio-term-popup .popup-detail-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 4px 0;
+  border-bottom: 1px solid #1a1a1a;
+  line-height: 1.4;
+}
+#bio-term-popup .popup-detail-row:last-child {
+  border-bottom: none;
+}
+#bio-term-popup .popup-detail-label {
+  flex-shrink: 0;
+  width: 80px;
+  font-size: 9px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding-top: 1px;
+}
+#bio-term-popup .popup-detail-value {
+  flex: 1;
+  font-size: 10px;
+  color: #999;
+  word-break: break-word;
+}
+#bio-term-popup .popup-detail-empty {
+  font-size: 10px;
+  color: #555;
+  font-style: italic;
+  padding: 8px 0;
+}
+#bio-term-popup .popup-source-title {
+  font-size: 11px;
+  color: #4caf50;
+  font-weight: 500;
+  margin: 0 0 2px 0;
+  letter-spacing: 0.02em;
+}
+#bio-term-popup .popup-source-subtitle {
+  font-size: 9px;
+  color: #555;
+  margin: 0 0 6px 0;
+}
+#bio-term-popup .popup-source-header {
+  display: none;
+}
+#bio-term-popup .popup-source-meta {
+  display: none;
 }
 #bio-term-popup .popup-countdown { 
   position: absolute; 
@@ -256,6 +384,8 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       <div class="popup-body">
         <p class="popup-translation"></p>
       </div>
+      <button class="popup-expand-btn" id="bio-popup-expand">查看更多信息</button>
+      <div class="popup-details" id="bio-popup-details"></div>
     \`;
     document.body.appendChild(popupDiv);
     
@@ -266,8 +396,11 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     const popupDef = popup.querySelector('.popup-def');
     const popupTranslation = popup.querySelector('.popup-translation');
     const popupCountdown = popup.querySelector('.popup-countdown');
+    const popupExpandBtn = document.getElementById('bio-popup-expand');
+    const popupDetails = document.getElementById('bio-popup-details');
     let countdownTimer = null;
     let countdownValue = 5;
+    let currentSources = [];
     
     function closePopup() {
       popup.classList.remove('active');
@@ -275,6 +408,112 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         clearInterval(countdownTimer);
         countdownTimer = null;
       }
+      // 重置展卷状态
+      if (popupDetails) {
+        popupDetails.classList.remove('active');
+        popupDetails.innerHTML = '';
+      }
+      if (popupExpandBtn) {
+        popupExpandBtn.classList.remove('expanded');
+        popupExpandBtn.textContent = '查看更多信息';
+      }
+    }
+    
+    // 渲染全量详情 - 分条显示
+    function renderDetails(sources) {
+      if (!sources || sources.length === 0) return '';
+      
+      return sources.map(src => {
+        const meta = src.metadata || {};
+        const d = src.detailed || {};
+        
+        // 构建分条列表
+        let items = [];
+        
+        // ID
+        if (d.id) {
+          items.push({ label: 'ID', value: d.id });
+        }
+        
+        // Name（与主标题不同才显示）
+        if (d.name && d.name !== popupTerm.textContent) {
+          items.push({ label: 'Name', value: d.name });
+        }
+        
+        // Translation
+        const trans = d.translation || d.chinese_name;
+        if (trans) {
+          items.push({ label: 'Translation', value: trans });
+        }
+        
+        // Phonetic
+        if (d.phonetic) {
+          items.push({ label: 'Phonetic', value: d.phonetic });
+        }
+        
+        // Definition
+        if (d.def) {
+          items.push({ label: 'Definition', value: d.def });
+        }
+        
+        // Synonyms
+        if (d.synonyms && d.synonyms.length) {
+          const syns = Array.isArray(d.synonyms) 
+            ? d.synonyms.map(s => typeof s === 'string' ? s : s.name).join(', ')
+            : String(d.synonyms);
+          items.push({ label: 'Synonyms', value: syns });
+        }
+        
+        // Is-a (分类层级)
+        if (d.is_a) {
+          const isa = Array.isArray(d.is_a) ? d.is_a.join(' → ') : d.is_a;
+          items.push({ label: 'Is-a', value: isa });
+        }
+        
+        // XRefs
+        if (d.xrefs && d.xrefs.length) {
+          const refs = Array.isArray(d.xrefs) ? d.xrefs.join(', ') : String(d.xrefs);
+          items.push({ label: 'XRefs', value: refs });
+        }
+        
+        // Def refs (定义引用)
+        if (d.def_refs && d.def_refs.length) {
+          const refs = Array.isArray(d.def_refs) ? d.def_refs.join(', ') : String(d.def_refs);
+          items.push({ label: 'Def-refs', value: refs });
+        }
+        
+        // 渲染为分条列表
+        const itemsHtml = items.length 
+          ? items.map(item => \`<div class="popup-detail-row">
+              <span class="popup-detail-label">\${item.label}:</span>
+              <span class="popup-detail-value">\${item.value}</span>
+            </div>\`).join('')
+          : '<div class="popup-detail-empty">无详细字段</div>';
+        
+        return \`<div class="popup-source-section">
+          <div class="popup-source-title">\${meta.source || 'unknown'}</div>
+          <div class="popup-source-subtitle">ver:\${meta.ver || '-'} date:\${meta.date || '-'}</div>
+          <div class="popup-detail-list">\${itemsHtml}</div>
+        </div>\`;
+      }).join('');
+    }
+    
+    // 展卷切换
+    if (popupExpandBtn) {
+      popupExpandBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isExpanded = popupDetails.classList.contains('active');
+        if (isExpanded) {
+          popupDetails.classList.remove('active');
+          popupExpandBtn.classList.remove('expanded');
+          popupExpandBtn.textContent = '查看更多信息';
+        } else {
+          popupDetails.innerHTML = renderDetails(currentSources);
+          popupDetails.classList.add('active');
+          popupExpandBtn.classList.add('expanded');
+          popupExpandBtn.textContent = '收起详细信息';
+        }
+      });
     }
     
     function showPopup(term) {
@@ -285,15 +524,34 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         clearInterval(countdownTimer);
       }
       
+      // 保存全量数据供展卷使用
+      currentSources = term.sources || [];
+      
+      // 主显示区：带来源标注
+      const trans = term.translation || '';
+      const transSrc = term.translation_source ? '<span class="popup-meta">[' + term.translation_source + ']</span>' : '';
+      const phon = term.phonetic || '/暂无音标/';
+      const phonSrc = term.phonetic_source ? '<span class="popup-meta">[' + term.phonetic_source + ']</span>' : '';
+      const def = term.def || '';
+      const defSrc = term.def_source ? '<span class="popup-meta">[' + term.def_source + ']</span>' : '';
+      
       popupTerm.textContent = term.name || term.key;
-      popupPhonetic.textContent = term.phonetic || '/null/';
-      popupDef.textContent = term.def || '';
-      popupTranslation.textContent = term.translation || '';
+      popupPhonetic.innerHTML = phon + phonSrc;
+      popupDef.innerHTML = (def ? def + defSrc : '');
+      popupTranslation.innerHTML = (trans ? trans + transSrc : '');
+      popupTranslation.classList.toggle('empty', !trans);
       
       // 重置并显示倒计时
       countdownValue = 5;
       popupCountdown.textContent = countdownValue;
       popup.classList.add('active');
+      
+      // 重置展卷状态
+      if (popupDetails) popupDetails.classList.remove('active');
+      if (popupExpandBtn) {
+        popupExpandBtn.classList.remove('expanded');
+        popupExpandBtn.textContent = '查看更多信息';
+      }
       
       // 启动倒计时
       countdownTimer = setInterval(function() {
@@ -307,7 +565,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         }
       }, 1000);
       
-      console.log('[BioTrans] Popup displayed with 5s countdown');
+      console.log('[BioTrans] Popup displayed with 5s countdown, sources:', currentSources.length);
     }
     
     // 术语点击处理函数（复用）

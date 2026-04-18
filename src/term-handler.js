@@ -36,20 +36,91 @@ async function loadAllTerms(env) {
           // 解析 value JSON
           const parsed = JSON.parse(value);
           
-          // 兼容新旧格式：优先使用 chinese_name，其次 translation
-          const chineseName = parsed.chinese_name || parsed.translation || "";
-          // 处理占位符格式 "汉译HAO:00000xx" — 如果包含 "汉译HAO:" 则视为未翻译
-          const isPlaceholder = chineseName.startsWith("汉译HAO:") || chineseName.startsWith("汉译");
+          // 新格式：parsed.data 是数组，包含多源数据
+          // 旧格式：parsed 直接包含字段
+          let dataArray = parsed.data || [];
+          if (!Array.isArray(dataArray)) {
+            // 兼容旧格式：将整个 parsed 视为 single entry
+            dataArray = [{ metadata: { source: parsed.source || 'legacy' }, detailed: parsed }];
+          }
+          
+          // 提取所有 source 的详细字段，用于术语高亮（只要有任一source包含此术语即可匹配）
+          // 按优先级合并：取第一个有翻译的，或第一个有定义的，等等
+          let merged = {
+            translation: "",
+            phonetic: "/null/",
+            definition: "",
+            id: "",
+            synonyms: [],
+            isA: [],
+            sources: []
+          };
+          
+          const FIELD_PRIORITY = {
+            translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
+            phonetic: ['hao_core_2023', 'my_term_202604'],
+            definition: ['hao_core_2023', 'my_term_202604']
+          };
+          
+          // 按 source 排序：优先人工翻译
+          const sortedData = [...dataArray].sort((a, b) => {
+            const aSrc = a.metadata?.source || '';
+            const bSrc = b.metadata?.source || '';
+            const aIdx = FIELD_PRIORITY.translation.indexOf(aSrc);
+            const bIdx = FIELD_PRIORITY.translation.indexOf(bSrc);
+            return (aIdx === -1 ? 99 : aIdx) - (bIdx === -1 ? 99 : bIdx);
+          });
+          
+          for (const item of sortedData) {
+            const src = item.metadata?.source || 'unknown';
+            const d = item.detailed || {};
+            
+            merged.sources.push(src);
+            
+            // translation: 取第一个有效的
+            if (!merged.translation) {
+              const t = d.translation || d.chinese_name || '';
+              if (t && !t.startsWith('汉译')) {
+                merged.translation = t;
+              }
+            }
+            
+            // phonetic: 从 HAO 优先
+            if (!merged.phonetic || merged.phonetic === '/null/') {
+              if (d.phonetic) merged.phonetic = d.phonetic;
+            }
+            
+            // definition: 从 HAO 优先
+            if (!merged.definition && d.def) {
+              merged.definition = d.def;
+            }
+            
+            // id: 取第一个有的（通常是HAO）
+            if (!merged.id && d.id) {
+              merged.id = d.id;
+            }
+            
+            // synonyms: 合并
+            if (d.synonyms && Array.isArray(d.synonyms)) {
+              merged.synonyms.push(...d.synonyms.map(s => typeof s === 'string' ? s : s.name));
+            }
+            
+            // is_a: 取第一个有的
+            if (!merged.isA.length && d.is_a) {
+              merged.isA = Array.isArray(d.is_a) ? d.is_a : [d.is_a];
+            }
+          }
           
           return {
             key: keyObj.name,
-            id: parsed.id || "",                    // HAO ID
-            translation: isPlaceholder ? "" : chineseName,  // 中文翻译（空表示未翻译）
-            phonetic: parsed.phonetic || "/null/",    // 音标
-            definition: parsed.def || "",             // 英文定义
-            synonyms: parsed.synonyms || [],          // 同义词数组
-            isA: parsed.is_a || [],                   // 分类层级
-            source: parsed.source || "hao"            // 数据来源
+            id: merged.id,
+            translation: merged.translation,
+            phonetic: merged.phonetic,
+            definition: merged.definition,
+            synonyms: [...new Set(merged.synonyms)], // 去重
+            isA: merged.isA,
+            sources: merged.sources,
+            rawData: dataArray // 保留原始数据供后续使用
           };
         } catch (err) {
           console.log(`[TERM-READ] ERROR parsing key "${keyObj.name}": ${err.message}`);
