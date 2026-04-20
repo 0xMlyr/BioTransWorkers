@@ -36,11 +36,13 @@
 |------|------|------|
 | Phase 0 | ✅ 完成 | 透明代理框架：网页代理、资源重写、CSP处理 |
 | Phase 1 | ✅ 完成 | 术语注入系统：KV读取、正则匹配、高亮标注 |
-| Phase 2 | 🚧 待开发 | 弹窗交互：悬停提示、移动端适配 |
-| Phase 3 | 📋 规划 | NLP增强：大小写变体、短语识别、词形还原 |
-| Phase 4 | 📋 规划 | 站点扩展：MDPI、PLOS、NCBI等更多站点 |
+| Phase 2 | ✅ 完成 | 弹窗交互：术语点击弹窗、iframe 跨帧通信、多源数据展示 |
+| Phase 3 | 🚧 开发中 | NLP增强：大小写变体、短语识别、词形还原 |
+| Phase 4 | 📋 规划 | 站点扩展：MDPI、PLOS、NCBI等更多站点适配 |
 
 ## 架构与请求流程
+
+### 页面代理流程
 
 ```
 用户请求 /?url=https://paper.example.com
@@ -54,9 +56,10 @@ index.js：
     ↓
 HTMLRewriter（rewriter.js）：
   - 注入 SW 注册脚本到 <head>
-  - 注入术语高亮 CSS
+  - 注入术语高亮 CSS + 弹窗交互 JS
   - 移除 <base> 标签
   - 重写所有资源路径为 /?url=绝对路径
+  - 处理懒加载图片：img[data-src] → 同时设置 src（ZooKeys 兼容）
   - 过滤黑名单脚本（MathJax等）
   - 术语注入：在文本节点包裹 <span class="bio-term">
     ↓
@@ -64,6 +67,27 @@ HTMLRewriter（rewriter.js）：
     ↓
 浏览器注册 Service Worker（sw.js）
 SW 拦截后续无 ?url= 的同源请求，自动补全代理路径
+```
+
+### 术语弹窗交互流程
+
+```
+用户点击高亮术语（.bio-term）
+    ↓
+注入的 JS 监听点击事件
+    ↓
+API 查询 /api/term?key=术语
+    ↓
+index.js 多源整合（按 FIELD_PRIORITY 选择最佳字段）
+    ↓
+返回 {name, translation, phonetic, def, sources}
+    ↓
+主页面展示弹窗（倒计时5秒自动关闭）
+    ↓
+用户可展开查看全量原始数据
+
+【iframe 站点特殊流程】（如 ZooKeys）
+iframe 内术语点击 → postMessage 发送给主页面 → 主页面展示弹窗
 ```
 
 ## 文件结构
@@ -92,10 +116,22 @@ wrangler.jsonc      Wrangler 配置（KV绑定、兼容性日期）
 **关键职责**：
 - 解析 `?url=` 参数，验证目标 URL
 - 提供 Service Worker 脚本 (`/sw.js`)
+- **API 端点 `/api/term`**：术语查询，多源数据整合，字段优先级选择
 - 上游请求头构造（UA、Referer、Cookie透传）
 - 区分主 HTML 和子资源（通过文件扩展名）
 - CSP 头删除（content-security-policy, x-frame-options等）
 - 协调术语加载与 HTMLRewriter 应用
+
+**API 术语查询**（`/api/term?key=术语`）：
+```javascript
+// 多源数据整合，字段优先级配置
+const FIELD_PRIORITY = {
+  translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
+  phonetic: ['hao_core_2023', 'my_term_202604'],
+  def: ['hao_core_2023', 'my_term_202604']
+};
+// 返回：name, translation, phonetic, def, translation_source, 及全量 sources 数据
+```
 
 **子资源判断逻辑**（不依赖 Content-Type，使用文件扩展名）：
 ```javascript
@@ -118,6 +154,7 @@ wrangler.jsonc      Wrangler 配置（KV绑定、兼容性日期）
 | `AttributeRewriter` | src, href, action | 通用属性重写 |
 | `SrcsetRewriter` | srcset | 响应式图片路径重写 |
 | `ScriptRewriter` | src | 脚本重写，支持黑名单过滤 |
+| `ImgDataSrcRewriter` | data-src | **新增**：懒加载图片处理，同时设置 src 属性 |
 
 **全局脚本黑名单**（无法代理的动态加载脚本）：
 ```javascript
@@ -225,11 +262,43 @@ const regex = new RegExp(`\\b(${pattern})\\b`, 'g');
 
 ## KV 术语表
 
-### 数据结构
+### 数据结构（支持多源整合）
 
 ```
 Key:   术语原文（大小写敏感，如 "mesopleuron"）
-Value: {"translation":"中胸侧板","phonetic":"/null/"}
+Value: 多源数据数组格式，支持字段优先级选择
+```
+
+**新格式**（多源数据）：
+```json
+{
+  "data": [
+    {
+      "metadata": {"source": "hao_core_2023", "ver": "1.0", "date": "2026-04"},
+      "detailed": {"name": "mesopleuron", "translation": "中胸侧板", "phonetic": "/me-soh-PLOOR-on/", "def": "The lateral plate of the mesothorax"}
+    },
+    {
+      "metadata": {"source": "my_term_202604", "ver": "2.1", "date": "2026-04"},
+      "detailed": {"translation": "中胸侧板", "chinese_name": "中胸侧板"}
+    }
+  ]
+}
+```
+
+**兼容旧格式**（单源数据）：
+```json
+{"translation":"中胸侧板","phonetic":"/null/","source":"legacy"}
+```
+
+### 字段优先级配置
+
+API 查询时按优先级选择最佳字段：
+```javascript
+const FIELD_PRIORITY = {
+  translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
+  phonetic: ['hao_core_2023', 'my_term_202604'],
+  def: ['hao_core_2023', 'my_term_202604']
+};
 ```
 
 ### 批量导入格式（glossary.json）
@@ -238,7 +307,7 @@ Value: {"translation":"中胸侧板","phonetic":"/null/"}
 [
   {
     "key": "mesopleuron",
-    "value": "{\"translation\":\"中胸侧板\",\"phonetic\":\"/null/\"}"
+    "value": "{\"data\":[...]}"
   }
 ]
 ```
@@ -308,21 +377,34 @@ npx wrangler kv bulk put --binding=TERM_GLOSSARY --remote glossary/glossary.json
 
 **注意**：`wrangler dev` 本地模拟运行时出站网络不稳定（ETIMEDOUT），建议直接部署到生产环境测试。
 
+## 已实现功能详情
+
+### Phase 2 — 弹窗交互系统（✅ 已完成）
+
+**核心实现**：
+1. **术语点击监听**：注入轻量级 JS 监听 `.bio-term` 点击事件
+2. **API 查询**：通过 `/api/term?key=术语` 获取多源整合数据
+3. **弹窗展示**：
+   - 主显示区：术语名、音标、定义、翻译（带来源标注）
+   - 倒计时自动关闭（5秒）
+   - 展开按钮查看全量原始数据
+4. **iframe 跨帧通信**：
+   - iframe 内术语点击 → `window.parent.postMessage` → 主页面接收并展示弹窗
+   - 支持 Pensoft ZooKeys 等 iframe 架构站点
+
+**代码位置**：`rewriter.js` 中 `applyRewriter` 函数末尾注入的 popup system JS
+
 ## 下一步开发方向
 
-### Phase 2 — 弹窗交互
-- 注入轻量级 JS 监听 `.bio-term` 点击/悬停事件
-- 从 `data-term` 读取术语，查询 KV 显示翻译弹窗
-- 移动端适配（触摸点击 vs 悬停）
-
-### Phase 3 — NLP 增强
+### Phase 3 — NLP 增强（🚧 开发中）
 - **大小写变体处理**：句首大写、标题全大写匹配
 - **短语识别**：多词术语如 "gregarious endoparasitoid of pupae"
 - **词形还原**：处理复数形式（setae → seta, tubercles → tubercle）
 
-### Phase 4 — 站点扩展
+### Phase 4 — 站点扩展（📋 规划）
 - 分析 MDPI、PLOS、NCBI 等站点的正文选择器
 - 在 `src/sites/index.js` 添加更多站点配置
+- 适配各站点的动态加载机制（懒加载、AJAX）
 
 ## 已支持的网站
 
@@ -330,7 +412,7 @@ npx wrangler kv bulk put --binding=TERM_GLOSSARY --remote glossary/glossary.json
 |------|--------|------|------|
 | **MDPI** | 多学科数字出版机构 | https://www.mdpi.com | 代理框架就绪 |
 | **PLOS** | 公共科学图书馆 | https://plos.org | 代理框架就绪 |
-| **PenSoft ZooKeys** | 动物分类学钥匙 | https://zookeys.pensoft.net | ✅ 术语注入已验证 |
+| **PenSoft ZooKeys** | 动物分类学钥匙 | https://zookeys.pensoft.net | ✅ 完整支持（术语注入+图片代理+弹窗） |
 | **NCBI** | 美国国家生物技术信息中心 | https://www.ncbi.nlm.nih.gov | 代理框架就绪 |
 | **EJT** | 欧洲分类学学报 | https://europeanjournaloftaxonomy.eu | 代理框架就绪 |
 | **Mapress Zootaxa** | 动物分类学 | https://www.mapress.com/zootaxa | 代理框架就绪 |

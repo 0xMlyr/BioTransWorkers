@@ -25,6 +25,27 @@ class AttributeRewriter {
   }
 }
 
+// 专门处理 img[data-src]：同时设置 src 以支持懒加载（ZooKeys/iframe 站点）
+class ImgDataSrcRewriter {
+  constructor(base, workerOrigin) {
+    this.base = base;
+    this.workerOrigin = workerOrigin;
+  }
+  element(el) {
+    const val = el.getAttribute("data-src");
+    if (!val) return;
+    const proxyUrl = toProxyUrl(val, this.base, this.workerOrigin);
+    // 代理 data-src
+    el.setAttribute("data-src", proxyUrl);
+    // 同时设置 src，确保原生懒加载和JS懒加载都能工作
+    // 如果原元素已有 src（占位图），保留原值不覆盖
+    const existingSrc = el.getAttribute("src");
+    if (!existingSrc) {
+      el.setAttribute("src", proxyUrl);
+    }
+  }
+}
+
 // 专门的 href 处理器：跳过锚点链接和 javascript: 协议
 class HrefRewriter {
   constructor(base, workerOrigin) {
@@ -793,7 +814,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   rewriter.on("*[data-counterslinkmanual]", new AttributeRewriter("data-counterslinkmanual", base, workerOrigin));
   rewriter.on("img[src]",                   new AttributeRewriter("src",      base, workerOrigin));
   rewriter.on("img[srcset]",                new SrcsetRewriter("srcset",      base, workerOrigin));
-  rewriter.on("img[data-src]",              new AttributeRewriter("data-src", base, workerOrigin));
+  rewriter.on("img[data-src]",              new ImgDataSrcRewriter(base, workerOrigin));
   rewriter.on("img[data-lsrc]",             new AttributeRewriter("data-lsrc", base, workerOrigin));
   rewriter.on("source[src]",                new AttributeRewriter("src",      base, workerOrigin));
   rewriter.on("source[srcset]",             new SrcsetRewriter("srcset",      base, workerOrigin));
