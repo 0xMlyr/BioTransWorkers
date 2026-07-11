@@ -37,9 +37,9 @@ async function loadAllTerms(env) {
           const parsed = JSON.parse(value);
           const dataArray = Array.isArray(parsed.data) ? parsed.data : [];
 
-          // [DIAG] 检查特定术语的解析情况
-          if (keyObj.name === "propodeum" || keyObj.name === "mesoscutum" || keyObj.name === "nucha" || keyObj.name === "plica" || keyObj.name === "sulcus") {
-            console.log(`[DIAG] Key "${keyObj.name}" parsed OK. data type: ${typeof parsed.data}, isArray: ${Array.isArray(parsed.data)}, dataLen: ${dataArray.length}`);
+          // [DIAG] 检查 propodeum 的解析情况
+          if (keyObj.name === "propodeum") {
+            console.log(`[DIAG] Key "propodeum" parsed OK. data type: ${typeof parsed.data}, isArray: ${Array.isArray(parsed.data)}, dataLen: ${dataArray.length}`);
             if (dataArray.length > 0) {
               dataArray.forEach((item, i) => {
                 console.log(`[DIAG]   source[${i}]: ${item.metadata?.source}, detailed keys: ${Object.keys(item.detailed || {}).join(',')}`);
@@ -127,9 +127,9 @@ async function loadAllTerms(env) {
           };
          } catch (err) {
           console.log(`[TERM-READ] ERROR parsing key "${keyObj.name}": ${err.message}`);
-          // [DIAG] 详细记录解析失败的key，帮助定位问题
-          if (keyObj.name === "propodeum" || keyObj.name === "mesoscutum" || keyObj.name === "nucha" || keyObj.name === "plica" || keyObj.name === "sulcus") {
-            console.log(`[DIAG] FAILED key "${keyObj.name}" value length: ${value?.length}, first 200 chars: ${value?.substring(0, 200)}`);
+          // [DIAG] 详细记录解析失败的key
+          if (keyObj.name === "propodeum") {
+            console.log(`[DIAG] FAILED key "propodeum" value length: ${value?.length}, first 200 chars: ${value?.substring(0, 200)}`);
           }
           return null;
         }
@@ -140,12 +140,10 @@ async function loadAllTerms(env) {
     const validTerms = terms.filter(t => t !== null);
     console.log(`[TERM-READ] Successfully loaded ${validTerms.length} valid terms`);
 
-    // [DIAG] 检查关键术语是否在有效列表中
-    const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner", "depression", "callus"];
-    diagKeys.forEach(k => {
-      const found = validTerms.some(t => t.key === k);
-      if (!found) console.log(`[DIAG] ⚠️ Key "${k}" NOT FOUND in validTerms!`);
-    });
+    // [DIAG] 检查 propodeum 是否在有效列表中
+    if (!validTerms.some(t => t.key === "propodeum")) {
+      console.log(`[DIAG] ⚠️ Key "propodeum" NOT FOUND in validTerms!`);
+    }
     
     // 打印前5个作为示例
     if (validTerms.length > 0) {
@@ -184,13 +182,12 @@ export async function getTerms(env) {
   termCache = await loadAllTerms(env);
   termCacheExpiry = now + CACHE_TTL_MS;
 
-  // [DIAG] 首次加载后检查关键术语
-  const diagKeys2 = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus"];
-  diagKeys2.forEach(k => {
-    const found = termCache.some(t => t.key === k);
-    if (!found) console.log(`[DIAG] ⚠️ [FRESH LOAD] Key "${k}" NOT in termCache after fresh load!`);
-    else console.log(`[DIAG] ✓ [FRESH LOAD] Key "${k}" found in termCache`);
-  });
+  // [DIAG] 检查 propodeum 是否在缓存中
+  if (!termCache.some(t => t.key === "propodeum")) {
+    console.log(`[DIAG] ⚠️ [FRESH LOAD] Key "propodeum" NOT in termCache after fresh load!`);
+  } else {
+    console.log(`[DIAG] ✓ [FRESH LOAD] Key "propodeum" found in termCache`);
+  }
   
   return termCache;
 }
@@ -206,12 +203,10 @@ export function buildTermRegex(terms) {
   const validTerms = terms.filter(t => t.key && t.key.length >= 3);
   console.log(`[TERM-READ] Filtered ${terms.length - validTerms.length} short terms (<3 chars), ${validTerms.length} remaining`);
 
-  // [DIAG] 检查关键术语是否通过了长度过滤
-  const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner"];
-  diagKeys.forEach(k => {
-    const found = validTerms.some(t => t.key === k);
-    if (!found) console.log(`[DIAG] ⚠️ Key "${k}" NOT in validTerms after length filter!`);
-  });
+  // [DIAG] 检查 propodeum 是否通过长度过滤
+  if (!validTerms.some(t => t.key === "propodeum")) {
+    console.log(`[DIAG] ⚠️ Key "propodeum" NOT in validTerms after length filter!`);
+  }
   
   // 转义特殊字符并按长度降序排序（优先匹配长术语）
   const escaped = validTerms
@@ -228,11 +223,8 @@ export function buildTermRegex(terms) {
     const regex = new RegExp(`\\b(${pattern})\\b`, 'g');
     console.log(`[TERM-READ] Built regex with ${escaped.length} patterns, pattern length: ${pattern.length}`);
 
-    // [DIAG] 检查特定术语在正则中的匹配情况
-    diagKeys.forEach(k => {
-      const inEscaped = escaped.includes(k);
-      console.log(`[DIAG] Key "${k}" in escaped: ${inEscaped}`);
-    });
+    // [DIAG] 检查 propodeum 在正则中的状态
+    console.log(`[DIAG] "propodeum" in escaped: ${escaped.includes("propodeum")}`);
 
     // [DIAG] 用正则直接测试特定文本
     const testText = "Median area of propodeum: evenly reticulate";

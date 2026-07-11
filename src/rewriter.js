@@ -876,23 +876,15 @@ function createTermHandler(terms, regex) {
       const content = text.text;
       if (!content || typeof content !== 'string') return;
 
-      // [DIAG] 检查包含关键术语的文本段
-      const diagTerms = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus"];
-      const hasDiagTerm = diagTerms.some(t => content.includes(t));
-      if (hasDiagTerm) {
-        console.log(`[DIAG] Text segment contains diagnostic term(s): "${content.substring(0, 120)}..."`);
-        // 检查快速过滤是否通过
-        const quickPass = /[a-zA-Z]{3,}/.test(content);
-        console.log(`[DIAG] Quick filter (/[a-zA-Z]{3,}/): ${quickPass}`);
-        if (quickPass) {
-          regex.lastIndex = 0;
-          const testResult = regex.test(content);
-          console.log(`[DIAG] Regex.test(content): ${testResult}`);
-          regex.lastIndex = 0;
-          // 尝试找所有匹配
-          const matches = [...content.matchAll(regex)];
-          console.log(`[DIAG] matchAll results: ${matches.map(m => m[0]).join(', ')}`);
-        }
+      // [DIAG] 检查包含 propodeum 的文本段
+      if (content.includes("propodeum")) {
+        console.log(`[DIAG] Text segment contains "propodeum": "${content.substring(0, 120)}..."`);
+        regex.lastIndex = 0;
+        const testResult = regex.test(content);
+        console.log(`[DIAG] Regex.test(content): ${testResult}`);
+        regex.lastIndex = 0;
+        const matches = [...content.matchAll(regex)];
+        console.log(`[DIAG] matchAll results: ${matches.map(m => m[0]).join(', ')}`);
       }
       
       // 简单过滤：检查是否包含可能的大写或小写英文单词

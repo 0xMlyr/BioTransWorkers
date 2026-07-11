@@ -229,12 +229,10 @@ export default {
     const termRegex = buildTermRegex(terms);
     console.log(`[TERM-READ] Terms loaded: ${terms.length}, Regex available: ${!!termRegex}`);
 
-    // [DIAG] 每次请求检查关键术语在最终terms中的状态
-    const diagCheck = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner"];
-    diagCheck.forEach(k => {
-      const found = terms.some(t => t.key === k);
-      if (!found) console.log(`[DIAG] ⚠️ [REQUEST] Key "${k}" NOT in terms array!`);
-    });
+    // [DIAG] 检查 propodeum 在最终 terms 中的状态
+    if (!terms.some(t => t.key === "propodeum")) {
+      console.log(`[DIAG] ⚠️ [REQUEST] Key "propodeum" NOT in terms array!`);
+    }
     
     const rewriter = new HTMLRewriter();
     applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, terms, termRegex);
