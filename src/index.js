@@ -48,13 +48,7 @@ export default {
       }
       
       const parsed = JSON.parse(value);
-      
-      // 新格式：parsed.data 是数组
-      let dataArray = parsed.data || [];
-      if (!Array.isArray(dataArray)) {
-        // 兼容旧格式
-        dataArray = [{ metadata: { source: parsed.source || 'legacy' }, detailed: parsed }];
-      }
+      const dataArray = Array.isArray(parsed.data) ? parsed.data : [];
       
       // 字段优先级配置
       const FIELD_PRIORITY = {

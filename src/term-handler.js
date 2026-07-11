@@ -33,15 +33,18 @@ async function loadAllTerms(env) {
             return null;
           }
           
-          // 解析 value JSON
+           // 解析 value JSON（新格式：data 为多源数组）
           const parsed = JSON.parse(value);
-          
-          // 新格式：parsed.data 是数组，包含多源数据
-          // 旧格式：parsed 直接包含字段
-          let dataArray = parsed.data || [];
-          if (!Array.isArray(dataArray)) {
-            // 兼容旧格式：将整个 parsed 视为 single entry
-            dataArray = [{ metadata: { source: parsed.source || 'legacy' }, detailed: parsed }];
+          const dataArray = Array.isArray(parsed.data) ? parsed.data : [];
+
+          // [DIAG] 检查特定术语的解析情况
+          if (keyObj.name === "propodeum" || keyObj.name === "mesoscutum" || keyObj.name === "nucha" || keyObj.name === "plica" || keyObj.name === "sulcus") {
+            console.log(`[DIAG] Key "${keyObj.name}" parsed OK. data type: ${typeof parsed.data}, isArray: ${Array.isArray(parsed.data)}, dataLen: ${dataArray.length}`);
+            if (dataArray.length > 0) {
+              dataArray.forEach((item, i) => {
+                console.log(`[DIAG]   source[${i}]: ${item.metadata?.source}, detailed keys: ${Object.keys(item.detailed || {}).join(',')}`);
+              });
+            }
           }
           
           // 提取所有 source 的详细字段，用于术语高亮（只要有任一source包含此术语即可匹配）
@@ -122,8 +125,12 @@ async function loadAllTerms(env) {
             sources: merged.sources,
             rawData: dataArray // 保留原始数据供后续使用
           };
-        } catch (err) {
+         } catch (err) {
           console.log(`[TERM-READ] ERROR parsing key "${keyObj.name}": ${err.message}`);
+          // [DIAG] 详细记录解析失败的key，帮助定位问题
+          if (keyObj.name === "propodeum" || keyObj.name === "mesoscutum" || keyObj.name === "nucha" || keyObj.name === "plica" || keyObj.name === "sulcus") {
+            console.log(`[DIAG] FAILED key "${keyObj.name}" value length: ${value?.length}, first 200 chars: ${value?.substring(0, 200)}`);
+          }
           return null;
         }
       })
@@ -132,6 +139,13 @@ async function loadAllTerms(env) {
     // 过滤掉无效的
     const validTerms = terms.filter(t => t !== null);
     console.log(`[TERM-READ] Successfully loaded ${validTerms.length} valid terms`);
+
+    // [DIAG] 检查关键术语是否在有效列表中
+    const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner", "depression", "callus"];
+    diagKeys.forEach(k => {
+      const found = validTerms.some(t => t.key === k);
+      if (!found) console.log(`[DIAG] ⚠️ Key "${k}" NOT FOUND in validTerms!`);
+    });
     
     // 打印前5个作为示例
     if (validTerms.length > 0) {
@@ -177,6 +191,13 @@ export function buildTermRegex(terms) {
   // 过滤长度小于 3 的术语（避免匹配 "1", "A", "1A" 等编号）
   const validTerms = terms.filter(t => t.key && t.key.length >= 3);
   console.log(`[TERM-READ] Filtered ${terms.length - validTerms.length} short terms (<3 chars), ${validTerms.length} remaining`);
+
+  // [DIAG] 检查关键术语是否通过了长度过滤
+  const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner"];
+  diagKeys.forEach(k => {
+    const found = validTerms.some(t => t.key === k);
+    if (!found) console.log(`[DIAG] ⚠️ Key "${k}" NOT in validTerms after length filter!`);
+  });
   
   // 转义特殊字符并按长度降序排序（优先匹配长术语）
   const escaped = validTerms
@@ -191,7 +212,20 @@ export function buildTermRegex(terms) {
   try {
     // 大小写敏感，全局匹配
     const regex = new RegExp(`\\b(${pattern})\\b`, 'g');
-    console.log(`[TERM-READ] Built regex with ${escaped.length} patterns`);
+    console.log(`[TERM-READ] Built regex with ${escaped.length} patterns, pattern length: ${pattern.length}`);
+
+    // [DIAG] 检查特定术语在正则中的匹配情况
+    diagKeys.forEach(k => {
+      const inEscaped = escaped.includes(k);
+      console.log(`[DIAG] Key "${k}" in escaped: ${inEscaped}`);
+    });
+
+    // [DIAG] 用正则直接测试特定文本
+    const testText = "Median area of propodeum: evenly reticulate";
+    regex.lastIndex = 0;
+    const testResult = regex.test(testText);
+    console.log(`[DIAG] Regex test on "${testText}": ${testResult}, lastIndex after: ${regex.lastIndex}`);
+
     return regex;
   } catch (err) {
     console.log(`[TERM-READ] ERROR building regex: ${err.message}`);
