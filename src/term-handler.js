@@ -168,20 +168,19 @@ async function loadAllTerms(env) {
 // 获取术语列表（带缓存）
 export async function getTerms(env) {
   const now = Date.now();
-  
-  if (termCache && now < termCacheExpiry) {
-    console.log(`[TERM-READ] Using cached terms (${termCache.length} items)`);
 
-    // [DIAG] 每次请求都检查缓存中的关键术语
-    const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner", "depression", "callus"];
-    diagKeys.forEach(k => {
-      const found = termCache.some(t => t.key === k);
-      if (!found) console.log(`[DIAG] ⚠️ [CACHE] Key "${k}" NOT in termCache!`);
-    });
-    return termCache;
-  }
+  // [TEMP] 强制禁用缓存，用于诊断
+  // if (termCache && now < termCacheExpiry) {
+  //   console.log(`[TERM-READ] Using cached terms (${termCache.length} items)`);
+  //   const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner", "depression", "callus"];
+  //   diagKeys.forEach(k => {
+  //     const found = termCache.some(t => t.key === k);
+  //     if (!found) console.log(`[DIAG] ⚠️ [CACHE] Key "${k}" NOT in termCache!`);
+  //   });
+  //   return termCache;
+  // }
   
-  console.log("[TERM-READ] Cache expired or empty, reloading...");
+  console.log("[TERM-READ] Cache disabled, reloading from KV...");
   termCache = await loadAllTerms(env);
   termCacheExpiry = now + CACHE_TTL_MS;
 
