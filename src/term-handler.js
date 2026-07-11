@@ -171,12 +171,27 @@ export async function getTerms(env) {
   
   if (termCache && now < termCacheExpiry) {
     console.log(`[TERM-READ] Using cached terms (${termCache.length} items)`);
+
+    // [DIAG] 每次请求都检查缓存中的关键术语
+    const diagKeys = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus", "area", "corner", "depression", "callus"];
+    diagKeys.forEach(k => {
+      const found = termCache.some(t => t.key === k);
+      if (!found) console.log(`[DIAG] ⚠️ [CACHE] Key "${k}" NOT in termCache!`);
+    });
     return termCache;
   }
   
   console.log("[TERM-READ] Cache expired or empty, reloading...");
   termCache = await loadAllTerms(env);
   termCacheExpiry = now + CACHE_TTL_MS;
+
+  // [DIAG] 首次加载后检查关键术语
+  const diagKeys2 = ["propodeum", "mesoscutum", "nucha", "plica", "sulcus"];
+  diagKeys2.forEach(k => {
+    const found = termCache.some(t => t.key === k);
+    if (!found) console.log(`[DIAG] ⚠️ [FRESH LOAD] Key "${k}" NOT in termCache after fresh load!`);
+    else console.log(`[DIAG] ✓ [FRESH LOAD] Key "${k}" found in termCache`);
+  });
   
   return termCache;
 }
