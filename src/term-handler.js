@@ -14,12 +14,19 @@ async function loadAllTerms(env) {
   }
   
   try {
-    // 列出所有 key
-    const keys = await env.TERM_GLOSSARY.list();
-    console.log(`[TERM-READ] Found ${keys.keys.length} keys in KV`);
+    // 列出所有 key（分页读取，CF KV list() 默认最多返回1000条）
+    const allKeys = [];
+    let cursor = undefined;
+    do {
+      const page = await env.TERM_GLOSSARY.list({ cursor, limit: 1000 });
+      allKeys.push(...page.keys);
+      cursor = page.cursor;
+      console.log(`[TERM-READ] list() page fetched: ${page.keys.length} keys, total so far: ${allKeys.length}, hasMore: ${!!cursor}`);
+    } while (cursor);
+    console.log(`[TERM-READ] Found ${allKeys.length} keys in KV (all pages)`);
 
     // [DIAG] 检查 list() 结果中是否有 propodeum
-    const keyNames = keys.keys.map(k => k.name);
+    const keyNames = allKeys.map(k => k.name);
     const hasPropodeumKey = keyNames.some(n => n.toLowerCase() === "propodeum");
     console.log(`[DIAG] list() contains "propodeum": ${hasPropodeumKey}`);
     // 搜索类似 key
@@ -30,14 +37,14 @@ async function loadAllTerms(env) {
       console.log(`[DIAG] No keys matching "propode*" found`);
     }
     
-    if (keys.keys.length === 0) {
+    if (allKeys.length === 0) {
       console.log("[TERM-READ] WARNING: No keys found in KV namespace");
       return [];
     }
     
     // 并行获取所有值
     const terms = await Promise.all(
-      keys.keys.map(async (keyObj) => {
+      allKeys.map(async (keyObj) => {
         try {
           const value = await env.TERM_GLOSSARY.get(keyObj.name);
           if (keyObj.name.toLowerCase() === "propodeum") {
