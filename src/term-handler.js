@@ -17,6 +17,18 @@ async function loadAllTerms(env) {
     // 列出所有 key
     const keys = await env.TERM_GLOSSARY.list();
     console.log(`[TERM-READ] Found ${keys.keys.length} keys in KV`);
+
+    // [DIAG] 检查 list() 结果中是否有 propodeum
+    const keyNames = keys.keys.map(k => k.name);
+    const hasPropodeumKey = keyNames.some(n => n.toLowerCase() === "propodeum");
+    console.log(`[DIAG] list() contains "propodeum": ${hasPropodeumKey}`);
+    // 搜索类似 key
+    const propodeumCandidates = keyNames.filter(n => n.toLowerCase().includes("propode"));
+    if (propodeumCandidates.length > 0) {
+      console.log(`[DIAG] Keys matching "propode*": ${JSON.stringify(propodeumCandidates.map(k => ({ name: k, charCodes: [...k].map(c => c.charCodeAt(0)) })))}`);
+    } else {
+      console.log(`[DIAG] No keys matching "propode*" found`);
+    }
     
     if (keys.keys.length === 0) {
       console.log("[TERM-READ] WARNING: No keys found in KV namespace");
@@ -28,6 +40,9 @@ async function loadAllTerms(env) {
       keys.keys.map(async (keyObj) => {
         try {
           const value = await env.TERM_GLOSSARY.get(keyObj.name);
+          if (keyObj.name.toLowerCase() === "propodeum") {
+            console.log(`[DIAG] get("propodeum") returned: ${value === null ? "null" : value === undefined ? "undefined" : `string len=${value.length}`}`);
+          }
           if (!value) {
             console.log(`[TERM-READ] WARNING: Key "${keyObj.name}" has no value`);
             return null;
