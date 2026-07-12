@@ -11,7 +11,7 @@ import requests
 
 # ==================== 配置 ====================
 API_URL = "https://aidmx.cqtbi.edu.cn/v1/chat/completions"
-API_KEY = "sk-g4A9IFICIxhvLz87Dl7ZmceRhlBlio5p_L1FPA4VNtY"
+API_KEY = ""
 MODEL = "cqtbi-deepseek-v3-2"
 
 # 路径配置

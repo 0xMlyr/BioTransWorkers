@@ -35,17 +35,38 @@ INFLECT:{变体1}|{变体2}|{变体3}
 - 格式：`NAME:术语原文`
 
 ### 2. ZH（第2行，核心）
-- 尽量只给出一个最为准确的译词
-- 若确实存在多个译词，则可给出多个，按行业惯用优先级排序
-- 多个译词用 `|` 分隔
-- **原则**：
-  - 首选：昆虫学权威文献中最常用的译词（如《昆虫形态学》、ZooKeys中文译本）
-  - 次选：学术界广泛接受的替代译词
-  - 末选：较少使用但正确的译词
-  - **若无确定译词**：填写`[待译]`或`[无标准译词]`，**严禁捏造**
-- 格式示例：
-  - `ZH:中胸侧板|中胸侧片|中胸侧腹板`
-  - `ZH:并胸腹节|[待译]`
+
+你必须根据翻译的可靠程度，采用以下**三级置信度标注体系**：
+
+#### 置信度分级标准
+
+| 级别 | 标注方式 | 适用条件 |
+|------|---------|---------|
+| **确定** | 直接输出汉语译词，不加括号 | 在昆虫学权威文献中有明确、公认的对应译词 |
+| **存疑** | 用半角括号 `()` 包裹译词 | 译词为基于构词/上下文推断、临时对应、非标准用法或短语性解释 |
+| **无译** | 输出 `[待译]` | 彻底无恰当汉语对应，无法推断 |
+
+#### 示例对比
+
+| 术语 | 级别 | ZH输出 |
+|------|------|--------|
+| `propodeum` | 确定 | `ZH:并胸腹节` |
+| `Symphyta` | 确定 | `ZH:广腰亚目` |
+| `areola` | 存疑 | `ZH:(并胸腹节腹侧中区)` |
+| `epicnemium` | 存疑 | `ZH:(前基腹区)` |
+| `compressed` (形态学语境) | 存疑 | `ZH:(左右扁平的)` |
+| `post-ramus flap` | 无译 | `ZH:[待译]` |
+
+#### 组合规则
+
+- 若同时存在确定和存疑译词，确定译词在前，存疑括号译词在后，用 `|` 分隔
+  - 如：`ZH:前基腹隆线|(中胸侧板前腹侧脊)`
+  - 如：`ZH:epimeron → 后侧片|(侧板后片)`
+- 多个同级别译词用 `|` 分隔
+- 确定级别的译词优先取自：昆虫学权威文献（《昆虫形态学》、ZooKeys中文译本）
+- **存疑级别**仅当下有合理依据（构词分析、DEF上下文、相关术语类比）时使用
+- **绝对禁止**将基于通用英语词根自行编造的译词标记为确定级别
+- 若全然无把握，必须诚实输出 `[待译]`
 
 ### 3. PHONETIC（第3行）
 - 提供英文术语的国际音标（IPA）
@@ -116,10 +137,11 @@ INFLECT:setae|setal
 - media → 中脉
 
 ## 4. 无标准译词的处理
-当某个术语确实没有标准汉语译词时：
-- ZH字段填写 `[待译]` 或 `[无标准译词]`
+当某个术语确实没有标准汉语译词，且无法基于构词或DEF合理推断时：
+- ZH字段**必须**填写 `[待译]`
 - 可在INFLECT中提供构词建议
-- **绝对禁止**基于通用英语词根编造译词
+- **绝对禁止**基于通用英语词根编造译词并标注为确定级别
+- 若仅有推断性理解但不足以确定为标准译词，应使用存疑括号标注 `()`
 
 # 示例输出
 
@@ -175,10 +197,248 @@ PHONETIC:/pəʊst ˈreɪməs flæp/
 INFLECT:post-ramus flaps
 ```
 
+**输入**：
+```
+NAME:propodeum
+DEF:The first abdominal tergum that is fused with the metapleuron.
+```
+**输出**：
+```
+NAME:propodeum
+ZH:并胸腹节
+PHONETIC:/prɒˈpəʊdiːəm/
+INFLECT:propodea|propodeal
+```
+
+**输入**：
+```
+NAME:Symphyta
+DEF:A suborder of Hymenoptera including sawflies and wood wasps, characterized by a broad connection between thorax and abdomen.
+```
+**输出**：
+```
+NAME:Symphyta
+ZH:广腰亚目
+PHONETIC:/ˈsɪmfɪtə/
+INFLECT:symphytan|symphytans
+```
+
+**输入**：
+```
+NAME:coxa
+DEF:The first segment of the insect leg, articulating with the thorax.
+```
+**输出**：
+```
+NAME:coxa
+ZH:基节
+PHONETIC:/ˈkɒksə/
+INFLECT:coxae|coxal|coxite
+```
+
+**输入**：
+```
+NAME:areola
+DEF:A small area on the propodeum, often delimited by carinae.
+```
+**输出**：
+```
+NAME:areola
+ZH:(并胸腹节腹侧中区)
+PHONETIC:/əˈriːələ/
+INFLECT:areolae|areolar|areolate
+```
+
+**输入**：
+```
+NAME:compressed
+DEF:Flattened from side to side.
+```
+**输出**：
+```
+NAME:compressed
+ZH:(左右扁平的)
+PHONETIC:/kəmˈprɛst/
+INFLECT:compress|compressing|compression
+```
+
+**输入**：
+```
+NAME:epicnemial carina
+DEF:The carina that extends across the mesepisternum, delineating the epicnemium.
+```
+**输出**：
+```
+NAME:epicnemial carina
+ZH:前基腹隆线|(中胸侧板前腹侧脊)
+PHONETIC:/ˌɛpɪkˈniːmiəl kəˈraɪnə/
+INFLECT:epicnemial carinae|epicnemial carinal
+```
+
+**输入**：
+```
+NAME:abscissa
+DEF:A segment of a wing vein that is delimited by the intersection of other veins or folds.
+```
+**输出**：
+```
+NAME:abscissa
+ZH:(脉段)
+PHONETIC:/æbˈsɪsə/
+INFLECT:abscissae|abscissas
+```
+
+**输入**：
+```
+NAME:A1 flap
+DEF:The carina that is located distally on the scape, that envelopes the proximal pedicel.
+```
+**输出**：
+```
+NAME:A1 flap
+ZH:[待译]
+PHONETIC:/eɪ wʌn flæp/
+INFLECT:A1 flaps
+```
+
+# 针对汉语翻译的示例输出
+abdomen 腹部
+Symphyta 广腰亚目
+abscissa (脉段)
+adventitions vein (不定脉; 偶脉)
+annulate (色环; 环纹; 环状的)
+antenna 触角
+appendage 附肢
+intrinsic muscle 内在肌; 固有肌
+Ichneumonidae 姬蜂科
+propodeum 并胸腹节
+areola (并胸腹节腹侧中区)
+areolet 前翅小室; (径分脉第一翅室)
+arolium 爪垫
+tarasal claws 跗爪
+lobe (叶状)
+axilla 腋片
+articulation (关节; 并接; 连接处)
+triangular (三角形)
+subdivision (细分)
+longitudinal (纵向的)
+axillula 腋侧片; 小盾片侧区
+mesoscutum 中胸盾片
+tegula 翅基片
+scutellum 小盾片
+pronotum 前胸背板
+metanotum 后胸背板; 后小盾片
+mesosoma 中体; 中躯
+metasoma 后体; 后躯
+propleuron 前胸侧板
+mesopleuron 中胸侧板
+metapleuron 后胸侧板
+-notum (胸背板)
+-pleuron (胸侧板)
+sternum 腹板
+tergum 背板
+ovipositor 产卵器
+sting 蜇针
+Apoidea 蜜蜂总科
+basitibial plate 基胫板
+bulla 脉缺; 透明斑
+unpigmented (未着色的)
+wing fold 翅褶
+line of flexion 屈曲线; (翅关节线)
+maxilla 下颚
+cardo 轴节
+carina 脊; 隆线
+metascutum 后胸盾片
+sublateral (侧面但不位于边缘的)
+cnchus 淡色斑; 附片
+circular (圆形)
+oval (椭圆形)
+cercus 尾须
+morphological (形态学意义上的)
+setae 刚毛
+chela (螯; 钳)
+Dryinidae 螯蜂科
+modified (特化的)
+tarsus 跗节
+tarsomere 跗分节; 跗小节
+opposable (可对合的; 对握的; 相对的)
+club 棒节; 触角棒
+flagellomere 鞭小节
+anellus 环节
+parallel with (平行于)
+extend to (延伸至)
+notch (切口; 缺口; 缺刻)
+clypeus 唇基
+immediately above (紧挨着)
+groove (线状凹痕; 沟)
+furrow (沟; 凹槽; 刻痕; 缝)
+suture (关节缝; 缝线)
+labrum 上唇
+compressed (左右扁平的)
+depressed (上下扁平的)
+concave 凹
+convex 凸
+corbicula 花粉篮
+Apiformes 蜜蜂类
+arise from (从···长出)
+pollen 花粉
+costal notch 前缘缺刻
+stigma 翅痣; 痣室
+coxa 基节
+trochanter 转节
+tibia 胫节
+femur 股节
+disc (中盘; 中间区域)
+emarginate (具缺刻的; 凹缺的)
+endodont mandible 内齿型上颚
+epicnemial carina 前基腹隆线; (中胸侧板前腹侧脊)
+delineate (界定; 划分出)
+mesepisternum 中胸前侧片
+epicnemium (前基腹区)
+claval fold 臀前褶
+jugal fold 轭褶
+claval lobe 臀叶
+jugal lobe 轭叶
+pleural groove 胸侧沟
+epimeron 后侧片; (侧板后片)
+episternum (侧板前片)
+Chalcidoidea 小蜂总科
+sclerotization 骨化; 硬化
+sclerotin 骨化蛋白
+flap (瓣)
+epipygium 上肛板
+epistomal groove 口上沟; (唇基基沟)
+epomia 前胸侧隆线
+oblique (倾斜的)
+transverse (横向的)
+exodont mandible 外齿型上颚
+Parasitica 寄生类
+Aculeata 针尾下目
+toruli 触角窝
+oral cavity (口窝)
+ocelli 单眼
+facial fovea 颜面凹; 面窝
+finely and densely (细密地)
+pubescent (被有短毛的)
+orbit 眼缘; 眼周区
+felt line (毯毛线; 毡毛线)
+Mutillidae 蚁蜂科
+Bradynobaenidae 裸蜂科
+longitudinal (纵向的)
+pore (孔隙)
+secretory (分泌)
+acute (尖锐)
+apex (末端; 端部)
+base (近端; 基部)
+cell 翅室
+
 # 最终指令
 1. 严格遵循上述4行输出格式（NAME/ZH/PHONETIC/INFLECT）
 2. 输入中的DEF仅作为上下文参考，不要输出到结果中
 3. 膜翅目专业语境优先，与人体解剖学术语区分
-4. 无确定译词时标注`[待译]`，不编造
+4. ZH字段必须遵守三级置信度标注体系：
+   - **确定** → 直接输出汉语，如 `ZH:并胸腹节`
+   - **存疑** → 括号包裹，如 `ZH:(左右扁平的)`
+   - **无译** → 输出 `[待译]`，诚实比编造更重要
 5. 生物学术语变形遵循拉丁/希腊规则，非通用英语规则
 6. 除指定格式外，不输出任何额外解释文字
