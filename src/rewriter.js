@@ -397,7 +397,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
 #bio-term-popup .popup-countdown { 
   position: absolute; 
   top: 10px; 
-  right: 12px; 
+  right: 42px; 
   width: 24px; 
   height: 24px; 
   border-radius: 3px; 
@@ -411,6 +411,39 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   justify-content: center;
   font-family: inherit;
 }
+#bio-term-popup .popup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  background: #2a2a2a;
+  border: 1px solid #4caf50;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+#bio-term-popup .popup-close-btn:hover {
+  background: #333;
+}
+#bio-term-popup .popup-close-btn::before,
+#bio-term-popup .popup-close-btn::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #4caf50;
+  border-radius: 1px;
+}
+#bio-term-popup .popup-close-btn::before {
+  transform: rotate(45deg);
+}
+#bio-term-popup .popup-close-btn::after {
+  transform: rotate(-45deg);
+}
 \`;
     document.head.appendChild(popupStyles);
     
@@ -419,6 +452,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     popupDiv.id = 'bio-term-popup';
     popupDiv.innerHTML = \`
       <div class="popup-header">
+        <div class="popup-close-btn" id="bio-popup-close"></div>
         <div class="popup-countdown">5</div>
         <p class="popup-term"></p>
         <p class="popup-phonetic"></p>
@@ -439,18 +473,23 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     const popupDef = popup.querySelector('.popup-def');
     const popupTranslation = popup.querySelector('.popup-translation');
     const popupCountdown = popup.querySelector('.popup-countdown');
+    const popupCloseBtn = document.getElementById('bio-popup-close');
     const popupExpandBtn = document.getElementById('bio-popup-expand');
     const popupDetails = document.getElementById('bio-popup-details');
     let countdownTimer = null;
     let countdownValue = 5;
     let currentSources = [];
-    let isPaused = false;
     
-    // 弹窗悬停/触摸时暂停倒计时
-    popup.addEventListener('mouseenter', function() { isPaused = true; }, { passive: true });
-    popup.addEventListener('mouseleave', function() { isPaused = false; }, { passive: true });
-    popup.addEventListener('touchstart', function() { isPaused = true; }, { passive: true });
-    popup.addEventListener('touchend', function() { isPaused = false; }, { passive: true });
+    // 关闭按钮
+    popupCloseBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      closePopup();
+      console.log('[BioTrans] Popup closed manually');
+    });
+    
+    // 弹窗悬停/触摸时重置倒计时
+    popup.addEventListener('mouseenter', function() { countdownValue = 6; popupCountdown.textContent = 5; }, { passive: true });
+    popup.addEventListener('touchstart', function() { countdownValue = 6; popupCountdown.textContent = 5; }, { passive: true });
     
     function closePopup() {
       popup.classList.remove('active');
@@ -593,7 +632,6 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       
       // 重置并显示倒计时
       countdownValue = 5;
-      isPaused = false;
       popupCountdown.textContent = countdownValue;
       popup.classList.add('active');
       
@@ -604,9 +642,8 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         popupExpandBtn.textContent = '查看更多信息';
       }
       
-      // 启动倒计时（悬停或触摸时暂停）
+      // 启动倒计时（悬停或触摸时重置为5）
       countdownTimer = setInterval(function() {
-        if (isPaused) return;
         countdownValue--;
         popupCountdown.textContent = countdownValue;
         if (countdownValue <= 0) {
