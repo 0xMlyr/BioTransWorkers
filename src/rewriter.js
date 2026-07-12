@@ -198,6 +198,13 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   color: #e0e0e0;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  #bio-term-popup {
+    left: auto;
+    right: 20px;
+    transform: none;
+  }
+}
 #bio-term-popup.active { display: flex !important; }
 #bio-term-popup .popup-header { 
   padding: 14px 16px 10px; 
