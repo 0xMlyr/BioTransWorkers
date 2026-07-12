@@ -242,6 +242,21 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   margin: 8px 0 0 0;
   max-height: 60px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a2a #1a1a1a;
+}
+#bio-term-popup .popup-def::-webkit-scrollbar {
+  width: 6px;
+}
+#bio-term-popup .popup-def::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+#bio-term-popup .popup-def::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+#bio-term-popup .popup-def::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
 }
 #bio-term-popup .popup-def:empty {
   display: none;
