@@ -27,6 +27,16 @@ export default {
       });
     }
 
+    // 静态资源
+    if (reqUrl.pathname === "/favicon.svg" || reqUrl.pathname === "/favicon.ico") {
+      return new Response('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="#4caf50"/></svg>', {
+        headers: {
+          "content-type": "image/svg+xml",
+          "cache-control": "public, max-age=86400"
+        }
+      });
+    }
+
     // API: 查询术语翻译（多源整合版）
     if (reqUrl.pathname === "/api/term") {
       const key = reqUrl.searchParams.get("key");
