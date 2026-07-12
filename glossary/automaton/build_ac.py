@@ -28,13 +28,13 @@ SOURCES = [
 OUTPUT_PATH = os.path.join(SCRIPT_DIR, "ac_trie.json")
 
 
-# ── Step 1: 提取并去重所有key ─────────────────────────────
-def extract_keys() -> list[str]:
+# ── Step 1: 提取并去重所有key（保留原始大小写）─────────────
+def extract_keys() -> dict[str, str]:
     """
-    从三个数据源提取所有英文术语key，去重并统一转小写。
-    返回排序后的唯一key列表。
+    从三个数据源提取所有英文术语key，构建 {小写: 原始大小写} 映射。
+    同一小写key出现多种大小写时，优先保留非全小写的变体（如 Chalcidoidea 优于 chalcidoidea）。
     """
-    raw_keys: set[str] = set()
+    case_map: dict[str, str] = {}
 
     for src_path in SOURCES:
         if not os.path.exists(src_path):
@@ -42,28 +42,28 @@ def extract_keys() -> list[str]:
             continue
 
         if src_path.endswith(".json"):
-            # JSON格式: [{"key": "term", "value": {...}}, ...]
             with open(src_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
             for entry in data:
                 if "key" in entry and isinstance(entry["key"], str):
-                    raw_keys.add(entry["key"])
+                    key = entry["key"]
+                    lower = key.lower()
+                    if lower not in case_map or (case_map[lower] == case_map[lower].lower() and key != key.lower()):
+                        case_map[lower] = key
             print(f"[LOAD] {os.path.basename(src_path)}: extracted {len(data)} entries")
 
         elif src_path.endswith(".txt"):
-            # 纯文本格式: 每行一个英文术语
             with open(src_path, "r", encoding="utf-8") as f:
                 for line in f:
                     term = line.strip()
-                    # 跳过空行和非英文行（含中文等）
                     if term and re.match(r'^[a-zA-Z\s\-]+$', term):
-                        raw_keys.add(term)
+                        lower = term.lower()
+                        if lower not in case_map or (case_map[lower] == case_map[lower].lower() and term != term.lower()):
+                            case_map[lower] = term
             print(f"[LOAD] {os.path.basename(src_path)}: loaded text terms")
 
-    # 统一转小写，去重
-    normalized = sorted({k.lower() for k in raw_keys if k.strip()})
-    print(f"[DONE] Total unique keys (lowercase): {len(normalized)}")
-    return normalized
+    print(f"[DONE] Total unique keys: {len(case_map)}")
+    return case_map
 
 
 # ── Step 2: 构建AC自动机 ──────────────────────────────────
@@ -77,22 +77,23 @@ class ACTrieNode:
         self.output: list[str] = []
 
 
-def build_trie(terms: list[str]) -> list[ACTrieNode]:
+def build_trie(case_map: dict[str, str]) -> list[ACTrieNode]:
     """
-    从术语列表构建Trie树。
-    每个节点存储children映射、failure指针、output列表。
+    从大小写映射构建Trie树。
+     - Trie结构使用小写key构建（匹配用）
+     - output存储原始大小写的术语（KV查询用）
     """
     nodes: list[ACTrieNode] = [ACTrieNode()]  # 根节点 index=0
+    terms = sorted(case_map.keys())  # 小写key作为Trie结构
 
-    # 插入所有术语
-    for term in terms:
+    for lower_term in terms:
         state = 0
-        for ch in term:
+        for ch in lower_term:
             if ch not in nodes[state].children:
                 nodes[state].children[ch] = len(nodes)
                 nodes.append(ACTrieNode())
             state = nodes[state].children[ch]
-        nodes[state].output.append(term)
+        nodes[state].output.append(case_map[lower_term])  # 存储原始大小写
 
     print(f"[TRIE] Inserted {len(terms)} terms, {len(nodes)} nodes created")
     return nodes
@@ -202,16 +203,16 @@ def main():
     print("AC Automaton Builder")
     print("=" * 60)
 
-    # 1. 提取key
+    # 1. 提取key（保留原始大小写）
     print("\n--- Step 1: Extract keys ---")
-    terms = extract_keys()
-    if not terms:
+    case_map = extract_keys()
+    if not case_map:
         print("[ERROR] No terms found!")
         return
 
     # 2. 构建Trie
     print("\n--- Step 2: Build Trie ---")
-    nodes = build_trie(terms)
+    nodes = build_trie(case_map)
 
     # 3. 构建failure指针
     print("\n--- Step 3: Build failure links ---")
@@ -219,17 +220,17 @@ def main():
 
     # 4. 序列化
     print("\n--- Step 4: Serialize ---")
-    trie_data = serialize(nodes, len(terms))
+    trie_data = serialize(nodes, len(case_map))
     json_str = json.dumps(trie_data, ensure_ascii=False, separators=(",", ":"))
     print(f"[SIZE] JSON size: {len(json_str):,} bytes ({len(json_str) / 1024:.1f} KB)")
 
-    # 5. 验证
+    # 5. 验证（注意标注词汇首字母大写）
     print("\n--- Step 5: Verify ---")
     verify(trie_data, [
         ("The propodeum is lateral to the pleuron", ["propodeum", "pleuron"]),
         ("Median area of propodeum: evenly reticulate", ["area", "propodeum"]),
-        ("The Mesopleuron is located posterior", ["mesopleuron"]),
-        ("fore wing venation of Chalcidoidea", ["fore wing venation", "chalcidoidea"]),
+        ("The Mesopleuron is located posterior", ["mesopleuron", "pleuron"]),  # pleuron 是 mesopleuron 的后缀
+        ("fore wing venation of Chalcidoidea", ["fore wing venation", "Chalcidoidea"]),  # 首字母大写
         ("The abdomen is segmented", ["abdomen"]),
         ("No terms here", []),
         ("PROPODEUM and Propodeum and propodeum", ["propodeum"]),
