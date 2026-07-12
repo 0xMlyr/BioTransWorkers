@@ -185,6 +185,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   transform: translateX(-50%);
   width: 400px;
   max-width: 90vw;
+  max-height: 66vh;
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 4px;
@@ -195,13 +196,15 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   line-height: 1.6;
   display: none;
   color: #e0e0e0;
+  flex-direction: column;
 }
-#bio-term-popup.active { display: block !important; }
+#bio-term-popup.active { display: flex !important; }
 #bio-term-popup .popup-header { 
   padding: 14px 16px 10px; 
   border-bottom: 1px solid #2a2a2a; 
   position: relative;
   background: #1a1a1a;
+  flex-shrink: 0;
 }
 #bio-term-popup .popup-term { 
   font-size: 15px; 
@@ -213,11 +216,10 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   letter-spacing: 0.02em;
 }
 #bio-term-popup .popup-phonetic { 
-  font-size: 12px; 
-  color: #888; 
+  font-size: 13px; 
+  color: #e0e0e0; 
   font-style: normal; 
   margin: 0;
-  opacity: 0.8;
 }
 #bio-term-popup .popup-meta {
   font-size: 10px;
@@ -245,6 +247,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
 #bio-term-popup .popup-body { 
   padding: 12px 16px 10px; 
   background: #1a1a1a;
+  flex-shrink: 0;
 }
 #bio-term-popup .popup-translation { 
   font-size: 14px; 
@@ -273,6 +276,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   justify-content: center;
   gap: 6px;
   transition: color 0.15s ease;
+  flex-shrink: 0;
 }
 #bio-term-popup .popup-expand-btn:hover {
   color: #4caf50;
@@ -287,7 +291,8 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
 }
 #bio-term-popup .popup-details {
   display: none;
-  max-height: 200px;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   background: #141414;
   border-top: 1px solid #2a2a2a;
