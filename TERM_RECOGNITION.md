@@ -2,197 +2,230 @@
 
 ## 概述
 
-术语识别系统是 BioTransWorkers 的核心功能，负责从代理的网页内容中识别昆虫形态学术语，并通过高亮标注和弹窗展示翻译信息。
+术语识别系统是 BioTransWorkers 的核心功能，使用 **Aho-Corasick (AC) 自动机** 在 Cloudflare Workers 边缘端对代理页面进行流式术语匹配。AC自动机将全部术语（2605条）预构建为一棵有限状态机（Trie + 失败指针），匹配时对文本做**一次线性扫描**，同时找出所有出现的术语，取代了原正则方案。
 
 ---
 
 ## 一、数据存储结构
 
-### 1.1 KV 存储格式
+### 1.1 双命名空间设计
+
+| 命名空间 | Binding | 用途 | KV操作/请求 |
+|----------|---------|------|------------|
+| `TERM_GLOSSARY` | `TERM_GLOSSARY` | 术语详情（翻译、音标、定义等多源数据） | 1次get（用户点击时） |
+| `TERM_ACTRIE` | `TERM_ACTRIE` | AC自动机Trie（匹配引擎） | 1次get（启动加载） |
+
+职责分离：Trie只管匹配，GLOSSARY只管数据存储。
+
+### 1.2 术语详情格式（TERM_GLOSSARY）
 
 ```
-Key: 术语原文（大小写敏感，如 "mesopleuron"）
-Value: JSON 字符串
+Key: 术语言文（大小写敏感，如 "Chalcidoidea"）
+Value: JSON 多源数据数组
 ```
-
-### 1.2 多源数据格式
-
-术语数据采用多源聚合设计，支持多个数据源的合并：
 
 ```json
 {
   "data": [
     {
-      "metadata": {
-        "source": "my_term_202604",
-        "ver": "1.0",
-        "date": "2026-04"
-      },
+      "metadata": {"source": "hao_core_2023", "ver": "1.0.0", "date": "20260419"},
       "detailed": {
-        "translation": "中胸侧板",
-        "phonetic": "/null/",
-        "def": "定义文本...",
         "id": "HAO:0000001",
         "name": "mesopleuron",
-        "synonyms": [...],
-        "is_a": [...],
-        "xrefs": [...],
-        "def_refs": [...]
+        "def": "The lateral plate of the mesothorax",
+        "synonyms": [{"name": "pleural plate of mesothorax", ...}],
+        "is_a": [{"id": "HAO:0001105", "name": "mesopleural region"}]
       }
     },
     {
-      "metadata": {
-        "source": "hao_core_2023",
-        "ver": "2023.12",
-        "date": "2023-12"
-      },
-      "detailed": { ... }
+      "metadata": {"source": "my_term_202604", "ver": "1.0.0", "date": "20260419"},
+      "detailed": {
+        "original": "mesopleuron",
+        "translation": "中胸侧板",
+        "phonetic": "/me-soh-PLOOR-on/"
+      }
     }
   ]
 }
 ```
 
-### 1.3 数据源优先级
+### 1.3 AC自动机Trie格式（TERM_ACTRIE）
 
-```javascript
-const FIELD_PRIORITY = {
-  translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
-  phonetic: ['hao_core_2023', 'my_term_202604'],
-  def: ['hao_core_2023', 'my_term_202604']
-};
+```json
+{
+  "version": "1.0",
+  "built_at": "2026-07-12T08:08:38Z",
+  "term_count": 2605,
+  "node_count": 32647,
+  "trie": [
+    {"children": {"a": 1, "b": 5, ...}, "fail": 0, "output": []},
+    {"children": {"r": 2},              "fail": 0, "output": []},
+    ...
+    {"children": {},                     "fail": 0, "output": ["area"]},
+    {"children": {},                     "fail": 0, "output": ["propodeum"]}
+  ]
+}
 ```
 
-- **人工翻译表** (`my_term_202604`) 在翻译字段上享有最高优先级
-- **HAO本体** (`hao_core_2023`) 在音标和定义字段上优先
-- 字段按优先级排序后，取第一个有效值
+每个节点字段：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `children` | `{string: number}` | 字符→下一节点索引映射 |
+| `fail` | `number` | 失败指针（回退节点，根为0） |
+| `output` | `string[]` | 该节点匹配到的术语列表（保留原始大小写） |
 
 ---
 
-## 二、术语加载与缓存
+## 二、AC自动机加载
 
 ### 2.1 加载流程
 
 ```
-请求到达
+请求到达 HTMLRewriter 阶段
     ↓
-getTerms(env) —— 检查缓存
+loadTrie(env)
     ↓
-缓存有效? → 返回缓存数据
-缓存过期? → loadAllTerms(env) → 更新缓存
+检查内存缓存（5分钟TTL）
     ↓
-返回术语列表
+缓存有效？→ 返回缓存的 trie 数组
+缓存过期？→ TERM_ACTRIE.get("ac_trie") → 1次KV get → JSON.parse → 更新缓存
+    ↓
+返回 trie 数组给 applyRewriter
+    ↓
+HTMLRewriter 注册文本处理器到白名单元素
+```
+
+```javascript
+// term-handler.js:9-38
+export async function loadTrie(env) {
+  if (trieCache && now < trieCacheExpiry) return trieCache;
+  const raw = await env.TERM_ACTRIE.get("ac_trie");
+  const data = JSON.parse(raw);
+  trieCache = data.trie;   // 32647个节点的数组
+  return trieCache;
+}
 ```
 
 ### 2.2 缓存机制
 
 ```javascript
-// term-handler.js:3-5
-let termCache = null;
-let termCacheExpiry = 0;
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5分钟
+let trieCache = null;
+let trieCacheExpiry = 0;
+const CACHE_TTL_MS = 5 * 60 * 1000;
 ```
 
 - **内存缓存**：Worker 实例内5分钟缓存
-- **冷启动重新加载**：Worker 实例间不共享缓存，每次冷启动会重新加载
-- **并发优化**：使用 `Promise.all()` 并行获取所有 KV 键值
+- **冷启动**：Worker 实例间不共享，每次冷启动重新加载（仅1次KV get）
+- **相比原方案**：从 955 次 KV get（list + 954次并行get）降到 **1 次**
 
-### 2.3 多源合并逻辑
+---
+
+## 三、AC自动机匹配算法
+
+### 3.1 核心匹配
 
 ```javascript
-// 按翻译优先级排序数据源
-const sortedData = [...dataArray].sort((a, b) => {
-  const aIdx = FIELD_PRIORITY.translation.indexOf(aSrc);
-  const bIdx = FIELD_PRIORITY.translation.indexOf(bSrc);
-  return (aIdx === -1 ? 99 : aIdx) - (bIdx === -1 ? 99 : bIdx);
+// term-handler.js:42-82
+export function acMatch(text, trie) {
+  const lower = text.toLowerCase();
+  const rawMatches = [];
+  let state = 0;
+
+  // 单次线性扫描
+  for (let i = 0; i < lower.length; i++) {
+    const ch = lower[i];
+    // 沿children走，走不通沿fail回退
+    while (state !== 0 && !trie[state].children[ch]) {
+      state = trie[state].fail;
+    }
+    state = trie[state].children[ch] || 0;
+    // 收集所有匹配
+    for (const term of trie[state].output) {
+      rawMatches.push({ term, start: i - term.length + 1, end: i + 1 });
+    }
+  }
+  ...
+}
+```
+
+**复杂度**：O(n + m + z)，n=文本长度，m=总模式长度，z=匹配数。
+
+### 3.2 单词边界过滤
+
+AC自动机本身不处理单词边界。匹配结果额外检查前后字符：
+
+```javascript
+const withBoundaries = rawMatches.filter(m => {
+  if (m.start > 0 && /\w/.test(text[m.start - 1])) return false;
+  if (m.end < text.length && /\w/.test(text[m.end])) return false;
+  return true;
 });
-
-// 字段级合并策略
-for (const item of sortedData) {
-  // translation: 取第一个有效的（非空且不以"汉译"开头）
-  // phonetic: 取第一个非 /null/ 的
-  // definition: 取第一个非空的
-  // id, is_a: 取第一个有的
-  // synonyms: 合并去重
-}
 ```
 
-合并后的术语对象：
+### 3.3 重叠处理（长词优先）
+
+```
+匹配结果：["fore wing", "wing", "fore wing venation", "wing venation"]
+    ↓ 按位置排序 → 同位置取最长
+最终：["fore wing venation"]
+```
+
 ```javascript
-{
-  key: "mesopleuron",
-  id: "HAO:0000001",
-  translation: "中胸侧板",
-  phonetic: "/null/",
-  definition: "...",
-  synonyms: [...],      // 去重后的同义词数组
-  isA: [...],           // 分类层级
-  sources: ['my_term_202604', 'hao_core_2023'], // 数据源列表
-  rawData: [...]        // 保留原始数据供展卷使用
+withBoundaries.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start));
+
+const final = [];
+let lastEnd = 0;
+for (const m of withBoundaries) {
+  if (m.start >= lastEnd) {
+    final.push(m);
+    lastEnd = m.end;
+  }
 }
 ```
 
 ---
 
-## 三、正则构建策略
+## 四、大小写处理
 
-### 3.1 构建流程
-
-```javascript
-// term-handler.js:171-199
-export function buildTermRegex(terms) {
-  // 1. 过滤短术语
-  const validTerms = terms.filter(t => t.key && t.key.length >= 3);
-  
-  // 2. 转义正则特殊字符
-  const escaped = validTerms
-    .map(t => t.key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-    .sort((a, b) => b.length - a.length); // 3. 长度降序排序
-  
-  // 4. 构建正则
-  const pattern = escaped.join('|');
-  return new RegExp(`\\b(${pattern})\\b`, 'g');
-}
-```
-
-### 3.2 关键设计决策
-
-| 设计点 | 实现 | 原因 |
-|--------|------|------|
-| 长度过滤 | `key.length >= 3` | 避免匹配 "1", "A", "1A" 等编号和短序列 |
-| 特殊字符转义 | `replace(/[.*+?^${}()|[\]\\]/g, '\\$&')` | 防止术语如 "seta(s)" 破坏正则 |
-| 长度降序排序 | `sort((a, b) => b.length - a.length)` | **长术语优先匹配**，确保 "mesopleuron" 先于 "pleuron" |
-| 单词边界 | `\b...\b` | 确保完整单词匹配，不匹配子串 |
-| 全局匹配 | `g` 标志 | 一行中匹配所有出现 |
-| 大小写敏感 | 默认行为 | "mesopleuron" ≠ "Mesopleuron" |
-
-### 3.3 长术语优先示例
+### 4.1 匹配策略
 
 ```
-术语列表: ["pleuron", "mesopleuron"]
-
-未排序正则: \b(pleuron|mesopleuron)\b
-  文本: "The mesopleuron and pleuron are..."
-  匹配: "pleuron" (先匹配到短术语，长术语被截断)
-
-排序后正则: \b(mesopleuron|pleuron)\b
-  文本: "The mesopleuron and pleuron are..."
-  匹配: "mesopleuron" (长术语优先完整匹配)
+Trie中存储:  小写key（"propodeum", "chalcidoidea"）
+匹配前:     文本转小写（"Propodeum" → "propodeum"）
+output:     原始大小写（"Chalcidoidea" 而非 "chalcidoidea"）
 ```
+
+### 4.2 原始大小写保留
+
+在 `build_ac.py` 中构建 `{小写 → 原始大小写}` 映射表：
+
+```python
+case_map = {}  # "propodeum" → "propodeum", "chalcidoidea" → "Chalcidoidea"
+# 优先保留非全小写变体（如分类群名称）
+if lower not in case_map or (case_map[lower] == lower and key != key.lower()):
+    case_map[lower] = key
+```
+
+匹配时 `data-term` 使用原始大小写，确保 KV 查询命中：
+
+| 原文 | Trie匹配 | data-term | KV key | 结果 |
+|------|---------|-----------|--------|------|
+| `Chalcidoidea` | ✅ | `Chalcidoidea` | `Chalcidoidea` | ✅ |
+| `Propodeum` | ✅ | `propodeum` | `propodeum` | ✅ |
+| `PROPODEUM` | ✅ | `propodeum` | `propodeum` | ✅ |
+| `abdomen` | ✅ | `abdomen` | `abdomen` | ✅ |
 
 ---
 
-## 四、文本注入机制
+## 五、文本注入机制
 
-### 4.1 HTMLRewriter 集成
+### 5.1 HTMLRewriter 集成
 
 ```javascript
-// rewriter.js:101
-export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, terms, termRegex) {
-  // 创建术语处理器
-  const termHandler = createTermHandler(terms, termRegex);
-  
-  // 注册文本处理器到白名单元素
-  const textSelectors = ['p', 'div', 'span', 'h1', ...]; // 18个元素
+// rewriter.js:828-853
+if (trie) {
+  const termHandler = createACTermHandler(trie);
   for (const selector of textSelectors) {
     rewriter.on(selector, {
       text(text) { termHandler.handleText(text); }
@@ -201,153 +234,101 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, term
 }
 ```
 
-### 4.2 白名单元素策略
+### 5.2 白名单元素
+
+37个安全文本元素，排除 script、style、code、pre、textarea 等。
+
+### 5.3 文本处理流程
 
 ```javascript
-// rewriter.js:811-817
-const textSelectors = [
-  // 文本容器
-  'p', 'div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-  'li', 'td', 'th', 'figcaption', 'caption', 'blockquote',
-  'article', 'section', 'aside', 'header', 'footer', 'main',
-  // 行内文本
-  'em', 'strong', 'i', 'b', 'u', 'mark', 'small', 'del', 'ins',
-  'sub', 'sup', 'time', 'label', 'summary', 'figcaption'
-];
-```
-
-**明确排除的元素**（避免破坏页面功能）：
-- `script` - 破坏 JavaScript 代码
-- `style`, `noscript` - 破坏 CSS 规则
-- `code`, `pre`, `kbd`, `samp` - 代码块不应污染
-- `textarea` - 用户输入区域
-- `title` - 页面标题保持干净
-
-### 4.3 为什么不使用 `rewriter.on("*")`？
-
-> HTMLRewriter 没有元素退出回调，无法实现可靠的嵌套跟踪。使用通配符会匹配到 `<script>` 和 `<style>`，导致 JavaScript 代码和 CSS 规则被破坏。
-
-### 4.4 文本处理流程
-
-```javascript
-// rewriter.js:836-881
-function createTermHandler(terms, regex) {
-  const termMap = new Map(terms.map(t => [t.key, t.translation]));
-  
+// rewriter.js:856-891
+function createACTermHandler(trie) {
+  let totalMatches = 0;
   return {
     handleText(text) {
       const content = text.text;
-      if (!content || typeof content !== 'string') return;
-      
-      // Step 1: 快速过滤 - 检查是否包含3+字母
+
+      // Step 1: 快速过滤（无3+字母直接跳过）
       if (!/[a-zA-Z]{3,}/.test(content)) return;
-      
-      // Step 2: 检测是否包含任何术语
-      regex.lastIndex = 0;
-      if (!regex.test(content)) return;
-      
-      // Step 3: 重置并执行替换
-      regex.lastIndex = 0;
-      const replaced = content.replace(regex, (match) => {
-        return `<span class="bio-term" data-term="${match}">${match}</span>`;
-      });
-      
+
+      // Step 2: AC匹配（单词边界+去重叠）
+      const matches = acMatch(content, trie);
+      if (matches.length === 0) return;
+
+      // Step 3: 执行替换
+      let result = '';
+      let last = 0;
+      for (const m of matches) {
+        result += content.slice(last, m.start);
+        result += `<span class="bio-term" data-term="${m.term}">${content.slice(m.start, m.end)}</span>`;
+        last = m.end;
+      }
+      result += content.slice(last);
+
       // Step 4: HTML注入
-      text.replace(replaced, { html: true });
+      text.replace(result, { html: true });
+      totalMatches += matches.length;
+      console.log(`[AC] Page total matched terms: ${totalMatches}`);
     }
   };
 }
 ```
 
-### 4.5 性能优化点
+### 5.4 性能优化点
 
 | 优化 | 实现 | 效果 |
 |------|------|------|
 | 快速字母检测 | `/[a-zA-Z]{3,}/` | 跳过不含英文的文本节点 |
-| 预检测再替换 | `regex.test()` → `regex.replace()` | 避免无匹配时的替换开销 |
-| 正则 lastIndex 重置 | `regex.lastIndex = 0` | 防止全局正则状态污染 |
-| 术语到翻译映射 | `Map` 结构 | O(1) 查询翻译（虽然实际注入时不使用，为后续扩展保留） |
+| AC一次扫描 | O(n)线性 | 替代正则O(nk)的alternatives回溯 |
+| 预构建Trie | 本地Python构建 | 不在Worker端构建匹配结构 |
+| 5分钟缓存 | 内存缓存 | 避免每次请求重新加载Trie |
 
 ---
 
-## 五、API 查询与字段选择
+## 六、本地构建流程
 
-### 5.1 `/api/term` 端点
+### 6.1 构建脚本
 
-```
-GET /api/term?key=mesopleuron
-```
-
-### 5.2 响应格式
-
-```json
-{
-  "key": "mesopleuron",
-  "name": "mesopleuron",
-  "translation": "中胸侧板",
-  "translation_source": "my_term_202604",
-  "phonetic": "/null/",
-  "phonetic_source": "hao_core_2023",
-  "def": "The mesopleuron is the...",
-  "def_source": "hao_core_2023",
-  "sources": [
-    {
-      "metadata": { "source": "my_term_202604", ... },
-      "detailed": { ... }
-    },
-    { ... }
-  ]
-}
+```bash
+cd glossary/automaton && python build_ac.py
 ```
 
-### 5.3 字段优先级选择算法
+输入：`glossary/terms/hao_core/hao_for_kv.json`（2596条） + `my_term_for_kv.json`（129条） + `test_term.txt`
 
-```javascript
-// index.js:60-85
-function pickBestField(fieldName) {
-  const priority = FIELD_PRIORITY[fieldName] || [];
-  
-  // 按优先级排序数据源
-  const sorted = [...dataArray].sort((a, b) => {
-    const aIdx = priority.indexOf(a.metadata?.source);
-    const bIdx = priority.indexOf(b.metadata?.source);
-    return (aIdx === -1 ? 999 : aIdx) - (bIdx === -1 ? 999 : bIdx);
-  });
-  
-  // 返回第一个有效值
-  for (const item of sorted) {
-    const val = fieldName === 'translation' 
-      ? (d.translation || d.chinese_name || '')
-      : (d[fieldName] || '');
-    if (val && !val.startsWith('汉译')) return { value: val, source: item.metadata?.source };
-  }
-  return { value: null, source: null };
-}
+输出：`ac_trie.json`（32647节点，1.6MB）
+
+### 6.2 构建步骤
+
 ```
+Step 1: 提取key，构建 {小写→原始大小写} 映射
+          → 2605个唯一key
 
-### 5.4 字段映射规则
+Step 2: 构建Trie（小写key构建结构）
+          → 32547节点
 
-| 输出字段 | 数据源字段 | 优先级 |
-|----------|-----------|--------|
-| `translation` | `translation` > `chinese_name` | my_term_202604 > hao_core_2023 > ... |
-| `phonetic` | `phonetic` | hao_core_2023 > my_term_202604 |
-| `def` | `def` | hao_core_2023 > my_term_202604 |
-| `name` | `name` | 优先从 hao_core_2023 取，否则任一有name的源 |
+Step 3: BFS构建失败指针（failure link）
+          → 支持后缀匹配
+
+Step 4: 序列化为JSON
+          → ac_trie.json
+
+Step 5: 上传到KV
+          → wrangler kv key put --binding=TERM_ACTRIE ... --key="ac_trie"
+```
 
 ---
 
-## 六、客户端弹窗系统
+## 七、客户端弹窗系统
 
-### 6.1 跨 Frame 架构
-
-由于 PenSoft/ZooKeys 使用 iframe 加载正文，需要跨 frame 通信：
+### 7.1 架构
 
 ```
 主页面 (parent)
-  ├── 注入术语高亮样式
-  ├── 注入弹窗 DOM 和样式
-  ├── 监听 postMessage 接收 iframe 术语点击
-  └── 显示弹窗
+  ├── 注入弹窗 DOM + 样式
+  ├── 监听 .bio-term 点击 → fetch API → showPopup()
+  ├── 监听 postMessage（接收iframe术语点击）
+  ├── 倒计时5秒自动关闭
+  └── 鼠标悬停/触摸时暂停倒计时
 
 iframe (正文内容)
   ├── 术语高亮（通过代理注入）
@@ -355,106 +336,78 @@ iframe (正文内容)
   └── postMessage 发送术语数据到主页面
 ```
 
-### 6.2 iframe 检测与分支逻辑
+### 7.2 倒计时暂停机制
 
 ```javascript
-// rewriter.js:146-784
-const iframeDetectionScript = `<script>
-(function() {
-  const isInIframe = window.self !== window.top;
-  console.log('[BioTrans] Page context:', isInIframe ? 'iframe' : 'main page');
-  
-  if (!isInIframe) {
-    // ===== 主页面逻辑 =====
-    // 1. 注入弹窗样式和 DOM
-    // 2. 显示术语弹窗 (showPopup)
-    // 3. 监听 message 事件接收 iframe 点击
-    // 4. 显示首屏欢迎弹窗
-  } else {
-    // ===== iframe 逻辑 =====
-    // 1. 监听 .bio-term 点击
-    // 2. fetch /api/term 获取数据
-    // 3. postMessage 发送给主页面显示
-  }
-})();
-</script>`;
-```
+let isPaused = false;
+popup.addEventListener('mouseenter', () => { isPaused = true; });
+popup.addEventListener('mouseleave', () => { isPaused = false; });
 
-### 6.3 弹窗交互流程
-
-```
-用户点击高亮术语
-    ↓
-iframe 中: fetch /api/term?key=xxx
-    ↓
-获取完整术语数据（多源合并后）
-    ↓
-window.parent.postMessage({ type: 'BIOTERM_SHOW', term: data })
-    ↓
-主页面监听 message 事件
-    ↓
-showPopup(term) 显示弹窗
-    ↓
-启动 5 秒倒计时自动关闭
-    ↓
-用户可点击"查看更多信息"展开全量数据
+setInterval(() => {
+  if (isPaused) return;  // 暂停时不递减
+  countdownValue--;
+  if (countdownValue <= 0) closePopup();
+}, 1000);
 ```
 
 ---
 
-## 七、当前限制与未来优化
+## 八、日志系统
 
-### 7.1 当前限制
+所有日志前缀：
 
-| 限制 | 说明 | 影响 |
-|------|------|------|
-| 大小写敏感 | "mesopleuron" ≠ "Mesopleuron" | 句首大写术语无法匹配 |
-| 单词边界 | 要求完整单词 | "mesopleura" (复数) 无法匹配 "mesopleuron" |
-| 无短语识别 | 单术语匹配 | "gregarious endoparasitoid of pupae" 无法识别 |
-| 无词形还原 | 原形匹配 | 复数、所有格无法匹配原形 |
-| Worker 内存限制 | KV 全量加载 | 术语数量受限于 Worker 内存 |
-| 正则长度限制 | 所有术语合并为一个正则 | 超长正则可能影响性能 |
-
-### 7.2 Phase 3 规划（NLP 增强）
-
-- **大小写变体处理**：句首大写、标题全大写匹配
-- **短语识别**：多词术语识别与匹配
-- **词形还原**：复数形式还原（setae → seta, tubercles → tubercle）
-
----
-
-## 八、关键代码位置速查
-
-| 功能 | 文件 | 行号 | 函数/代码块 |
-|------|------|------|-------------|
-| 术语加载 | `term-handler.js` | 8-152 | `loadAllTerms()` |
-| 缓存获取 | `term-handler.js` | 155-168 | `getTerms()` |
-| 正则构建 | `term-handler.js` | 171-199 | `buildTermRegex()` |
-| 多源合并 | `term-handler.js` | 66-112 | 排序+合并循环 |
-| API 端点 | `index.js` | 31-126 | `/api/term` 处理 |
-| 字段优先级 | `index.js` | 60-64 | `FIELD_PRIORITY` |
-| 字段选择 | `index.js` | 67-85 | `pickBestField()` |
-| 术语处理器 | `rewriter.js` | 836-882 | `createTermHandler()` |
-| 白名单元素 | `rewriter.js` | 811-817 | `textSelectors` 数组 |
-| 文本处理 | `rewriter.js` | 853-880 | `handleText()` |
-| iframe 检测 | `rewriter.js` | 146-784 | `iframeDetectionScript` |
-
----
-
-## 九、调试与日志
-
-所有术语相关日志使用 `[TERM-READ]` 前缀，便于 Wrangler Tail 过滤：
+| 前缀 | 用途 |
+|------|------|
+| `[REQ]` | 请求路径和方法 |
+| `[SW]` | Service Worker |
+| `[API]` | 术语查询结果 |
+| `[UPSTREAM]` | 上游请求和响应 |
+| `[REWRITER]` / `[REWRITE]` | HTMLRewriter 处理 |
+| `[BLOCK]` | 被屏蔽的脚本 |
+| `[AC]` | AC自动机加载和匹配 |
+| `[BioTrans]` | 客户端弹窗交互 |
 
 ```bash
-# 查看术语加载日志
-npx wrangler tail | grep "TERM-READ"
+# 查看 AC 自动机相关日志
+npx wrangler tail | grep "\[AC\]"
 
-# 示例日志输出
-[TERM-READ] Starting to load all terms from KV...
-[TERM-READ] Found 1847 keys in KV
-[TERM-READ] Successfully loaded 1847 valid terms
-[TERM-READ] Built regex with 1847 patterns
-[TERM-READ] Injected term highlight styles
-[TERM-READ] Registered text handlers for 18 element types
-[TERM-READ] Injected 3 terms in text segment
+# 示例
+[AC] Loading trie from KV...
+[AC] Loaded trie: 2605 terms, 32647 nodes
+[AC] Page total matched terms: 38
 ```
+
+---
+
+## 九、当前限制与未来优化
+
+### 当前限制
+
+| 限制 | 说明 |
+|------|------|
+| 无词形还原 | "setae" 无法匹配 "seta"，"tubercles" 无法匹配 "tubercle" |
+| 无短语智能识别 | 所有短语按逐字符匹配，不依赖语义 |
+| 单词边界限制 | "mesopleuronites" 中的 "mesopleuron" 不匹配（需独立单词） |
+
+### 规划
+
+| 方向 | 优先级 | 说明 |
+|------|--------|------|
+| 词形还原 | P1 | 处理复数、所有格、形容词变体 |
+| 更多站点适配 | P1 | MDPI、PLOS、NCBI |
+| 术语数据完善 | P2 | 补充缺失术语到KV |
+
+---
+
+## 十、关键代码位置速查
+
+| 功能 | 文件 | 函数/代码块 |
+|------|------|-------------|
+| AC自动机加载 | `term-handler.js` | `loadTrie()` |
+| AC匹配算法 | `term-handler.js` | `acMatch()` |
+| AC文本处理器 | `rewriter.js` | `createACTermHandler()` |
+| API 端点 | `index.js` | `/api/term` 处理 |
+| 字段优先级 | `index.js` | `FIELD_PRIORITY` + `pickBestField()` |
+| 白名单元素 | `rewriter.js` | `textSelectors` 数组 |
+| 弹窗系统 | `rewriter.js` | 内联JS嵌入在 `<body>` 处理器 |
+| 构建脚本 | `glossary/automaton/build_ac.py` | `build_trie()` + `build_failure_links()` |
