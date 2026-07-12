@@ -479,6 +479,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     let countdownTimer = null;
     let countdownValue = 5;
     let currentSources = [];
+    let isPaused = false;
     
     // 关闭按钮
     popupCloseBtn.addEventListener('click', function(e) {
@@ -487,9 +488,27 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       console.log('[BioTrans] Popup closed manually');
     });
     
-    // 弹窗悬停/触摸时重置倒计时
-    popup.addEventListener('mouseenter', function() { countdownValue = 6; popupCountdown.textContent = 5; }, { passive: true });
-    popup.addEventListener('touchstart', function() { countdownValue = 6; popupCountdown.textContent = 5; }, { passive: true });
+    // 弹窗悬停/触摸时重置倒计时并暂停
+    popup.addEventListener('mouseenter', function() {
+      isPaused = true;
+      countdownValue = 6;
+      popupCountdown.textContent = 5;
+    }, { passive: true });
+    popup.addEventListener('mouseleave', function() {
+      isPaused = false;
+      countdownValue = 5;
+      popupCountdown.textContent = 5;
+    }, { passive: true });
+    popup.addEventListener('touchstart', function() {
+      isPaused = true;
+      countdownValue = 6;
+      popupCountdown.textContent = 5;
+    }, { passive: true });
+    popup.addEventListener('touchend', function() {
+      isPaused = false;
+      countdownValue = 5;
+      popupCountdown.textContent = 5;
+    }, { passive: true });
     
     function closePopup() {
       popup.classList.remove('active');
@@ -632,6 +651,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       
       // 重置并显示倒计时
       countdownValue = 5;
+      isPaused = false;
       popupCountdown.textContent = countdownValue;
       popup.classList.add('active');
       
@@ -642,8 +662,9 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         popupExpandBtn.textContent = '查看更多信息';
       }
       
-      // 启动倒计时（悬停或触摸时重置为5）
+      // 启动倒计时（悬停/触摸时重置为5并暂停，离开后恢复）
       countdownTimer = setInterval(function() {
+        if (isPaused) return;
         countdownValue--;
         popupCountdown.textContent = countdownValue;
         if (countdownValue <= 0) {
