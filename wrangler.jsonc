@@ -18,6 +18,12 @@
 			"id": "c312cd561f654c4ca2fcebf40160070a",
             "preview_id": "c312cd561f654c4ca2fcebf40160070a",
 			"remote": true
+		},
+		{
+			"binding": "TERM_ACTRIE",
+			"id": "43f730e81d314f47b50034291d0d5ab2",
+			"preview_id": "43f730e81d314f47b50034291d0d5ab2",
+			"remote": true
 		}
 	]
 }
