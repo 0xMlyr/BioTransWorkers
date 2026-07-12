@@ -1,3 +1,5 @@
+import { acMatch } from "./term-handler.js";
+
 function decodeHtmlEntities(str) {
   return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 }
@@ -119,13 +121,13 @@ const GLOBAL_SCRIPT_BLOCKLIST = [
   /maps\.gstatic\.com/i,
 ];
 
-export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}, terms = [], termRegex = null) {
+export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}, trie = null) {
   const base = finalUrl;
   const scriptBlocklist = [...GLOBAL_SCRIPT_BLOCKLIST, ...(siteConfig.scriptBlocklist ?? [])];
   console.log(`[REWRITER] Base: ${base}, Blocklist count: ${scriptBlocklist.length}`);
 
-  // 创建术语处理器
-  const termHandler = createTermHandler(terms, termRegex);
+  // 创建 AC 自动机术语处理器
+  const termHandler = createACTermHandler(trie);
 
   rewriter.on("head", {
     element(el) {
@@ -823,12 +825,10 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
   rewriter.on("form[action]",               new AttributeRewriter("action",   base, workerOrigin));
   rewriter.on("iframe[src]",                new AttributeRewriter("src",      base, workerOrigin));
 
-  // 术语注入：只在安全的文本元素中处理
-  if (termRegex) {
-    console.log("[TERM-READ] Setting up text handlers for term injection");
+  // 术语注入：AC自动机匹配（只处理安全的文本元素）
+  if (trie) {
+    console.log("[AC] Setting up text handlers for AC automaton term injection");
     
-    // 明确列出要处理的文本元素（白名单模式）
-    // 排除：script, style, noscript, code, pre, textarea, kbd, samp, title, alt属性等
     const textSelectors = [
       'p', 'div', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
       'li', 'td', 'th', 'figcaption', 'caption', 'blockquote',
@@ -837,7 +837,6 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       'sub', 'sup', 'time', 'label', 'summary', 'figcaption'
     ];
     
-    // 为每个选择器注册文本处理器
     for (const selector of textSelectors) {
       rewriter.on(selector, {
         text(text) {
@@ -846,69 +845,51 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       });
     }
     
-    console.log(`[TERM-READ] Registered text handlers for ${textSelectors.length} element types`);
+    console.log(`[AC] Registered text handlers for ${textSelectors.length} element types`);
     
   } else {
-    console.log("[TERM-READ] No term regex, skipping text handlers");
+    console.log("[AC] No trie available, skipping term injection");
   }
 }
 
-// 创建术语处理器
-function createTermHandler(terms, regex) {
-  if (!regex || !terms || terms.length === 0) {
+// AC 自动机文本处理器
+function createACTermHandler(trie) {
+  if (!trie) {
     return {
-      handleText(text) {
-        // 不处理
-      }
+      handleText(text) {}
     };
   }
-
-  // 创建术语到翻译的映射
-  const termMap = new Map();
-  for (const term of terms) {
-    termMap.set(term.key, term.translation || "");
-  }
-
-  let matchCount = 0;
 
   return {
     handleText(text) {
       const content = text.text;
       if (!content || typeof content !== 'string') return;
 
-      // [DIAG] 检查包含 propodeum 的文本段
+      // [DIAG] 包含 propodeum 的文本段
       if (content.includes("propodeum")) {
         console.log(`[DIAG] Text segment contains "propodeum": "${content.substring(0, 120)}..."`);
-        regex.lastIndex = 0;
-        const testResult = regex.test(content);
-        console.log(`[DIAG] Regex.test(content): ${testResult}`);
-        regex.lastIndex = 0;
-        const matches = [...content.matchAll(regex)];
-        console.log(`[DIAG] matchAll results: ${matches.map(m => m[0]).join(', ')}`);
       }
-      
-      // 简单过滤：检查是否包含可能的大写或小写英文单词
+
+      // 简单过滤：无3+字母英文直接跳过
       if (!/[a-zA-Z]{3,}/.test(content)) return;
-      
-      // 检查是否包含任何术语
-      regex.lastIndex = 0;
-      if (!regex.test(content)) return;
-      
-      // 重置并执行替换
-      regex.lastIndex = 0;
-      
-      const replaced = content.replace(regex, (match) => {
-        matchCount++;
-        // 只保留 data-term，不显示 title 避免默认 tooltip
-        // 翻译数据通过 data-term 后续从 KV 查询
-        return `<span class="bio-term" data-term="${match}">${match}</span>`;
-      });
-      
-      text.replace(replaced, { html: true });
-      
-      if (matchCount > 0 && matchCount <= 5) {
-        console.log(`[TERM-READ] Injected ${matchCount} terms in text segment`);
+
+      // AC 匹配
+      const matches = acMatch(content, trie);
+      if (matches.length === 0) return;
+
+      // 执行替换
+      let result = '';
+      let last = 0;
+      for (const m of matches) {
+        result += content.slice(last, m.start);
+        const matchedText = content.slice(m.start, m.end);
+        result += `<span class="bio-term" data-term="${m.term}">${matchedText}</span>`;
+        last = m.end;
       }
+      result += content.slice(last);
+
+      text.replace(result, { html: true });
+      console.log(`[AC] Injected ${matches.length} terms in text segment`);
     }
   };
 }

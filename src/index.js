@@ -2,7 +2,7 @@ import { errorPage, landingPage } from "./webpage.js";
 import { applyRewriter } from "./rewriter.js";
 import { swScript } from "./sw.js";
 import { getSiteConfig } from "./sites/index.js";
-import { getTerms, buildTermRegex } from "./term-handler.js";
+import { loadTrie } from "./term-handler.js";
 
 const CSP_HEADERS = [
   "content-security-policy",
@@ -224,18 +224,12 @@ export default {
 
     console.log("[REWRITE] Applying HTMLRewriter...");
     
-    // 加载术语并构建正则
-    const terms = await getTerms(env);
-    const termRegex = buildTermRegex(terms);
-    console.log(`[TERM-READ] Terms loaded: ${terms.length}, Regex available: ${!!termRegex}`);
-
-    // [DIAG] 检查 propodeum 在最终 terms 中的状态
-    if (!terms.some(t => t.key === "propodeum")) {
-      console.log(`[DIAG] ⚠️ [REQUEST] Key "propodeum" NOT in terms array!`);
-    }
+    // 加载 AC 自动机 Trie
+    const trie = await loadTrie(env);
+    console.log(`[AC] Trie available: ${!!trie}`);
     
     const rewriter = new HTMLRewriter();
-    applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, terms, termRegex);
+    applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, trie);
 
     console.log("[DONE] Returning transformed response");
     return rewriter.transform(new Response(upstream.body, { status: upstream.status, headers }));
