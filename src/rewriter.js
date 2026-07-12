@@ -424,6 +424,13 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     let countdownTimer = null;
     let countdownValue = 5;
     let currentSources = [];
+    let isPaused = false;
+    
+    // 弹窗悬停/触摸时暂停倒计时
+    popup.addEventListener('mouseenter', function() { isPaused = true; }, { passive: true });
+    popup.addEventListener('mouseleave', function() { isPaused = false; }, { passive: true });
+    popup.addEventListener('touchstart', function() { isPaused = true; }, { passive: true });
+    popup.addEventListener('touchend', function() { isPaused = false; }, { passive: true });
     
     function closePopup() {
       popup.classList.remove('active');
@@ -566,6 +573,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       
       // 重置并显示倒计时
       countdownValue = 5;
+      isPaused = false;
       popupCountdown.textContent = countdownValue;
       popup.classList.add('active');
       
@@ -576,8 +584,9 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         popupExpandBtn.textContent = '查看更多信息';
       }
       
-      // 启动倒计时
+      // 启动倒计时（悬停或触摸时暂停）
       countdownTimer = setInterval(function() {
+        if (isPaused) return;
         countdownValue--;
         popupCountdown.textContent = countdownValue;
         if (countdownValue <= 0) {
@@ -860,24 +869,18 @@ function createACTermHandler(trie) {
     };
   }
 
+  let totalMatches = 0;
+
   return {
     handleText(text) {
       const content = text.text;
       if (!content || typeof content !== 'string') return;
 
-      // [DIAG] 包含 propodeum 的文本段
-      if (content.includes("propodeum")) {
-        console.log(`[DIAG] Text segment contains "propodeum": "${content.substring(0, 120)}..."`);
-      }
-
-      // 简单过滤：无3+字母英文直接跳过
       if (!/[a-zA-Z]{3,}/.test(content)) return;
 
-      // AC 匹配
       const matches = acMatch(content, trie);
       if (matches.length === 0) return;
 
-      // 执行替换
       let result = '';
       let last = 0;
       for (const m of matches) {
@@ -889,7 +892,9 @@ function createACTermHandler(trie) {
       result += content.slice(last);
 
       text.replace(result, { html: true });
-      console.log(`[AC] Injected ${matches.length} terms in text segment`);
+
+      totalMatches += matches.length;
+      console.log(`[AC] Page total matched terms: ${totalMatches}`);
     }
   };
 }
