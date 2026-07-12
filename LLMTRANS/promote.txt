@@ -301,7 +301,9 @@ PHONETIC:/eɪ wʌn flæp/
 INFLECT:A1 flaps
 ```
 
+```
 # 针对汉语翻译的示例输出
+```
 abdomen 腹部
 Symphyta 广腰亚目
 abscissa (脉段)

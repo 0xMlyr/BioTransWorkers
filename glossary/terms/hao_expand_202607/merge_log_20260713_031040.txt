@@ -1,0 +1,6 @@
+03:10:40 [INFO] Log: C:\Users\Ramitd\Documents\GitHub\BioTransWorkers\glossary\terms\hao_expand_202607\merge_log_20260713_031040.txt
+03:10:40 [INFO] Namespace: c312cd56...
+03:10:40 [INFO] Loaded 2605 entries
+03:10:40 [INFO] Bulk upload: 2605 entries
+03:10:40 [INFO] WARNING: This will overwrite all data in the namespace!
+03:10:40 [INFO] Batch 1/1: 2605 entries...

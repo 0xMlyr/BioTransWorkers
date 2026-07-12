@@ -62,8 +62,8 @@ export default {
       
       // 字段优先级配置
       const FIELD_PRIORITY = {
-        translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
-        phonetic: ['hao_core_2023', 'my_term_202604'],
+        translation: ['my_term_202604', 'hao_core_expand_dsv4', 'hao_core_2023', 'hao_inflect', 'engine_test'],
+        phonetic: ['hao_core_expand_dsv4', 'hao_core_2023', 'my_term_202604'],
         def: ['hao_core_2023', 'my_term_202604']
       };
       
