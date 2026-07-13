@@ -161,7 +161,7 @@ export default {
 
     if (!isAllowedDomain(targetUrl.hostname)) {
       console.log(`[BLOCK] Domain not in allowlist: ${targetUrl.hostname}`);
-      return htmlResponse(errorPage("403", "该站点不在代理白名单中"));
+      return htmlResponse(errorPage("403", "暂不支持该站点"));
     }
 
     console.log(`[CONFIG] Host: ${targetUrl.hostname}, SiteConfig: ${JSON.stringify(getSiteConfig(targetUrl.hostname))}`);
