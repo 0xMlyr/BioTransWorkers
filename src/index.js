@@ -1,7 +1,7 @@
 import { errorPage, landingPage } from "./webpage.js";
 import { applyRewriter } from "./rewriter.js";
 import { swScript } from "./sw.js";
-import { getSiteConfig } from "./sites/index.js";
+import { getSiteConfig, isAllowedDomain } from "./sites/index.js";
 import { loadTrie } from "./term-handler.js";
 
 const CSP_HEADERS = [
@@ -157,6 +157,11 @@ export default {
     } catch {
       console.log("[ERROR] Invalid target URL");
       return htmlResponse(errorPage("400", "无效的目标 URL"));
+    }
+
+    if (!isAllowedDomain(targetUrl.hostname)) {
+      console.log(`[BLOCK] Domain not in allowlist: ${targetUrl.hostname}`);
+      return htmlResponse(errorPage("403", "该站点不在代理白名单中"));
     }
 
     console.log(`[CONFIG] Host: ${targetUrl.hostname}, SiteConfig: ${JSON.stringify(getSiteConfig(targetUrl.hostname))}`);

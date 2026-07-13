@@ -1,6 +1,24 @@
 import { pensoftConfig } from "./pensoft.js";
 
-// key 为域名后缀，支持子域名匹配（同 ALLOWED_HOSTS 逻辑）
+const ALLOWED_DOMAINS = [
+  "mdpi.com",
+  "plos.org",
+  "zookeys.pensoft.net",
+  "zootaxa.pensoft.net",
+  "ncbi.nlm.nih.gov",
+  "europeanjournaloftaxonomy.eu",
+  "mapress.com",
+];
+
+export function isAllowedDomain(hostname) {
+  hostname = hostname.toLowerCase();
+  for (const domain of ALLOWED_DOMAINS) {
+    if (hostname === domain || hostname.endsWith("." + domain)) return true;
+  }
+  return false;
+}
+
+// key 为域名后缀，支持子域名匹配
 const SITE_MAP = new Map([
   ["pensoft.net", pensoftConfig],
 ]);
