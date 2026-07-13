@@ -121,7 +121,7 @@ const GLOBAL_SCRIPT_BLOCKLIST = [
   /maps\.gstatic\.com/i,
 ];
 
-export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}, trie = null) {
+export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {}, trie = null, apiToken = "") {
   const base = finalUrl;
   const scriptBlocklist = [...GLOBAL_SCRIPT_BLOCKLIST, ...(siteConfig.scriptBlocklist ?? [])];
   console.log(`[REWRITER] Base: ${base}, Blocklist count: ${scriptBlocklist.length}`);
@@ -704,7 +704,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     function handleTermClick(termKey) {
       console.log('[BioTrans] Term clicked, fetching:', termKey);
       
-      fetch('/api/term?key=' + encodeURIComponent(termKey))
+      fetch('/api/term?key=' + encodeURIComponent(termKey) + '&token=${apiToken}')
         .then(function(res) { return res.json(); })
         .then(function(data) {
           console.log('[BioTrans] Got term data:', data);
@@ -895,7 +895,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       console.log('[BioTrans] iframe term clicked:', termKey);
       
       // 获取术语数据并发送到主页面
-      fetch('/api/term?key=' + encodeURIComponent(termKey))
+      fetch('/api/term?key=' + encodeURIComponent(termKey) + '&token=${apiToken}')
         .then(function(res) { return res.json(); })
         .then(function(data) {
           console.log('[BioTrans] iframe sending term data to parent:', data);

@@ -46,7 +46,16 @@ export default {
           headers: { "content-type": "application/json;charset=UTF-8" }
         });
       }
-      
+
+      const token = reqUrl.searchParams.get("token");
+      if (!token || token !== env.TERM_API_KEY) {
+        console.log(`[API] Unauthorized access (token: ${token ? 'invalid' : 'missing'})`);
+        return new Response(JSON.stringify({ error: "Unauthorized" }), {
+          status: 403,
+          headers: { "content-type": "application/json;charset=UTF-8" }
+        });
+      }
+
       console.log(`[API] Querying term: ${key}`);
       const value = await env.TERM_GLOSSARY.get(key);
       
@@ -244,7 +253,7 @@ export default {
     console.log(`[AC] Trie available: ${!!trie}`);
     
     const rewriter = new HTMLRewriter();
-    applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, trie);
+    applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig, trie, env.TERM_API_KEY);
 
     console.log("[DONE] Returning transformed response");
     return rewriter.transform(new Response(upstream.body, { status: upstream.status, headers }));
