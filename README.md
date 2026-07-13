@@ -63,7 +63,7 @@ SW 拦截后续无 ?url= 的同源请求，自动补全代理路径
     ↓
 注入的 JS 监听点击事件
     ↓
-API 查询 /api/term?key=术语
+API 查询 /api/term?key=术语&token=密钥
     ↓
 index.js 多源整合（按 FIELD_PRIORITY 选择最佳字段）
     ↓
@@ -123,14 +123,15 @@ wrangler.jsonc      Wrangler 配置（KV绑定、兼容性日期）
 const trie = await loadTrie(env);  // TERM_ACTRIE.get("ac_trie")
 ```
 
-**API 术语查询**（`/api/term?key=术语`）：
+**API 术语查询**（`/api/term?key=术语&token=密钥`）：
 ```javascript
 const FIELD_PRIORITY = {
-  translation: ['my_term_202604', 'hao_core_2023', 'hao_inflect', 'engine_test'],
-  phonetic: ['hao_core_2023', 'my_term_202604'],
+  translation: ['my_term_202604', 'hao_core_expand_dsv4', 'hao_core_2023', 'hao_inflect', 'engine_test'],
+  phonetic: ['hao_core_expand_dsv4', 'hao_core_2023', 'my_term_202604'],
   def: ['hao_core_2023', 'my_term_202604']
 };
 ```
+需携带 `token` 参数匹配 Worker Secret `TERM_API_KEY`，否则返回 401。
 
 **子资源判断逻辑**（不依赖 Content-Type，使用文件扩展名）：
 ```javascript
@@ -230,6 +231,52 @@ export function acMatch(text, trie) {
 | translation | my_term_202604 > hao_core_2023 > hao_inflect > engine_test |
 | phonetic | hao_core_2023 > my_term_202604 |
 | def | hao_core_2023 > my_term_202604 |
+
+## /api/term 术语查询接口
+
+供外部项目复用同一 KV 术语库的 RESTful 接口。
+
+### 请求
+
+```
+GET /api/term?key=<术语名>&token=<API密钥>
+```
+
+| 参数 | 必填 | 说明 |
+|------|------|------|
+| `key` | 是 | 术语英文名，**大小写敏感**（如 `propodeum`、`Chalcidoidea`） |
+| `token` | 是 | 共享密钥，对应 Worker Secret `TERM_API_KEY`，不匹配返回 403 |
+
+### 响应
+
+正常相应
+```json
+{
+  "key": "propodeum",
+  "name": "propodeum",
+  "translation": "并胸腹节",
+  "translation_source": "my_term_202604",
+  "phonetic": "/proʊˈpoʊdiəm/",
+  "phonetic_source": "hao_core_expand_dsv4",
+  "def": "The first abdominal tergum...",
+  "def_source": "hao_core_2023",
+  "sources": [
+    { "metadata": { "source": "...", "ver": "...", "date": "..." },
+      "detailed": { ... } }
+  ]
+}
+```
+
+- `translation / phonetic / def` — 按上述优先级从多源选出的最佳值
+- `*_source` — 标注值来源，供前端弹窗展示
+- `sources[]` — 全部数据源的原始字段，供"查看更多信息"展开
+
+API_KEY错误的响应
+```json
+{
+  "error": "Unauthorized"
+}
+```
 
 ## 站点配置
 

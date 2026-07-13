@@ -51,7 +51,7 @@ export default {
       if (!token || token !== env.TERM_API_KEY) {
         console.log(`[API] Unauthorized access (token: ${token ? 'invalid' : 'missing'})`);
         return new Response(JSON.stringify({ error: "Unauthorized" }), {
-          status: 403,
+          status: 401,
           headers: { "content-type": "application/json;charset=UTF-8" }
         });
       }
