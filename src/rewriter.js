@@ -596,7 +596,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
         
         // Is-a (分类层级)
         if (d.is_a) {
-          const isa = Array.isArray(d.is_a) ? d.is_a.join(' → ') : d.is_a;
+          const isa = Array.isArray(d.is_a) ? d.is_a.map(i => i.name || i).join(' → ') : d.is_a;
           items.push({ label: 'Is-a', value: isa });
         }
         

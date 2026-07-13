@@ -1,3 +1,0 @@
-03:10:22 [INFO] Log: C:\Users\Ramitd\Documents\GitHub\BioTransWorkers\glossary\terms\hao_expand_202607\merge_log_20260713_031022.txt
-03:10:22 [INFO] Namespace: c312cd56...
-03:10:23 [INFO] Loaded 2605 entries
