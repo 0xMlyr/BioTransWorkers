@@ -21,7 +21,7 @@ import sqlite3
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 TERMS_DIR = os.path.join(SCRIPT_DIR, "..", "terms")
 DB_PATH = os.path.join(SCRIPT_DIR, "BioTermbase.db")
-ACKEY_PATH = os.path.join(SCRIPT_DIR, "ackey_0714.txt")
+ACKEY_PATH = os.path.join(SCRIPT_DIR, "ackey_0715.txt")
 DSV4_PATH = os.path.join(TERMS_DIR, "hao_expand_202607", "hao_dsv4.txt")
 
 DDL = """

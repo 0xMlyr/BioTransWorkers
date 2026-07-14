@@ -180,7 +180,7 @@ KV: GET concept_payload:{concept_id}:* （遍历该概念全部来源）
 
 系统中存在三处需要保持同步的数据：
 
-ACz自动机的 **Trie** ↔ **D1** 的 `lexicom` 表主键 term 
+AC自动机的 **Trie** ↔ **D1** 的 `lexicom` 表主键 term 
 **D1** 的 `concepts` 表主键 concepts_id ↔ **KV** 的 主键key concepts_id
 
 **原则**：任何一次数据变更（新增词条、新增来源、修改概念归属）都应通过单一入口的脚本/流程触发三处同步更新，而非分头手动维护。

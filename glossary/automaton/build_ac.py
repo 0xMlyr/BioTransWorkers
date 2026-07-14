@@ -32,6 +32,7 @@ SOURCES = [
 # 新增数据源
 OBO_PATH = os.path.join(TERMS_DIR, "hao_core", "hao.obo")
 DSV4_PATH = os.path.join(TERMS_DIR, "hao_expand_202607", "hao_dsv4.txt")
+AAFC_PATH = os.path.join(TERMS_DIR, "aafc_hym_of_the_world", "aafc_glossary.json")
 
 OUTPUT_PATH = os.path.join(SCRIPT_DIR, "ac_trie.json")
 
@@ -94,7 +95,61 @@ def extract_dsv4_inflects(dsv4_path: str) -> list[str]:
     return inflects
 
 
-# ── Step 3: 提取所有原始 key（保留原始大小写）─────────────
+# ── Step 3: 从 AAFC 提取词头 + variants ─────────────────────
+def extract_aafc_terms(aafc_path: str) -> list[str]:
+    """
+    从 aafc_glossary.json 提取所有词形：
+      - entries[].term           → 词头
+      - entries[].variants       → 解析出的变异词形（复数/形容词/词根变体）
+
+    variants 字段格式：
+      "pl., antennae; adj., antennal"      → ["antennae", "antennal"]
+      "adj., abdominal"                     → ["abdominal"]
+      "pl., apices; adj., apical, apico-"   → ["apices", "apical", "apico-"]
+    """
+    terms: list[str] = []
+    if not os.path.exists(aafc_path):
+        print(f"[WARN] AAFC file not found, skipping: {aafc_path}")
+        return terms
+
+    import json
+    with open(aafc_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    entries = data.get("entries", [])
+    headwords = 0
+    variants = 0
+    labels = {"pl", "adj", "sing", "n", "cf", "adv", "prep"}
+
+    for entry in entries:
+        # 词头
+        head = entry.get("term", "").strip()
+        if head and re.search(r'[a-zA-Z]', head):
+            terms.append(head)
+            headwords += 1
+
+        # 变异词形
+        var_text = entry.get("variants", "").strip()
+        if not var_text:
+            continue
+
+        # 按 ; 分割不同词性组，再按 , 分割同组内多个形式
+        for group in var_text.split(";"):
+            for part in group.split(","):
+                form = part.strip().rstrip(".").strip()
+                if not form or not re.search(r'[a-zA-Z]', form):
+                    continue
+                # 跳过纯标签 (pl., adj., sing., n. 等)
+                if form.lower() in labels:
+                    continue
+                terms.append(form)
+                variants += 1
+
+    print(f"[LOAD] {os.path.basename(aafc_path)}: {headwords} headwords + {variants} variant forms = {headwords + variants} total")
+    return terms
+
+
+# ── Step 4: 提取所有原始 key（保留原始大小写）─────────────
 def extract_keys() -> dict[str, str]:
     """
     从三个基础数据源提取所有英文术语key，构建 {小写: 原始大小写} 映射。
@@ -293,7 +348,7 @@ def verify(trie_data: dict, test_cases: list[tuple[str, list[str]]]):
 # ── Main ──────────────────────────────────────────────────
 def main():
     print("=" * 70)
-    print("AC Automaton Builder (Extended — OBO synonyms + DSV4 inflections)")
+    print("AC Automaton Builder (OBO synonyms + DSV4 inflections + AAFC glossary)")
     print("=" * 70)
 
     stats: dict[str, int] = {}
@@ -327,10 +382,19 @@ def main():
     stats["after_dsv4"] = len(case_map)
     stats["dsv4_new"] = stats["after_dsv4"] - case_map_before_dsv4
 
+    # ── 4. 提取 AAFC terms + variants ──
+    print("\n--- Step 4: Extract AAFC headwords + variants ---")
+    aafc_terms = extract_aafc_terms(AAFC_PATH)
+    stats["aafc_raw"] = len(aafc_terms)
+    case_map_before_aafc = len(case_map)
+    merge_terms(case_map, aafc_terms, "AAFC glossary")
+    stats["after_aafc"] = len(case_map)
+    stats["aafc_new"] = stats["after_aafc"] - case_map_before_aafc
+
     total = len(case_map)
     stats["total_unique"] = total
 
-    # ── 4. 额外统计 ──
+    # ── 5. 额外统计 ──
     # OBO synonym 中有多少已在 base 中
     base_lower_set = set()
     for src_path in SOURCES:
@@ -360,23 +424,22 @@ def main():
     cross_overlap = len(obo_lower_set & dsv4_lower_set)
     stats["obo_dsv4_cross_overlap"] = cross_overlap
 
-    # ── 5. 构建 Trie ──
-    print("\n--- Step 5: Build Trie ---")
+    # ── 6. 构建 Trie ──
+    print("\n--- Step 6: Build Trie ---")
     nodes = build_trie(case_map)
 
-    # ── 6. 构建 failure 指针 ──
-    print("\n--- Step 6: Build failure links ---")
+    # ── 7. 构建 failure 指针 ──
+    print("\n--- Step 7: Build failure links ---")
     nodes = build_failure_links(nodes)
 
-    # ── 7. 序列化 ──
-    print("\n--- Step 7: Serialize ---")
+    # ── 8. 序列化 ──
+    print("\n--- Step 8: Serialize ---")
     trie_data = serialize(nodes, total)
     json_str = json.dumps(trie_data, ensure_ascii=False, separators=(",", ":"))
     file_size_kb = len(json_str) / 1024
     print(f"[SIZE] JSON size: {len(json_str):,} bytes ({file_size_kb:.1f} KB)")
 
-    # ── 8. 验证 ──
-    print("\n--- Step 8: Verify ---")
+    # ── 9. 验证 ──
     verify(trie_data, [
         ("The propodeum is lateral to the pleuron", ["propodeum", "pleuron"]),
         ("Median area of propodeum: evenly reticulate", ["area", "median", "propodeum", "reticulate"]),
@@ -395,23 +458,25 @@ def main():
         ("Der Hinterleib ist segmentiert", ["der Hinterleib"]),
     ])
 
-    # ── 9. 写入文件 ──
-    print(f"\n--- Step 9: Write output ---")
+    # ── 10. 写入文件 ──
+    print(f"\n--- Step 10: Write output ---")
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(json_str)
 
-    # ── 10. 统计数据报告 ──
+    # ── 11. 统计数据报告 ──
     print()
     print("=" * 70)
     print("BUILD SUMMARY")
     print("=" * 70)
     print(f"  Base keys (hao_core + my_term + engine_test):    {stats['base_keys']:>6,d}")
     print(f"  OBO synonyms extracted (raw):                    {stats['obo_synonym_raw']:>6,d}")
-    print(f"  OBO synonyms net new (not in base):              {stats['obo_new']:>6,d}")
-    print(f"    (of which already in base:                     {stats['obo_overlap_with_base']:>6,d})")
+    print(f"  OBO synonyms net new:                            {stats['obo_new']:>6,d}")
+    print(f"    (already in base:                              {stats['obo_overlap_with_base']:>6,d})")
     print(f"  DSV4 INFLECT forms extracted (raw):              {stats['dsv4_inflect_raw']:>6,d}")
-    print(f"  DSV4 INFLECT net new (not in prior):             {stats['dsv4_new']:>6,d}")
-    print(f"    (of which already in base:                     {stats['dsv4_overlap_with_base']:>6,d})")
+    print(f"  DSV4 INFLECT net new:                            {stats['dsv4_new']:>6,d}")
+    print(f"    (already in prior:                             {stats['dsv4_overlap_with_base']:>6,d})")
+    print(f"  AAFC terms + variants extracted (raw):           {stats['aafc_raw']:>6,d}")
+    print(f"  AAFC net new:                                    {stats['aafc_new']:>6,d}")
     print(f"  Cross-overlap (OBO ∩ DSV4, lowercased):          {stats['obo_dsv4_cross_overlap']:>6,d}")
     print(f"  ───────────────────────────────────────────────────────")
     print(f"  TOTAL UNIQUE TERMS IN TRIE:                      {stats['total_unique']:>6,d}")
