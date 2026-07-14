@@ -25,5 +25,12 @@
 			"preview_id": "43f730e81d314f47b50034291d0d5ab2",
 			"remote": true
 		}
+	],
+	"d1_databases": [
+		{
+			"binding": "BIO_TERMBASE",
+			"database_name": "bio_termbase",
+			"database_id": "1608b79c-d394-4f9e-bfc8-553a14c21f57"
+		}
 	]
 }

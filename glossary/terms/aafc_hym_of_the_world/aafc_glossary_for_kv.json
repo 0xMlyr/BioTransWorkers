@@ -1,0 +1,3642 @@
+[
+  {
+    "key": "abdomen",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., abdominal",
+            "definition": "The principal posterior division of the body, posterior to the leg-bearing segments and composed of 10 or fewer apparent segments; in most Symphyta abdominal segment 1 is easily recognized by its median split (cf. metasoma, propodeum).",
+            "source_page": 34
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "abscissa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., abscissae",
+            "definition": "A segment of a wing vein that is delimited by the intersection of other veins.",
+            "source_page": 34
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "acute",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Sharply angled, less than 90°.",
+            "source_page": 34
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "adventitious vein",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A wing vein that is not homologized with a standard wing vein.",
+            "source_page": 34
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "annulate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Ringed; formed in ring-like segments or color patterns.",
+            "source_page": 34
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "antenna",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., antennae; adj., antennal",
+            "definition": "A paired, segmented sensory appendage of the head between the compound eyes, which consists of three segments having intrinsic muscles (see also scape, pedicel, and flagellum).",
+            "source_page": 34
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "apex",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., apices; adj., apical, apico-",
+            "definition": "Part of a structure farthest from its point of attachment to the body.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "areola",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., areolae; adj., areolate",
+            "definition": "In Ichneumonidae, the median area of the propodeum that is enclosed by ridges.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "areolet",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Ichneumonidae, the small cell in the centre of the fore wing; the first radial sector cell.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "arolium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., arolia",
+            "definition": "A pad-like median lobe between the tarsal claws (see also pretarsus).",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "axilla",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., axillae; adj., axillar",
+            "definition": "In groups with a transscutal articulation, posterolateral portion of the mesoscutum separated from the mesoscutum lateral to the scutellum; usually triangular (see also scutum).",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "axillula",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., axillulae; adj., axillular",
+            "definition": "In Chalcidoidea, the lateral subdivision of the scutellum delimited by a longitudinal line.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "base",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., basal, basi-",
+            "definition": "Part of a structure nearest to its point of attachment to the body.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "basitibial plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Apoidea, a small, flat, hairless, raised region of the dorsal surface of the metatibia at its base.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "bulla",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., bullae",
+            "definition": "In Ichneumonidae, unpigmented area of a vein where it is crossed by a wing fold or line of flexion.",
+            "source_page": 35
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "lacinia",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., laciniae",
+            "definition": "The inner apical lobe of the maxilla, articulated to the stipes.",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "lamina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., laminae; adj., laminate",
+            "definition": "A thin plate or leaf-like process.",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "laterotergite",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The lateral part of an abdominal/metasomal tergum that is marked by a crease or groove, or is even completely detached from the main dorsal part of the tergum (see also tergite, tergum).",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "malar space",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The shortest distance between the base of the mandible and the margin of the compound eye.",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mandible",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., mandibular",
+            "definition": "The paired, heavily sclerotized biting and chewing lateral appendage of the mouthparts between the labrum and maxilla.",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "maxilla",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., maxillae; adj., maxillary",
+            "definition": "The paired appendage of the mouthparts between the mandible and labium, consisting of the cardo, stipes, lacinia, galea, and maxillary palpus.",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mentum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A labial sclerite articulating basally with the submentum and apically with the prementum; often fused with the latter and indistinguishable as a separate sclerite.",
+            "source_page": 44
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mes-, meso-",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A Greek prefix meaning middle or mid; used with Latin, latinized, or Greek words to indicate the middle (often second) part of a structure.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesepimeron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The posterior subdivision of the mesopleuron, usually small relative to the mesepisternum or almost absent.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesepisternal groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A groove on the mesopleuron, extending ventrally from a pit under the base of the fore wing and, when complete, reaching the anteroventral margin of the mesothorax.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesepisternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The anterior subdivision of the mesopleuron, usually comprising most of the mesopleuron.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesonotum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The dorsal part of the mesothorax.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesopleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The lateral and ventral part of the mesothorax (see also mesosternum).",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesoscutal lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "See mesoscutum.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesoscutellar appendage",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Symphyta, the posterior subdivision of the mesoscutellum, usually crescent-shaped and overhanging the postnotum of the mesothorax.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesoscutellum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "See scutellum.",
+            "source_page": 45
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesoscutum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The mesonotum excluding the scutellum; in groups with a transscutal articulation, the portion of the mesonotum anterior to the articulation; the mesoscutum is usually divided by the notauli into a medial part and two lateral lobes (see also scutum).",
+            "source_page": 46
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesosoma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., mesosomata; adj., mesosomal",
+            "definition": "In Apocrita, the thorax plus the propodeum (cf. thorax).",
+            "source_page": 46
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesosternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The sternum of the mesothorax, usually invaginated and not visible, but sometimes inappropriately used as a general term for the ventral surface of the mesothorax, such as when it is modified into a flattened plate with posteriorly projecting lobes (see also mesopleuron).",
+            "source_page": 46
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesothorax",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The second and largest of the three primary subdivisions of the thorax, bearing the middle pair of legs and, when present, the fore wings.",
+            "source_page": 46
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mesotrochantinal plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The ventral part of the mesothorax inflected towards the metasternum beneath the base of the mesocoxae; visible only by removing the mesocoxae.",
+            "source_page": 46
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "met-, meta-",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A Greek prefix meaning hind or posterior; used with Latin, latinized, or Greek words to indicate the posterior (usually third) part of a structure.",
+            "source_page": 46
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metepimeron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The posterior subdivision of the metapleuron.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metepisternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The anterior subdivision of the metapleuron.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "mouthparts",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The appendages of the head used for feeding, including the labrum, hypopharynx, mandibles, maxillae, and labium.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "nebulous vein",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A wing vein that is uniformly pigmented (not darker on its margins), without a tubular structure; it can be seen with both reflected and transmitted light (cf. spectral, tubular veins).",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "notaulus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., notauli",
+            "definition": "The usually oblique, longitudinal groove on the mesoscutum, often dividing the mesoscutum into medial and lateral parts.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "notopleural suture",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A groove separating the mesonotum from the mesopleuron.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "notum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., nota; adj., notal",
+            "definition": "A thoracic tergum, usually subdivided into a scutum and a scutellum.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "oblique scutal carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Spheciformes, the ridge on the mesoscutum extending obliquely posteriorly and medially from the lateral margin near the posterior of the tegula.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ocellus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., ocelli; adj., ocellar",
+            "definition": "A simple eye, consisting of a single, usually round or oval facet. Hymenoptera usually have three ocelli: one median (anterior) and two lateral (posterior).",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "occipital carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A ridge on the posterior surface of the head that separates the occiput from the vertex and gena; the ventral part of the ridge is sometimes called the genal carina.",
+            "source_page": 48
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "occiput",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., occipital",
+            "definition": "The posterior part of the head behind the vertex dorsally and the genae laterally. If an occipital carina is present, the occiput is the area between it and the very narrow postocciput surrounding the foramen magnum (see also postgena).",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "oral cavity",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The opening of the head from which the mouthparts are suspended.",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "orbit",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The narrow border around the eye. The inner and outer orbits are those parts of the face plus the frons and the gena, respectively, immediately next to the eye.",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ovipositor",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In females, a slender, paired and interlocking, saw-like or tubular structure used for laying the eggs or, in Aculeata, for stinging or, in some Ichneumonoidea, for both; it may be concealed or may extend beyond the apex of the body and is protected by a pair of ovipositor sheaths.",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ovipositor sheath",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A paired, sclerotized structure enclosing the external part of the ovipositor.",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "palpus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., palpi; adj., palpal",
+            "definition": "Paired sensory appendages of the maxilla and labium, consisting of one to six segments and one to four segments, respectively.",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "paraglossa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., paraglossae",
+            "definition": "A paired, lateral lobe of the labium articulated basally with the prementum lateral to the base of the glossa.",
+            "source_page": 49
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pedicel",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The second primary division or segment of the antenna; it articulates apically with the flagellum and basally with the scape.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pedunculate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "An intermediate, club-like condition between sessile and petiolate (see also petiolate).",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "petiolate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Stalked.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "petiole",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Part of the metasoma, usually metasomal segment 1; the usually narrow, parallel-sided stalk joining the rest of the metasoma to the propodeum.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "placoid sensillum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., sensilla",
+            "definition": "An elongate, appressed, plate-like or rounded roof-like or groove-like sensory structure; it is usually mentioned when referring to the flagellomeres.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "plantar lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A small membranous pad projecting from the ventral apex of tarsomeres 1–4.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pleural groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A groove on the mesopleuron and metapleuron extending between the wing base and the coxal articulation; it separates the episternum from the epimeron.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., pleura; adj., pleural",
+            "definition": "The lateral part of a body segment, commonly of a thoracic segment where the pleuron occupies the lateral as well as the ventral areas of the mesothorax and metathorax.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "posterior lingual plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A sclerite on the posterior (ventral) surface of the glossa.",
+            "source_page": 50
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "postgena",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., postgenal",
+            "definition": "The lower part of the occiput; when the occipital carina is absent, the gena and postgena are continuous, and the entire lower area constitutes the gena (see also occiput).",
+            "source_page": 51
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "postnotum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A posterior sclerite of the mesonotum and metanotum behind the scutellum. The postnotum of the metathorax is fused dorsally with abdominal tergum 1 and laterally with the metepimeron; in Apocrita the postnotum is rarely visible, and then only as an impressed line in front of the propodeum.",
+            "source_page": 51
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "postocciput",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., postoccipital",
+            "definition": "A narrow area surrounding the foramen magnum; it is separated from the occiput by the postoccipital groove.",
+            "source_page": 51
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "postpectal carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Ichneumonoidea, the posterior transverse carina ventrally on the mesopleuron, just in front of the mesocoxa.",
+            "source_page": 51
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "prementum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A labial sclerite articulating basally with the mentum and bearing the glossae, paraglossae, and palpi apically.",
+            "source_page": 51
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "prepectus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A sclerite of the thorax between the pronotum and the mesepisternum (see also epicnemium).",
+            "source_page": 51
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "prestigma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The enlarged and sclerotized apex of one or more veins on the anterior margin of the wing basal to the costal notch and almost continuous with the stigma.",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pretarsus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The apical segment of a leg, bearing the claws and associated structures (see also arolium).",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pro-",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A Latin prefix meaning before or anterior; used with Latin, latinized, or Greek words to indicate the anterior (usually first) part of a structure.",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "prognathous",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "With the head more or less in the same plane as the body (horizontal) so the mouthparts are directed anteriorly (cf. hypognathous).",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pronotal collar",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The horizontal surface of the pronotum posterior to the sloping, and often narrowing, region immediately behind the head.",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pronotal flange",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The anterior projecting rim of the pronotum; it is often hidden by the head.",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pronotal lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The rounded posterolateral extension of the pronotum covering the mesothoracic spiracle.",
+            "source_page": 52
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pronotal plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Cynipoidea, the dorsal disc of the pronotum.",
+            "source_page": 53
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pronotum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., pronotal",
+            "definition": "The dorsal sclerite of the prothorax; in most Hymenoptera, occupying also the dorsolateral or lateral part of the prothorax.",
+            "source_page": 53
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "propodeal carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Ichneumonoidea, one or more named, usually distinct, transverse or longitudinal ridges on the propodeum.",
+            "source_page": 53
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "propodeum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., propodeal",
+            "definition": "In Apocrita, the first tergum of the abdomen, widely and immovably fused with the metanotum and with each metapleuron of the thorax, and usually narrowly and flexibly joined to the rest of the abdomen (see also abdomen, metasoma, thorax).",
+            "source_page": 53
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "propleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., propleura",
+            "definition": "The lateral part of the prothorax. In Hymenoptera, it is displaced somewhat by the pronotum so as to occupy an oblique position ventrolateral and anterior to the pronotum.",
+            "source_page": 53
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "prosternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A ventral sclerite of the prothorax, between the propleura.",
+            "source_page": 53
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cardo",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., cardines",
+            "definition": "The basal part of the maxilla.",
+            "source_page": 36
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., carinae; adj., carinate",
+            "definition": "A ridge or raised line.",
+            "source_page": 36
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cell",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The area between the veins of a wing; it is closed when completely surrounded by veins, otherwise it is open (see morphology section for naming of cells).",
+            "source_page": 36
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cenchrus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., cenchri",
+            "definition": "In Symphyta, a paired, circular, or oval structure on the sublateral portion of the metascutum.",
+            "source_page": 36
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "cercus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., cerci; adj., cercal",
+            "definition": "A paired, posterior, sensory appendage of the last (morphological tenth) abdominal tergum, which usually bears several setae. With a reduction of the apical segments of the metasoma, the cerci often appear to be on a more anterior segment.",
+            "source_page": 36
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "chela",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., chelae; adj., chelate",
+            "definition": "In Dryinidae, the modified tarsus in which the apical tarsomere forms a clasping structure with its opposable tarsal claw; a pincer.",
+            "source_page": 36
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "prothorax",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The first of the three primary subdivisions of the thorax, composed of the pronotum, the propleuron, and the prosternum.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pubescence",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The short, fine, often closely set setae on the body.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "punctate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Bearing fine, impressed points or pits.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "pygidial plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A specialized area of the tergum of the last externally visible segment of the metasoma; it is usually flattened and defined laterally by ridges or grooves.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "radicle",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The basal part of the scape often strongly defined by a constriction; it articulates with the torulus.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "recumbent",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Referring to a seta lying parallel to the body surface.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "reticulate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Covered with a network of lines; meshed.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scape",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The first primary division or segment of the antenna; it articulates apically with the pedicel and basally with the torulus.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sclerite",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A hardened plate of the integument; it is separated from other such plates by sutures or membrane.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sclerotized",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Referring to the body integument; relatively stiff and usually darkly pigmented areas compared with usually colorless and flexible membranous areas.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scopa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., scopae",
+            "definition": "In Apiformes, a brush-like structure of short stiff hairs of equal length used for collecting pollen.",
+            "source_page": 54
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scrobal groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A horizontal groove on the mesopleuron that may be continuous with the episternal groove anteriorly and ends at the pleural groove posteriorly.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scrobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., scrobal",
+            "definition": "A groove in the body integument for the reception or concealment of an appendage, e.g., a longitudinal depression of the head above each torulus for reception of the scape or a groove on the mesopleuron for reception of the mesofemur; the scrobe of the mesepisternum is a small pit.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sculpture",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Markings or a pattern of impressions or elevations on the surface of a structure.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scutellum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., scutella; adj., scutellar",
+            "definition": "The middle region of the mesonotum or metanotum, behind the scutum. In Apocrita, only the mesoscutellum is evident and is simply called the scutellum, whereas in Symphyta both the mesoscutellum and metascutellum are present.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "scutum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., scuta; adj., scutal",
+            "definition": "The anterior sclerite of a notum, in front of the scutellum. In Apocrita, the mesoscutum is functionally only the area in front of the transscutal articulation; the axilla, although morphologically part of the mesoscutum, is treated as separate (see also axilla).",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "segment",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A ring or subdivision of the body or of an appendage between areas of flexibility, and bearing intrinsic muscles.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sensillum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., sensilla",
+            "definition": "A simple sense organ, such as a seta, or one of the structural units of a compound sense organ.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sessile",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "One structure attached to another, without a distinct constriction (cf. pedunculate, petiolate).",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "seta",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., setae; adj., setal",
+            "definition": "A slender, hair-like, usually sensory extension of the cuticle, connected to the body wall by a socket.",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "spectral vein",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A wing vein that is indicated only by a ridge or furrow on the wing surface; it has no trace of pigment and can only be seen with reflected light (cf. tubular, nebulous veins).",
+            "source_page": 55
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "spiracle",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., spiracular",
+            "definition": "A small, round or oval lateral opening on a body segment through which air enters the tracheae.",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sternaulus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., sternauli",
+            "definition": "The horizontal lateroventral carina or groove near the lower margin of the mesopleuron, extending from the lower end of the epicnemial carina toward the mesocoxa.",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sternite",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The sclerotized subdivision of a sternum bounded by grooves or by membranous lines or areas (see also sternum).",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., sterna; adj., sternal",
+            "definition": "The ventral division of a body segment, which may be subdivided into sternites; usually only refers to the segments of the abdomen/metasoma and to the prothorax. The sterna of the mesothorax and metathorax are considered to be invaginated within the thorax.",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "stigma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A thickly sclerotized and usually darkly pigmented area on the fore wing margin at the apex of the costal vein. In Chalcidoidea, a knob-like enlargement of the apex of the stigmal vein.",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "stipes",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., stipites; adj., stipital",
+            "definition": "A major sclerite of the maxilla, articulating basally with the cardo, apically with the galea and lacinia, and laterally with the maxillary palpus.",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "sub-",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Latin prefix meaning under; also used commonly to mean somewhat or almost (e.g., subequal is synonymous with almost equal).",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "subantennal groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Apiformes, one or two fine grooves between the torulus and the clypeus.",
+            "source_page": 56
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "subgenal carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A ridge bordering the gena ventrally; it extends from the hypostomal carina to the anterior or facial articulation of the mandible.",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "submentum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The basal sclerite of the labium articulating apically with the mentum; in Apoidea, an often V-shaped sclerite (often called the lorum) with an arm articulating with each cardo and medially articulating with the mentum.",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "submetapleural carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A ridge on the ventral margin of the lower part of the metapleuron, between the bases of the mesocoxae and metacoxae.",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "subocular groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A groove extending from the ventral margin of the eye to the anterior or facial articulation of the mandible.",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "suture",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A line or membranous area on the cuticle indicating the junction of two formerly separate plates or sclerites (see also groove).",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tarsomere",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A subdivision of the tarsus; each tarsus has 3–5 tarsomeres.",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tarsus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., tarsi; adj., tarsal",
+            "definition": "The fifth segment of a leg, attached basally to the tibia and subdivided into tarsomeres.",
+            "source_page": 57
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tegula",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., tegulae",
+            "definition": "A small, scale-like sclerite covering the base of the fore wing, basal to the humeral plate.",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tergite",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A sclerotized subdivision of a tergum bounded by grooves, or membranous lines or areas (see also laterotergite, tergum).",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tergum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., terga; adj., tergal",
+            "definition": "A dorsal sclerite of a body segment, which may be subdivided into tergites; specifically used for the abdomen/metasoma (see also laterotergite).",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "thorax",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., thoraces; adj., thoracic",
+            "definition": "The principal middle division of the body to which the legs are attached, between the head and abdomen (cf. mesosoma).",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "thyridium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "See gastrocoelus.",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tibia",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., tibiae; adj., tibial",
+            "definition": "The fourth segment of a leg, between the femur and the tarsus.",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tibial spur",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A spine-like, multicellular extension of the cuticle connected to an appendage by a socket; usually found apically on the tibiae.",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "torulus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., toruli",
+            "definition": "A paired socket on the front of the head upon which the scape is articulated.",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "transscutal articulation",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A line of weakness across the mesonotum between the fore wing bases, which secondarily separates the posterolateral angles of the mesoscutum beside the scutellum (see also axilla, scutum).",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "trochantellus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The basal end of the femur; it looks like a second segment of the trochanter.",
+            "source_page": 58
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "trochanter",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The second segment of a leg, between the coxa and femur.",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "truncate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Cut off squarely at the tip.",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "tubular vein",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A pigmented wing vein that is hollow and therefore appears darker laterally and lighter medially; it can be seen with both reflected and transmitted light (cf. nebulous, spectral veins).",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "uncus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Chalcidoidea, a short, narrow stub near the apex of the stigmal vein directed towards the postmarginal vein.",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "vein",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., veinal",
+            "definition": "Narrow, usually dark thickenings of a wing arising at the wing base and branching towards the apex (see also nebulous, spectral, tubular veins, and morphology section for naming of veins).",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "vertex",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The top of the head between the eyes, from the anterior margin of the median ocellus to the occiput.",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "volsella",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., volsellae",
+            "definition": ". A paired, median inner appendage of the male genitalia.",
+            "source_page": 59
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "claval fold",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The furrow on the fore wing just anterior to, and parallel with, vein 1A, and extending to the claval notch on the wing margin.",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "claval lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The posterior portion of a wing behind the claval fold and in front of the jugal fold, when present (see also jugal lobe).",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "club",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The enlarged apical flagellomere or flagellomeres of an antenna (see also funicle).",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "clypeus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., clypeal",
+            "definition": "The medial sclerite of the head immediately above the labrum; often defined dorsally and laterally by the epistomal groove.",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "compressed",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Flattened from side to side (higher than wide).",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "concave",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Pertaining to a linear structure, margin, or surface that is curved inward (cf. convex).",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "convex",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Pertaining to a linear structure, margin, or surface that is curved outward (cf. concave).",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "corbicula",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., corbiculae",
+            "definition": "In Apiformes, the concave, smooth region of the metatibia that is margined by a fringe of setae arising from the margins; it forms a pollen basket.",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "costal notch",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The excision of the wing margin between the apex of the costal vein and the base of the stigma.",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "coxa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., coxae; adj., coxal",
+            "definition": "The first segment of a leg, between the body and the trochanter.",
+            "source_page": 37
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "depressed",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Flattened from top to bottom (wider than high).",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "disc",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., discal",
+            "definition": "The central surface of any structure.",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "emarginate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "Notched; with an obtuse, rounded, or quadrate section cut out of a margin.",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "endodont mandible",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A mandible with the teeth facing inward so that when the mandibles are closed their tips point toward each other's base (cf. exodont).",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epicnemial carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The ridge on the mesopleuron that more or less parallels the anterior margin of the mesepisternum and that delineates the posterior margin of the epicnemium.",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epicnemium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., epicnemial",
+            "definition": "The anterior portion of the mesopleuron delimited posteriorly by the epicnemial carina (see also prepectus).",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epimeron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., epimera; adj., epimeral",
+            "definition": "The portion of a pleuron posterior to the pleural groove (cf. episternum).",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epipygium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Chalcidoidea, a small, more or less sclerotized, fingernail-like flap attached to the last metasomal tergum between the cerci.",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "episternal groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "See mesepisternal groove.",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "episternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., episterna; adj., episternal",
+            "definition": "The portion of a pleuron anterior to the pleural groove (cf. epimeron).",
+            "source_page": 38
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epistomal groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A groove defining the lateral and dorsal margin of the clypeus.",
+            "source_page": 39
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "epomia",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., epomiae",
+            "definition": "In Ichneumonoidea, an oblique ridge crossing the transverse furrow on the side of the pronotum.",
+            "source_page": 39
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "exodont mandible",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A mandible with the teeth facing outward so that when the mandibles are closed their tips point anteriorly or away from each other (cf. endodont).",
+            "source_page": 39
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "face",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., facial",
+            "definition": "In Parasitica, the anterior surface of the head between the eyes from the ventral margin of the toruli to the oral cavity, excluding the clypeus; in Symphyta and Aculeata, anterior surface of the head between the eyes from the ocelli to the oral cavity, including the clypeus.",
+            "source_page": 39
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "facial fovea",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Apoidea, a depressed, often finely and densely pubescent area along the inner orbit of a compound eye.",
+            "source_page": 39
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "felt line",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Mutillidae and Bradynobaenidae, a longitudinal line of flattened setae and secretory pores laterally on metasomal tergum 2.",
+            "source_page": 39
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "femur",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., femora; adj., femoral",
+            "definition": "The third segment of a leg, between the trochanter and tibia.",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "flabellum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., flabella",
+            "definition": "In Apiformes, a small thin plate at the apex of the glossa.",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "flagellomere",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A segment-like subdivision of the flagellum; it is numbered consecutively from the base of the flagellum.",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "flagellum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., flagella; adj., flagellar",
+            "definition": "The third primary division or segment of the antenna; it articulates with the pedicel basally and almost always is subdivided into flagellomeres.",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "foramen",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., foramina",
+            "definition": "A hole in the body wall through which vessels or nerves pass. The foramen magnum is the central hole in the back of the head; the propodeal foramen is the hole in the posterior area of the propodeum.",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "frenum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., frena; adj., frenal",
+            "definition": "In Chalcidoidea, the transverse line on the scutellum that delineates a posterior portion of the scutellum, the frenal area.",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "frons",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The area of the head between the ventral margin of the toruli and the anterior margin of the median ocellus. (Note: this is not equivalent to the true frons of larvae.)",
+            "source_page": 40
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "frontal carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A longitudinal ridge or pair of ridges on the frons between (and sometimes partly covering) the toruli.",
+            "source_page": 41
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "funicle",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., funicular",
+            "definition": "A group of flagellomeres between the pedicel and the club.",
+            "source_page": 41
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "galea",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., galeae",
+            "definition": "The outer apical lobe of the maxilla, articulated basally with the stipes.",
+            "source_page": 41
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "gastrocoelus–thyridium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., gastrocoeli",
+            "definition": "In Ichneumonidae, the usually transverse impression anterolaterally on metasomal tergum 2. The gastrocoelus includes the thyridium (t), which is the surface area with specialized sculpture, whereas the gastrocoelus is the impression itself.",
+            "source_page": 41
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "gena",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., genae; adj., genal",
+            "definition": "The cheek; the lateral part of the head between the compound eye and, when present, the occipital carina; otherwise, the lower (in hypognathous head) or anterior (in prognathous head) part of the back of the head between the compound eye and the occiput.",
+            "source_page": 41
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "glossa",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., glossae",
+            "definition": "The paired, fused, median lobe of the labium articulated basally with the prementum.",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "glymma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., glymmae",
+            "definition": "In Ichneumonidae, the paired groove or pit on the side of metasomal segment 1 between its base and the spiracle; it is nearly always present when sternum 1 is free from tergum 1 but absent when tergum 1 and sternum 1 are fused.",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "groove",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "A linear impression on a sclerite (see also suture).",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "hamulus",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., hamuli",
+            "definition": "One of a series of small bristle-like hooks on the anterior margin of the hind wing; in some groups there may be a basal and an apical series of hamuli.",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "head",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The principal anterior division of the body; it bears the mouthparts and antennae.",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "humeral plate",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The anterior sclerite of the wing at the base of vein C.",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "hypognathous",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "With the head more or less at a right angle to the plane of the body (vertical), so the mouthparts are directed ventrally (cf. prognathous).",
+            "source_page": 42
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "hypopygium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., hypopygial",
+            "definition": "The last visible sternum of the abdomen.",
+            "source_page": 43
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "hypostomal bridge",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The sclerotized posterior part of the head that sometimes separates the foramen magnum from the oral cavity (the bridge may sometimes be formed by the median fusion of the postgena or gena and is then called the postgenal or genal bridge).",
+            "source_page": 43
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "hypostomal carina",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The ridge on the back of the head along the oral cavity that normally delimits the hypostoma from the postgena and occiput.",
+            "source_page": 43
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "jugal lobe",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The posterior area of the wing behind vein 1A and set off from more anterior areas by a slight fold (jugal fold) on the wing and by a notch on the wing margin (see also claval lobe).",
+            "source_page": 43
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "labium",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., labial",
+            "definition": "The posterior, medial appendage of the mouthparts between and behind the maxillae, composed of the submentum, mentum, prementum, glossa, paraglossa, and labial palpi.",
+            "source_page": 43
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "labrum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "adj., labral",
+            "definition": "The anterior, medial appendage of the mouthparts attached to the underside of, and often concealed by, the clypeus.",
+            "source_page": 43
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metanotum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The dorsal part of the metathorax.",
+            "source_page": 47
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metapleuron",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The lateral and ventral part of the metathorax.",
+            "source_page": 47
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metascutellum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "In Symphyta, the middle region of the metanotum.",
+            "source_page": 47
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metasoma",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "variants": "pl., metasomata; adj., metasomal",
+            "definition": "In Apocrita, the apparent abdomen, consisting of the abdomen excluding the first segment or propodeum. In this publication the first metasomal segment which is often shortened, and narrowed, and not clearly visible, is numbered 1 (cf. abdomen).",
+            "source_page": 47
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metasternum",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The sternum of the metathorax, usually invaginated and not visible but sometimes used as a general term for the ventral surface of the metathorax.",
+            "source_page": 47
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "metathorax",
+    "value": {
+      "data": [
+        {
+          "metadata": {
+            "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+            "ver": "1.0.0",
+            "date": "20260715"
+          },
+          "detailed": {
+            "definition": "The third of the three primary subdivisions of the thorax, bearing the hind pair of legs and, when present, the hind wings.",
+            "source_page": 47
+          }
+        }
+      ]
+    }
+  }
+]

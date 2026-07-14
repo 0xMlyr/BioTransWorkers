@@ -1,0 +1,2763 @@
+{
+  "metadata": {
+    "model": "mimo-v2.5",
+    "total_pages": 26,
+    "success_pages": 26,
+    "failed_pages": 0,
+    "total_entries": 198,
+    "completed_at": "2026-07-14T16:10:00.720744+00:00"
+  },
+  "failed_pages": {},
+  "entries": [
+    {
+      "term": "abdomen",
+      "variants": "adj., abdominal",
+      "definition": "The principal posterior division of the body, posterior to the leg-bearing segments and composed of 10 or fewer apparent segments; in most Symphyta abdominal segment 1 is easily recognized by its median split (cf. metasoma, propodeum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.52,
+        0.5,
+        0.77
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 34
+    },
+    {
+      "term": "abscissa",
+      "variants": "pl., abscissae",
+      "definition": "A segment of a wing vein that is delimited by the intersection of other veins.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.14,
+        0.9,
+        0.26
+      ],
+      "column": "right",
+      "reading_order": 2,
+      "source_page": 34
+    },
+    {
+      "term": "acute",
+      "variants": "",
+      "definition": "Sharply angled, less than 90°.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 3,
+      "source_page": 34
+    },
+    {
+      "term": "adventitious vein",
+      "variants": "",
+      "definition": "A wing vein that is not homologized with a standard wing vein.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.32,
+        0.9,
+        0.42
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 34
+    },
+    {
+      "term": "annulate",
+      "variants": "",
+      "definition": "Ringed; formed in ring-like segments or color patterns.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.47,
+        0.9,
+        0.62
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 34
+    },
+    {
+      "term": "antenna",
+      "variants": "pl., antennae; adj., antennal",
+      "definition": "A paired, segmented sensory appendage of the head between the compound eyes, which consists of three segments having intrinsic muscles (see also scape, pedicel, and flagellum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.71,
+        0.9,
+        0.86
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 34
+    },
+    {
+      "term": "apex",
+      "variants": "pl., apices; adj., apical, apico-",
+      "definition": "Part of a structure farthest from its point of attachment to the body.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 35
+    },
+    {
+      "term": "areola",
+      "variants": "pl., areolae; adj., areolate",
+      "definition": "In Ichneumonidae, the median area of the propodeum that is enclosed by ridges.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.15,
+        0.46,
+        0.31
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 35
+    },
+    {
+      "term": "areolet",
+      "variants": "",
+      "definition": "In Ichneumonidae, the small cell in the centre of the fore wing; the first radial sector cell.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.37,
+        0.46,
+        0.48
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 35
+    },
+    {
+      "term": "arolium",
+      "variants": "pl., arolia",
+      "definition": "A pad-like median lobe between the tarsal claws (see also pretarsus).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.52,
+        0.46,
+        0.68
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 35
+    },
+    {
+      "term": "axilla",
+      "variants": "pl., axillae; adj., axillar",
+      "definition": "In groups with a transscutal articulation, posterolateral portion of the mesoscutum separated from the mesoscutum lateral to the scutellum; usually triangular (see also scutum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.14,
+        0.85,
+        0.32
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 35
+    },
+    {
+      "term": "axillula",
+      "variants": "pl., axillulae; adj., axillular",
+      "definition": "In Chalcidoidea, the lateral subdivision of the scutellum delimited by a longitudinal line.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.38,
+        0.85,
+        0.56
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 35
+    },
+    {
+      "term": "base",
+      "variants": "adj., basal, basi-",
+      "definition": "Part of a structure nearest to its point of attachment to the body.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 35
+    },
+    {
+      "term": "basitibial plate",
+      "variants": "",
+      "definition": "In Apoidea, a small, flat, hairless, raised region of the dorsal surface of the metatibia at its base.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.63,
+        0.85,
+        0.73
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 35
+    },
+    {
+      "term": "bulla",
+      "variants": "pl., bullae",
+      "definition": "In Ichneumonidae, unpigmented area of a vein where it is crossed by a wing fold or line of flexion.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.78,
+        0.85,
+        0.9
+      ],
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 35
+    },
+    {
+      "term": "lacinia",
+      "variants": "pl., laciniae",
+      "definition": "The inner apical lobe of the maxilla, articulated to the stipes.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.1,
+        0.51,
+        0.21
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 44
+    },
+    {
+      "term": "lamina",
+      "variants": "pl., laminae; adj., laminate",
+      "definition": "A thin plate or leaf-like process.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 44
+    },
+    {
+      "term": "laterotergite",
+      "variants": "",
+      "definition": "The lateral part of an abdominal/metasomal tergum that is marked by a crease or groove, or is even completely detached from the main dorsal part of the tergum (see also tergite, tergum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.33,
+        0.51,
+        0.48
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 44
+    },
+    {
+      "term": "malar space",
+      "variants": "",
+      "definition": "The shortest distance between the base of the mandible and the margin of the compound eye.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.54,
+        0.51,
+        0.7
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 44
+    },
+    {
+      "term": "mandible",
+      "variants": "adj., mandibular",
+      "definition": "The paired, heavily sclerotized biting and chewing lateral appendage of the mouthparts between the labrum and maxilla.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.13,
+        0.9,
+        0.29
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 44
+    },
+    {
+      "term": "maxilla",
+      "variants": "pl., maxillae; adj., maxillary",
+      "definition": "The paired appendage of the mouthparts between the mandible and labium, consisting of the cardo, stipes, lacinia, galea, and maxillary palpus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.36,
+        0.9,
+        0.59
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 44
+    },
+    {
+      "term": "mentum",
+      "variants": "",
+      "definition": "A labial sclerite articulating basally with the submentum and apically with the prementum; often fused with the latter and indistinguishable as a separate sclerite.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.68,
+        0.9,
+        0.86
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 44
+    },
+    {
+      "term": "mes-, meso-",
+      "variants": "",
+      "definition": "A Greek prefix meaning middle or mid; used with Latin, latinized, or Greek words to indicate the middle (often second) part of a structure.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 45
+    },
+    {
+      "term": "mesepimeron",
+      "variants": "",
+      "definition": "The posterior subdivision of the mesopleuron, usually small relative to the mesepisternum or almost absent.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.17,
+        0.46,
+        0.31
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 45
+    },
+    {
+      "term": "mesepisternal groove",
+      "variants": "",
+      "definition": "A groove on the mesopleuron, extending ventrally from a pit under the base of the fore wing and, when complete, reaching the anteroventral margin of the mesothorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.42,
+        0.46,
+        0.57
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 45
+    },
+    {
+      "term": "mesepisternum",
+      "variants": "",
+      "definition": "The anterior subdivision of the mesopleuron, usually comprising most of the mesopleuron.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.63,
+        0.46,
+        0.77
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 45
+    },
+    {
+      "term": "mesonotum",
+      "variants": "",
+      "definition": "The dorsal part of the mesothorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.09,
+        0.86,
+        0.36
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 45
+    },
+    {
+      "term": "mesopleuron",
+      "variants": "",
+      "definition": "The lateral and ventral part of the mesothorax (see also mesosternum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.4,
+        0.86,
+        0.55
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 45
+    },
+    {
+      "term": "mesoscutal lobe",
+      "variants": "",
+      "definition": "See mesoscutum.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 45
+    },
+    {
+      "term": "mesoscutellar appendage",
+      "variants": "",
+      "definition": "In Symphyta, the posterior subdivision of the mesoscutellum, usually crescent-shaped and overhanging the postnotum of the mesothorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.66,
+        0.86,
+        0.81
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 45
+    },
+    {
+      "term": "mesoscutellum",
+      "variants": "",
+      "definition": "See scutellum.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 45
+    },
+    {
+      "term": "mesoscutum",
+      "variants": "",
+      "definition": "The mesonotum excluding the scutellum; in groups with a transscutal articulation, the portion of the mesonotum anterior to the articulation; the mesoscutum is usually divided by the notauli into a medial part and two lateral lobes (see also scutum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.155,
+        0.515,
+        0.425
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 46
+    },
+    {
+      "term": "mesosoma",
+      "variants": "pl., mesosomata; adj., mesosomal",
+      "definition": "In Apocrita, the thorax plus the propodeum (cf. thorax).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.485,
+        0.515,
+        0.595
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 46
+    },
+    {
+      "term": "mesosternum",
+      "variants": "",
+      "definition": "The sternum of the mesothorax, usually invaginated and not visible, but sometimes inappropriately used as a general term for the ventral surface of the mesothorax, such as when it is modified into a flattened plate with posteriorly projecting lobes (see also mesopleuron).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.715,
+        0.515,
+        0.935
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 46
+    },
+    {
+      "term": "mesothorax",
+      "variants": "",
+      "definition": "The second and largest of the three primary subdivisions of the thorax, bearing the middle pair of legs and, when present, the fore wings.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.545,
+        0.135,
+        0.915,
+        0.405
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 46
+    },
+    {
+      "term": "mesotrochantinal plate",
+      "variants": "",
+      "definition": "The ventral part of the mesothorax inflected towards the metasternum beneath the base of the mesocoxae; visible only by removing the mesocoxae.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.545,
+        0.475,
+        0.915,
+        0.635
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 46
+    },
+    {
+      "term": "met-, meta-",
+      "variants": "",
+      "definition": "A Greek prefix meaning hind or posterior; used with Latin, latinized, or Greek words to indicate the posterior (usually third) part of a structure.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 46
+    },
+    {
+      "term": "metepimeron",
+      "variants": "",
+      "definition": "The posterior subdivision of the metapleuron.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.1,
+        0.51,
+        0.235
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 48
+    },
+    {
+      "term": "metepisternum",
+      "variants": "",
+      "definition": "The anterior subdivision of the metapleuron.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.275,
+        0.51,
+        0.41
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 48
+    },
+    {
+      "term": "mouthparts",
+      "variants": "",
+      "definition": "The appendages of the head used for feeding, including the labrum, hypopharynx, mandibles, maxillae, and labium.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 48
+    },
+    {
+      "term": "nebulous vein",
+      "variants": "",
+      "definition": "A wing vein that is uniformly pigmented (not darker on its margins), without a tubular structure; it can be seen with both reflected and transmitted light (cf. spectral, tubular veins).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 48
+    },
+    {
+      "term": "notaulus",
+      "variants": "pl., notauli",
+      "definition": "The usually oblique, longitudinal groove on the mesoscutum, often dividing the mesoscutum into medial and lateral parts.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.595,
+        0.51,
+        0.865
+      ],
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 48
+    },
+    {
+      "term": "notopleural suture",
+      "variants": "",
+      "definition": "A groove separating the mesonotum from the mesopleuron.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 48
+    },
+    {
+      "term": "notum",
+      "variants": "pl., nota; adj., notal",
+      "definition": "A thoracic tergum, usually subdivided into a scutum and a scutellum.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 48
+    },
+    {
+      "term": "oblique scutal carina",
+      "variants": "",
+      "definition": "In Spheciformes, the ridge on the mesoscutum extending obliquely posteriorly and medially from the lateral margin near the posterior of the tegula.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 48
+    },
+    {
+      "term": "ocellus",
+      "variants": "pl., ocelli; adj., ocellar",
+      "definition": "A simple eye, consisting of a single, usually round or oval facet. Hymenoptera usually have three ocelli: one median (anterior) and two lateral (posterior).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.545,
+        0.27,
+        0.91,
+        0.425
+      ],
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 48
+    },
+    {
+      "term": "occipital carina",
+      "variants": "",
+      "definition": "A ridge on the posterior surface of the head that separates the occiput from the vertex and gena; the ventral part of the ridge is sometimes called the genal carina.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.545,
+        0.505,
+        0.91,
+        0.655
+      ],
+      "column": "right",
+      "reading_order": 10,
+      "source_page": 48
+    },
+    {
+      "term": "occiput",
+      "variants": "adj., occipital",
+      "definition": "The posterior part of the head behind the vertex dorsally and the genae laterally. If an occipital carina is present, the occiput is the area between it and the very narrow postocciput surrounding the foramen magnum (see also postgena).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.16,
+        0.45,
+        0.32
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 49
+    },
+    {
+      "term": "oral cavity",
+      "variants": "",
+      "definition": "The opening of the head from which the mouthparts are suspended.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 49
+    },
+    {
+      "term": "orbit",
+      "variants": "",
+      "definition": "The narrow border around the eye. The inner and outer orbits are those parts of the face plus the frons and the gena, respectively, immediately next to the eye.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 49
+    },
+    {
+      "term": "ovipositor",
+      "variants": "",
+      "definition": "In females, a slender, paired and interlocking, saw-like or tubular structure used for laying the eggs or, in Aculeata, for stinging or, in some Ichneumonoidea, for both; it may be concealed or may extend beyond the apex of the body and is protected by a pair of ovipositor sheaths.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.51,
+        0.45,
+        0.65
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 49
+    },
+    {
+      "term": "ovipositor sheath",
+      "variants": "",
+      "definition": "A paired, sclerotized structure enclosing the external part of the ovipositor.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.69,
+        0.45,
+        0.83
+      ],
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 49
+    },
+    {
+      "term": "palpus",
+      "variants": "pl., palpi; adj., palpal",
+      "definition": "Paired sensory appendages of the maxilla and labium, consisting of one to six segments and one to four segments, respectively.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.13,
+        0.85,
+        0.37
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 49
+    },
+    {
+      "term": "paraglossa",
+      "variants": "pl., paraglossae",
+      "definition": "A paired, lateral lobe of the labium articulated basally with the prementum lateral to the base of the glossa.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.44,
+        0.85,
+        0.78
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 49
+    },
+    {
+      "term": "pedicel",
+      "variants": "",
+      "definition": "The second primary division or segment of the antenna; it articulates apically with the flagellum and basally with the scape.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.125,
+        0.51,
+        0.26
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 50
+    },
+    {
+      "term": "pedunculate",
+      "variants": "",
+      "definition": "An intermediate, club-like condition between sessile and petiolate (see also petiolate).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 50
+    },
+    {
+      "term": "petiolate",
+      "variants": "",
+      "definition": "Stalked.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 50
+    },
+    {
+      "term": "petiole",
+      "variants": "",
+      "definition": "Part of the metasoma, usually metasomal segment 1; the usually narrow, parallel-sided stalk joining the rest of the metasoma to the propodeum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.385,
+        0.51,
+        0.505
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 50
+    },
+    {
+      "term": "placoid sensillum",
+      "variants": "pl., sensilla",
+      "definition": "An elongate, appressed, plate-like or rounded roof-like or groove-like sensory structure; it is usually mentioned when referring to the flagellomeres.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.59,
+        0.51,
+        0.725
+      ],
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 50
+    },
+    {
+      "term": "plantar lobe",
+      "variants": "",
+      "definition": "A small membranous pad projecting from the ventral apex of tarsomeres 1–4.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.145,
+        0.765,
+        0.51,
+        0.86
+      ],
+      "column": "left",
+      "reading_order": 6,
+      "source_page": 50
+    },
+    {
+      "term": "pleural groove",
+      "variants": "",
+      "definition": "A groove on the mesopleuron and metapleuron extending between the wing base and the coxal articulation; it separates the episternum from the epimeron.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.135,
+        0.905,
+        0.275
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 50
+    },
+    {
+      "term": "pleuron",
+      "variants": "pl., pleura; adj., pleural",
+      "definition": "The lateral part of a body segment, commonly of a thoracic segment where the pleuron occupies the lateral as well as the ventral areas of the mesothorax and metathorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.395,
+        0.905,
+        0.495
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 50
+    },
+    {
+      "term": "posterior lingual plate",
+      "variants": "",
+      "definition": "A sclerite on the posterior (ventral) surface of the glossa.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.535,
+        0.905,
+        0.695
+      ],
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 50
+    },
+    {
+      "term": "postgena",
+      "variants": "adj., postgenal",
+      "definition": "The lower part of the occiput; when the occipital carina is absent, the gena and postgena are continuous, and the entire lower area constitutes the gena (see also occiput).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.14,
+        0.45,
+        0.3
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 51
+    },
+    {
+      "term": "postnotum",
+      "variants": "",
+      "definition": "A posterior sclerite of the mesonotum and metanotum behind the scutellum. The postnotum of the metathorax is fused dorsally with abdominal tergum 1 and laterally with the metepimeron; in Apocrita the postnotum is rarely visible, and then only as an impressed line in front of the propodeum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.42,
+        0.45,
+        0.57
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 51
+    },
+    {
+      "term": "postocciput",
+      "variants": "adj., postoccipital",
+      "definition": "A narrow area surrounding the foramen magnum; it is separated from the occiput by the postoccipital groove.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.64,
+        0.45,
+        0.8
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 51
+    },
+    {
+      "term": "postpectal carina",
+      "variants": "",
+      "definition": "In Ichneumonoidea, the posterior transverse carina ventrally on the mesopleuron, just in front of the mesocoxa.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.11,
+        0.85,
+        0.25
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 51
+    },
+    {
+      "term": "prementum",
+      "variants": "",
+      "definition": "A labial sclerite articulating basally with the mentum and bearing the glossae, paraglossae, and palpi apically.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.31,
+        0.85,
+        0.62
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 51
+    },
+    {
+      "term": "prepectus",
+      "variants": "",
+      "definition": "A sclerite of the thorax between the pronotum and the mesepisternum (see also epicnemium).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.69,
+        0.85,
+        0.88
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 51
+    },
+    {
+      "term": "prestigma",
+      "variants": "",
+      "definition": "The enlarged and sclerotized apex of one or more veins on the anterior margin of the wing basal to the costal notch and almost continuous with the stigma.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.13,
+        0.5,
+        0.27
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 52
+    },
+    {
+      "term": "pretarsus",
+      "variants": "",
+      "definition": "The apical segment of a leg, bearing the claws and associated structures (see also arolium).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.33,
+        0.5,
+        0.52
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 52
+    },
+    {
+      "term": "pro-",
+      "variants": "",
+      "definition": "A Latin prefix meaning before or anterior; used with Latin, latinized, or Greek words to indicate the anterior (usually first) part of a structure.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 52
+    },
+    {
+      "term": "prognathous",
+      "variants": "",
+      "definition": "With the head more or less in the same plane as the body (horizontal) so the mouthparts are directed anteriorly (cf. hypognathous).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.65,
+        0.5,
+        0.77
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 52
+    },
+    {
+      "term": "pronotal collar",
+      "variants": "",
+      "definition": "The horizontal surface of the pronotum posterior to the sloping, and often narrowing, region immediately behind the head.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.13,
+        0.9,
+        0.31
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 52
+    },
+    {
+      "term": "pronotal flange",
+      "variants": "",
+      "definition": "The anterior projecting rim of the pronotum; it is often hidden by the head.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.35,
+        0.9,
+        0.5
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 52
+    },
+    {
+      "term": "pronotal lobe",
+      "variants": "",
+      "definition": "The rounded posterolateral extension of the pronotum covering the mesothoracic spiracle.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.56,
+        0.9,
+        0.71
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 52
+    },
+    {
+      "term": "pronotal plate",
+      "variants": "",
+      "definition": "In Cynipoidea, the dorsal disc of the pronotum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.1,
+        0.45,
+        0.29
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 53
+    },
+    {
+      "term": "pronotum",
+      "variants": "adj., pronotal",
+      "definition": "The dorsal sclerite of the prothorax; in most Hymenoptera, occupying also the dorsolateral or lateral part of the prothorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.36,
+        0.45,
+        0.61
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 53
+    },
+    {
+      "term": "propodeal carina",
+      "variants": "",
+      "definition": "In Ichneumonoidea, one or more named, usually distinct, transverse or longitudinal ridges on the propodeum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.12,
+        0.85,
+        0.25
+      ],
+      "column": "right",
+      "reading_order": 3,
+      "source_page": 53
+    },
+    {
+      "term": "propodeum",
+      "variants": "adj., propodeal",
+      "definition": "In Apocrita, the first tergum of the abdomen, widely and immovably fused with the metanotum and with each metapleuron of the thorax, and usually narrowly and flexibly joined to the rest of the abdomen (see also abdomen, metasoma, thorax).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.36,
+        0.85,
+        0.57
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 53
+    },
+    {
+      "term": "propleuron",
+      "variants": "pl., propleura",
+      "definition": "The lateral part of the prothorax. In Hymenoptera, it is displaced somewhat by the pronotum so as to occupy an oblique position ventrolateral and anterior to the pronotum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.71,
+        0.45,
+        0.85
+      ],
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 53
+    },
+    {
+      "term": "prosternum",
+      "variants": "",
+      "definition": "A ventral sclerite of the prothorax, between the propleura.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.63,
+        0.85,
+        0.81
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 53
+    },
+    {
+      "term": "cardo",
+      "variants": "pl., cardines",
+      "definition": "The basal part of the maxilla.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.09,
+        0.51,
+        0.38
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 36
+    },
+    {
+      "term": "carina",
+      "variants": "pl., carinae; adj., carinate",
+      "definition": "A ridge or raised line.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 36
+    },
+    {
+      "term": "cell",
+      "variants": "",
+      "definition": "The area between the veins of a wing; it is closed when completely surrounded by veins, otherwise it is open (see morphology section for naming of cells).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.48,
+        0.51,
+        0.59
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 36
+    },
+    {
+      "term": "cenchrus",
+      "variants": "pl., cenchri",
+      "definition": "In Symphyta, a paired, circular, or oval structure on the sublateral portion of the metascutum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.64,
+        0.51,
+        0.81
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 36
+    },
+    {
+      "term": "cercus",
+      "variants": "pl., cerci; adj., cercal",
+      "definition": "A paired, posterior, sensory appendage of the last (morphological tenth) abdominal tergum, which usually bears several setae. With a reduction of the apical segments of the metasoma, the cerci often appear to be on a more anterior segment.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.16,
+        0.91,
+        0.45
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 36
+    },
+    {
+      "term": "chela",
+      "variants": "pl., chelae; adj., chelate",
+      "definition": "In Dryinidae, the modified tarsus in which the apical tarsomere forms a clasping structure with its opposable tarsal claw; a pincer.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.52,
+        0.91,
+        0.65
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 36
+    },
+    {
+      "term": "prothorax",
+      "variants": "",
+      "definition": "The first of the three primary subdivisions of the thorax, composed of the pronotum, the propleuron, and the prosternum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.12,
+        0.5,
+        0.39
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 54
+    },
+    {
+      "term": "pubescence",
+      "variants": "",
+      "definition": "The short, fine, often closely set setae on the body.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 54
+    },
+    {
+      "term": "punctate",
+      "variants": "",
+      "definition": "Bearing fine, impressed points or pits.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 54
+    },
+    {
+      "term": "pygidial plate",
+      "variants": "",
+      "definition": "A specialized area of the tergum of the last externally visible segment of the metasoma; it is usually flattened and defined laterally by ridges or grooves.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.5,
+        0.5,
+        0.69
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 54
+    },
+    {
+      "term": "radicle",
+      "variants": "",
+      "definition": "The basal part of the scape often strongly defined by a constriction; it articulates with the torulus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.12,
+        0.9,
+        0.26
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 54
+    },
+    {
+      "term": "recumbent",
+      "variants": "",
+      "definition": "Referring to a seta lying parallel to the body surface.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 54
+    },
+    {
+      "term": "reticulate",
+      "variants": "",
+      "definition": "Covered with a network of lines; meshed.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 54
+    },
+    {
+      "term": "scape",
+      "variants": "",
+      "definition": "The first primary division or segment of the antenna; it articulates apically with the pedicel and basally with the torulus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.37,
+        0.9,
+        0.51
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 54
+    },
+    {
+      "term": "sclerite",
+      "variants": "",
+      "definition": "A hardened plate of the integument; it is separated from other such plates by sutures or membrane.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 54
+    },
+    {
+      "term": "sclerotized",
+      "variants": "",
+      "definition": "Referring to the body integument; relatively stiff and usually darkly pigmented areas compared with usually colorless and flexible membranous areas.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 10,
+      "source_page": 54
+    },
+    {
+      "term": "scopa",
+      "variants": "pl., scopae",
+      "definition": "In Apiformes, a brush-like structure of short stiff hairs of equal length used for collecting pollen.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 11,
+      "source_page": 54
+    },
+    {
+      "term": "scrobal groove",
+      "variants": "",
+      "definition": "A horizontal groove on the mesopleuron that may be continuous with the episternal groove anteriorly and ends at the pleural groove posteriorly.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.13,
+        0.45,
+        0.27
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 55
+    },
+    {
+      "term": "scrobe",
+      "variants": "adj., scrobal",
+      "definition": "A groove in the body integument for the reception or concealment of an appendage, e.g., a longitudinal depression of the head above each torulus for reception of the scape or a groove on the mesopleuron for reception of the mesofemur; the scrobe of the mesepisternum is a small pit.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.38,
+        0.45,
+        0.51
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 55
+    },
+    {
+      "term": "sculpture",
+      "variants": "",
+      "definition": "Markings or a pattern of impressions or elevations on the surface of a structure.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 55
+    },
+    {
+      "term": "scutellum",
+      "variants": "pl., scutella; adj., scutellar",
+      "definition": "The middle region of the mesonotum or metanotum, behind the scutum. In Apocrita, only the mesoscutellum is evident and is simply called the scutellum, whereas in Symphyta both the mesoscutellum and metascutellum are present.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.64,
+        0.45,
+        0.91
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 55
+    },
+    {
+      "term": "scutum",
+      "variants": "pl., scuta; adj., scutal",
+      "definition": "The anterior sclerite of a notum, in front of the scutellum. In Apocrita, the mesoscutum is functionally only the area in front of the transscutal articulation; the axilla, although morphologically part of the mesoscutum, is treated as separate (see also axilla).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.17,
+        0.85,
+        0.44
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 55
+    },
+    {
+      "term": "segment",
+      "variants": "",
+      "definition": "A ring or subdivision of the body or of an appendage between areas of flexibility, and bearing intrinsic muscles.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.5,
+        0.85,
+        0.67
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 55
+    },
+    {
+      "term": "sensillum",
+      "variants": "pl., sensilla",
+      "definition": "A simple sense organ, such as a seta, or one of the structural units of a compound sense organ.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 55
+    },
+    {
+      "term": "sessile",
+      "variants": "",
+      "definition": "One structure attached to another, without a distinct constriction (cf. pedunculate, petiolate).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 55
+    },
+    {
+      "term": "seta",
+      "variants": "pl., setae; adj., setal",
+      "definition": "A slender, hair-like, usually sensory extension of the cuticle, connected to the body wall by a socket.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 55
+    },
+    {
+      "term": "spectral vein",
+      "variants": "",
+      "definition": "A wing vein that is indicated only by a ridge or furrow on the wing surface; it has no trace of pigment and can only be seen with reflected light (cf. tubular, nebulous veins).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 10,
+      "source_page": 55
+    },
+    {
+      "term": "spiracle",
+      "variants": "adj., spiracular",
+      "definition": "A small, round or oval lateral opening on a body segment through which air enters the tracheae.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.12,
+        0.5,
+        0.35
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 56
+    },
+    {
+      "term": "sternaulus",
+      "variants": "pl., sternauli",
+      "definition": "The horizontal lateroventral carina or groove near the lower margin of the mesopleuron, extending from the lower end of the epicnemial carina toward the mesocoxa.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.43,
+        0.5,
+        0.56
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 56
+    },
+    {
+      "term": "sternite",
+      "variants": "",
+      "definition": "The sclerotized subdivision of a sternum bounded by grooves or by membranous lines or areas (see also sternum).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 56
+    },
+    {
+      "term": "sternum",
+      "variants": "pl., sterna; adj., sternal",
+      "definition": "The ventral division of a body segment, which may be subdivided into sternites; usually only refers to the segments of the abdomen/metasoma and to the prothorax. The sterna of the mesothorax and metathorax are considered to be invaginated within the thorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.72,
+        0.5,
+        0.89
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 56
+    },
+    {
+      "term": "stigma",
+      "variants": "",
+      "definition": "A thickly sclerotized and usually darkly pigmented area on the fore wing margin at the apex of the costal vein. In Chalcidoidea, a knob-like enlargement of the apex of the stigmal vein.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.15,
+        0.9,
+        0.26
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 56
+    },
+    {
+      "term": "stipes",
+      "variants": "pl., stipites; adj., stipital",
+      "definition": "A major sclerite of the maxilla, articulating basally with the cardo, apically with the galea and lacinia, and laterally with the maxillary palpus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.35,
+        0.9,
+        0.62
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 56
+    },
+    {
+      "term": "sub-",
+      "variants": "",
+      "definition": "Latin prefix meaning under; also used commonly to mean somewhat or almost (e.g., subequal is synonymous with almost equal).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 56
+    },
+    {
+      "term": "subantennal groove",
+      "variants": "",
+      "definition": "In Apiformes, one or two fine grooves between the torulus and the clypeus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.72,
+        0.9,
+        0.86
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 56
+    },
+    {
+      "term": "subgenal carina",
+      "variants": "",
+      "definition": "A ridge bordering the gena ventrally; it extends from the hypostomal carina to the anterior or facial articulation of the mandible.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.13,
+        0.45,
+        0.28
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 57
+    },
+    {
+      "term": "submentum",
+      "variants": "",
+      "definition": "The basal sclerite of the labium articulating apically with the mentum; in Apoidea, an often V-shaped sclerite (often called the lorum) with an arm articulating with each cardo and medially articulating with the mentum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.38,
+        0.45,
+        0.54
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 57
+    },
+    {
+      "term": "submetapleural carina",
+      "variants": "",
+      "definition": "A ridge on the ventral margin of the lower part of the metapleuron, between the bases of the mesocoxae and metacoxae.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.63,
+        0.45,
+        0.77
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 57
+    },
+    {
+      "term": "subocular groove",
+      "variants": "",
+      "definition": "A groove extending from the ventral margin of the eye to the anterior or facial articulation of the mandible.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.11,
+        0.84,
+        0.27
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 57
+    },
+    {
+      "term": "suture",
+      "variants": "",
+      "definition": "A line or membranous area on the cuticle indicating the junction of two formerly separate plates or sclerites (see also groove).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.32,
+        0.84,
+        0.5
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 57
+    },
+    {
+      "term": "tarsomere",
+      "variants": "",
+      "definition": "A subdivision of the tarsus; each tarsus has 3–5 tarsomeres.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.55,
+        0.84,
+        0.62
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 57
+    },
+    {
+      "term": "tarsus",
+      "variants": "pl., tarsi; adj., tarsal",
+      "definition": "The fifth segment of a leg, attached basally to the tibia and subdivided into tarsomeres.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.69,
+        0.84,
+        0.78
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 57
+    },
+    {
+      "term": "tegula",
+      "variants": "pl., tegulae",
+      "definition": "A small, scale-like sclerite covering the base of the fore wing, basal to the humeral plate.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.12,
+        0.51,
+        0.23
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 58
+    },
+    {
+      "term": "tergite",
+      "variants": "",
+      "definition": "A sclerotized subdivision of a tergum bounded by grooves, or membranous lines or areas (see also laterotergite, tergum).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 58
+    },
+    {
+      "term": "tergum",
+      "variants": "pl., terga; adj., tergal",
+      "definition": "A dorsal sclerite of a body segment, which may be subdivided into tergites; specifically used for the abdomen/metasoma (see also laterotergite).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.34,
+        0.51,
+        0.54
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 58
+    },
+    {
+      "term": "thorax",
+      "variants": "pl., thoraces; adj., thoracic",
+      "definition": "The principal middle division of the body to which the legs are attached, between the head and abdomen (cf. mesosoma).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.15,
+        0.62,
+        0.51,
+        0.86
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 58
+    },
+    {
+      "term": "thyridium",
+      "variants": "",
+      "definition": "See gastrocoelus.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 58
+    },
+    {
+      "term": "tibia",
+      "variants": "pl., tibiae; adj., tibial",
+      "definition": "The fourth segment of a leg, between the femur and the tarsus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.12,
+        0.91,
+        0.2
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 58
+    },
+    {
+      "term": "tibial spur",
+      "variants": "",
+      "definition": "A spine-like, multicellular extension of the cuticle connected to an appendage by a socket; usually found apically on the tibiae.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.26,
+        0.91,
+        0.34
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 58
+    },
+    {
+      "term": "torulus",
+      "variants": "pl., toruli",
+      "definition": "A paired socket on the front of the head upon which the scape is articulated.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.38,
+        0.91,
+        0.52
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 58
+    },
+    {
+      "term": "transscutal articulation",
+      "variants": "",
+      "definition": "A line of weakness across the mesonotum between the fore wing bases, which secondarily separates the posterolateral angles of the mesoscutum beside the scutellum (see also axilla, scutum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.62,
+        0.91,
+        0.72
+      ],
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 58
+    },
+    {
+      "term": "trochantellus",
+      "variants": "",
+      "definition": "The basal end of the femur; it looks like a second segment of the trochanter.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.78,
+        0.91,
+        0.86
+      ],
+      "column": "right",
+      "reading_order": 10,
+      "source_page": 58
+    },
+    {
+      "term": "trochanter",
+      "variants": "",
+      "definition": "The second segment of a leg, between the coxa and femur.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.09,
+        0.45,
+        0.18
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 59
+    },
+    {
+      "term": "truncate",
+      "variants": "",
+      "definition": "Cut off squarely at the tip.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 59
+    },
+    {
+      "term": "tubular vein",
+      "variants": "",
+      "definition": "A pigmented wing vein that is hollow and therefore appears darker laterally and lighter medially; it can be seen with both reflected and transmitted light (cf. nebulous, spectral veins).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 59
+    },
+    {
+      "term": "uncus",
+      "variants": "",
+      "definition": "In Chalcidoidea, a short, narrow stub near the apex of the stigmal vein directed towards the postmarginal vein.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.32,
+        0.45,
+        0.39
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 59
+    },
+    {
+      "term": "vein",
+      "variants": "adj., veinal",
+      "definition": "Narrow, usually dark thickenings of a wing arising at the wing base and branching towards the apex (see also nebulous, spectral, tubular veins, and morphology section for naming of veins).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.08,
+        0.47,
+        0.45,
+        0.58
+      ],
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 59
+    },
+    {
+      "term": "vertex",
+      "variants": "",
+      "definition": "The top of the head between the eyes, from the anterior margin of the median ocellus to the occiput.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.1,
+        0.85,
+        0.26
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 59
+    },
+    {
+      "term": "volsella",
+      "variants": "pl., volsellae",
+      "definition": ". A paired, median inner appendage of the male genitalia.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.48,
+        0.31,
+        0.85,
+        0.44
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 59
+    },
+    {
+      "term": "claval fold",
+      "variants": "",
+      "definition": "The furrow on the fore wing just anterior to, and parallel with, vein 1A, and extending to the claval notch on the wing margin.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.13,
+        0.46,
+        0.36
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 37
+    },
+    {
+      "term": "claval lobe",
+      "variants": "",
+      "definition": "The posterior portion of a wing behind the claval fold and in front of the jugal fold, when present (see also jugal lobe).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.43,
+        0.46,
+        0.66
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 37
+    },
+    {
+      "term": "club",
+      "variants": "",
+      "definition": "The enlarged apical flagellomere or flagellomeres of an antenna (see also funicle).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.73,
+        0.46,
+        0.86
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 37
+    },
+    {
+      "term": "clypeus",
+      "variants": "adj., clypeal",
+      "definition": "The medial sclerite of the head immediately above the labrum; often defined dorsally and laterally by the epistomal groove.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.13,
+        0.85,
+        0.27
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 37
+    },
+    {
+      "term": "compressed",
+      "variants": "",
+      "definition": "Flattened from side to side (higher than wide).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 37
+    },
+    {
+      "term": "concave",
+      "variants": "",
+      "definition": "Pertaining to a linear structure, margin, or surface that is curved inward (cf. convex).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 37
+    },
+    {
+      "term": "convex",
+      "variants": "",
+      "definition": "Pertaining to a linear structure, margin, or surface that is curved outward (cf. concave).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 37
+    },
+    {
+      "term": "corbicula",
+      "variants": "pl., corbiculae",
+      "definition": "In Apiformes, the concave, smooth region of the metatibia that is margined by a fringe of setae arising from the margins; it forms a pollen basket.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.43,
+        0.85,
+        0.52
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 37
+    },
+    {
+      "term": "costal notch",
+      "variants": "",
+      "definition": "The excision of the wing margin between the apex of the costal vein and the base of the stigma.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.58,
+        0.85,
+        0.69
+      ],
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 37
+    },
+    {
+      "term": "coxa",
+      "variants": "pl., coxae; adj., coxal",
+      "definition": "The first segment of a leg, between the body and the trochanter.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.75,
+        0.85,
+        0.88
+      ],
+      "column": "right",
+      "reading_order": 10,
+      "source_page": 37
+    },
+    {
+      "term": "depressed",
+      "variants": "",
+      "definition": "Flattened from top to bottom (wider than high).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 38
+    },
+    {
+      "term": "disc",
+      "variants": "adj., discal",
+      "definition": "The central surface of any structure.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 38
+    },
+    {
+      "term": "emarginate",
+      "variants": "",
+      "definition": "Notched; with an obtuse, rounded, or quadrate section cut out of a margin.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.15,
+        0.51,
+        0.38
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 38
+    },
+    {
+      "term": "endodont mandible",
+      "variants": "",
+      "definition": "A mandible with the teeth facing inward so that when the mandibles are closed their tips point toward each other's base (cf. exodont).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.45,
+        0.51,
+        0.6
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 38
+    },
+    {
+      "term": "epicnemial carina",
+      "variants": "",
+      "definition": "The ridge on the mesopleuron that more or less parallels the anterior margin of the mesepisternum and that delineates the posterior margin of the epicnemium.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.67,
+        0.51,
+        0.84
+      ],
+      "column": "left",
+      "reading_order": 5,
+      "source_page": 38
+    },
+    {
+      "term": "epicnemium",
+      "variants": "adj., epicnemial",
+      "definition": "The anterior portion of the mesopleuron delimited posteriorly by the epicnemial carina (see also prepectus).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.12,
+        0.91,
+        0.31
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 38
+    },
+    {
+      "term": "epimeron",
+      "variants": "pl., epimera; adj., epimeral",
+      "definition": "The portion of a pleuron posterior to the pleural groove (cf. episternum).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.36,
+        0.91,
+        0.5
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 38
+    },
+    {
+      "term": "epipygium",
+      "variants": "",
+      "definition": "In Chalcidoidea, a small, more or less sclerotized, fingernail-like flap attached to the last metasomal tergum between the cerci.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.55,
+        0.91,
+        0.7
+      ],
+      "column": "right",
+      "reading_order": 8,
+      "source_page": 38
+    },
+    {
+      "term": "episternal groove",
+      "variants": "",
+      "definition": "See mesepisternal groove.",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "right",
+      "reading_order": 9,
+      "source_page": 38
+    },
+    {
+      "term": "episternum",
+      "variants": "pl., episterna; adj., episternal",
+      "definition": "The portion of a pleuron anterior to the pleural groove (cf. epimeron).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.77,
+        0.91,
+        0.91
+      ],
+      "column": "right",
+      "reading_order": 10,
+      "source_page": 38
+    },
+    {
+      "term": "epistomal groove",
+      "variants": "",
+      "definition": "A groove defining the lateral and dorsal margin of the clypeus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.09,
+        0.46,
+        0.25
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 39
+    },
+    {
+      "term": "epomia",
+      "variants": "pl., epomiae",
+      "definition": "In Ichneumonoidea, an oblique ridge crossing the transverse furrow on the side of the pronotum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.31,
+        0.46,
+        0.53
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 39
+    },
+    {
+      "term": "exodont mandible",
+      "variants": "",
+      "definition": "A mandible with the teeth facing outward so that when the mandibles are closed their tips point anteriorly or away from each other (cf. endodont).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.6,
+        0.46,
+        0.78
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 39
+    },
+    {
+      "term": "face",
+      "variants": "adj., facial",
+      "definition": "In Parasitica, the anterior surface of the head between the eyes from the ventral margin of the toruli to the oral cavity, excluding the clypeus; in Symphyta and Aculeata, anterior surface of the head between the eyes from the ocelli to the oral cavity, including the clypeus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.17,
+        0.85,
+        0.32
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 39
+    },
+    {
+      "term": "facial fovea",
+      "variants": "",
+      "definition": "In Apoidea, a depressed, often finely and densely pubescent area along the inner orbit of a compound eye.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.38,
+        0.85,
+        0.54
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 39
+    },
+    {
+      "term": "felt line",
+      "variants": "",
+      "definition": "In Mutillidae and Bradynobaenidae, a longitudinal line of flattened setae and secretory pores laterally on metasomal tergum 2.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.63,
+        0.85,
+        0.78
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 39
+    },
+    {
+      "term": "femur",
+      "variants": "pl., femora; adj., femoral",
+      "definition": "The third segment of a leg, between the trochanter and tibia.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.11,
+        0.51,
+        0.2
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 40
+    },
+    {
+      "term": "flabellum",
+      "variants": "pl., flabella",
+      "definition": "In Apiformes, a small thin plate at the apex of the glossa.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.24,
+        0.51,
+        0.42
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 40
+    },
+    {
+      "term": "flagellomere",
+      "variants": "",
+      "definition": "A segment-like subdivision of the flagellum; it is numbered consecutively from the base of the flagellum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.48,
+        0.51,
+        0.61
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 40
+    },
+    {
+      "term": "flagellum",
+      "variants": "pl., flagella; adj., flagellar",
+      "definition": "The third primary division or segment of the antenna; it articulates with the pedicel basally and almost always is subdivided into flagellomeres.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.68,
+        0.51,
+        0.82
+      ],
+      "column": "left",
+      "reading_order": 4,
+      "source_page": 40
+    },
+    {
+      "term": "foramen",
+      "variants": "pl., foramina",
+      "definition": "A hole in the body wall through which vessels or nerves pass. The foramen magnum is the central hole in the back of the head; the propodeal foramen is the hole in the posterior area of the propodeum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.14,
+        0.91,
+        0.32
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 40
+    },
+    {
+      "term": "frenum",
+      "variants": "pl., frena; adj., frenal",
+      "definition": "In Chalcidoidea, the transverse line on the scutellum that delineates a posterior portion of the scutellum, the frenal area.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.39,
+        0.91,
+        0.57
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 40
+    },
+    {
+      "term": "frons",
+      "variants": "",
+      "definition": "The area of the head between the ventral margin of the toruli and the anterior margin of the median ocellus. (Note: this is not equivalent to the true frons of larvae.)",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.64,
+        0.91,
+        0.8
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 40
+    },
+    {
+      "term": "frontal carina",
+      "variants": "",
+      "definition": "A longitudinal ridge or pair of ridges on the frons between (and sometimes partly covering) the toruli.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.11,
+        0.46,
+        0.31
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 41
+    },
+    {
+      "term": "funicle",
+      "variants": "adj., funicular",
+      "definition": "A group of flagellomeres between the pedicel and the club.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.36,
+        0.46,
+        0.48
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 41
+    },
+    {
+      "term": "galea",
+      "variants": "pl., galeae",
+      "definition": "The outer apical lobe of the maxilla, articulated basally with the stipes.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.53,
+        0.46,
+        0.82
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 41
+    },
+    {
+      "term": "gastrocoelus–thyridium",
+      "variants": "pl., gastrocoeli",
+      "definition": "In Ichneumonidae, the usually transverse impression anterolaterally on metasomal tergum 2. The gastrocoelus includes the thyridium (t), which is the surface area with specialized sculpture, whereas the gastrocoelus is the impression itself.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.17,
+        0.85,
+        0.37
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 41
+    },
+    {
+      "term": "gena",
+      "variants": "pl., genae; adj., genal",
+      "definition": "The cheek; the lateral part of the head between the compound eye and, when present, the occipital carina; otherwise, the lower (in hypognathous head) or anterior (in prognathous head) part of the back of the head between the compound eye and the occiput.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.48,
+        0.85,
+        0.64
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 41
+    },
+    {
+      "term": "glossa",
+      "variants": "pl., glossae",
+      "definition": "The paired, fused, median lobe of the labium articulated basally with the prementum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.11,
+        0.51,
+        0.45
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 42
+    },
+    {
+      "term": "glymma",
+      "variants": "pl., glymmae",
+      "definition": "In Ichneumonidae, the paired groove or pit on the side of metasomal segment 1 between its base and the spiracle; it is nearly always present when sternum 1 is free from tergum 1 but absent when tergum 1 and sternum 1 are fused.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.14,
+        0.55,
+        0.51,
+        0.68
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 42
+    },
+    {
+      "term": "groove",
+      "variants": "",
+      "definition": "A linear impression on a sclerite (see also suture).",
+      "has_figure": false,
+      "figure_bbox_approx": null,
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 42
+    },
+    {
+      "term": "hamulus",
+      "variants": "pl., hamuli",
+      "definition": "One of a series of small bristle-like hooks on the anterior margin of the hind wing; in some groups there may be a basal and an apical series of hamuli.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.12,
+        0.91,
+        0.26
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 42
+    },
+    {
+      "term": "head",
+      "variants": "",
+      "definition": "The principal anterior division of the body; it bears the mouthparts and antennae.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.3,
+        0.91,
+        0.44
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 42
+    },
+    {
+      "term": "humeral plate",
+      "variants": "",
+      "definition": "The anterior sclerite of the wing at the base of vein C.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.48,
+        0.91,
+        0.59
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 42
+    },
+    {
+      "term": "hypognathous",
+      "variants": "",
+      "definition": "With the head more or less at a right angle to the plane of the body (vertical), so the mouthparts are directed ventrally (cf. prognathous).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.54,
+        0.66,
+        0.91,
+        0.77
+      ],
+      "column": "right",
+      "reading_order": 7,
+      "source_page": 42
+    },
+    {
+      "term": "hypopygium",
+      "variants": "adj., hypopygial",
+      "definition": "The last visible sternum of the abdomen.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.1,
+        0.46,
+        0.27
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 43
+    },
+    {
+      "term": "hypostomal bridge",
+      "variants": "",
+      "definition": "The sclerotized posterior part of the head that sometimes separates the foramen magnum from the oral cavity (the bridge may sometimes be formed by the median fusion of the postgena or gena and is then called the postgenal or genal bridge).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.38,
+        0.46,
+        0.53
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 43
+    },
+    {
+      "term": "hypostomal carina",
+      "variants": "",
+      "definition": "The ridge on the back of the head along the oral cavity that normally delimits the hypostoma from the postgena and occiput.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.1,
+        0.6,
+        0.46,
+        0.76
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 43
+    },
+    {
+      "term": "jugal lobe",
+      "variants": "",
+      "definition": "The posterior area of the wing behind vein 1A and set off from more anterior areas by a slight fold (jugal fold) on the wing and by a notch on the wing margin (see also claval lobe).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.13,
+        0.86,
+        0.26
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 43
+    },
+    {
+      "term": "labium",
+      "variants": "adj., labial",
+      "definition": "The posterior, medial appendage of the mouthparts between and behind the maxillae, composed of the submentum, mentum, prementum, glossa, paraglossa, and labial palpi.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.35,
+        0.86,
+        0.59
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 43
+    },
+    {
+      "term": "labrum",
+      "variants": "adj., labral",
+      "definition": "The anterior, medial appendage of the mouthparts attached to the underside of, and often concealed by, the clypeus.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.5,
+        0.66,
+        0.86,
+        0.82
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 43
+    },
+    {
+      "term": "metanotum",
+      "variants": "",
+      "definition": "The dorsal part of the metathorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.08,
+        0.46,
+        0.35
+      ],
+      "column": "left",
+      "reading_order": 1,
+      "source_page": 47
+    },
+    {
+      "term": "metapleuron",
+      "variants": "",
+      "definition": "The lateral and ventral part of the metathorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.4,
+        0.46,
+        0.64
+      ],
+      "column": "left",
+      "reading_order": 2,
+      "source_page": 47
+    },
+    {
+      "term": "metascutellum",
+      "variants": "",
+      "definition": "In Symphyta, the middle region of the metanotum.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.09,
+        0.69,
+        0.46,
+        0.85
+      ],
+      "column": "left",
+      "reading_order": 3,
+      "source_page": 47
+    },
+    {
+      "term": "metasoma",
+      "variants": "pl., metasomata; adj., metasomal",
+      "definition": "In Apocrita, the apparent abdomen, consisting of the abdomen excluding the first segment or propodeum. In this publication the first metasomal segment which is often shortened, and narrowed, and not clearly visible, is numbered 1 (cf. abdomen).",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.17,
+        0.85,
+        0.28
+      ],
+      "column": "right",
+      "reading_order": 4,
+      "source_page": 47
+    },
+    {
+      "term": "metasternum",
+      "variants": "",
+      "definition": "The sternum of the metathorax, usually invaginated and not visible but sometimes used as a general term for the ventral surface of the metathorax.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.35,
+        0.85,
+        0.53
+      ],
+      "column": "right",
+      "reading_order": 5,
+      "source_page": 47
+    },
+    {
+      "term": "metathorax",
+      "variants": "",
+      "definition": "The third of the three primary subdivisions of the thorax, bearing the hind pair of legs and, when present, the hind wings.",
+      "has_figure": true,
+      "figure_bbox_approx": [
+        0.49,
+        0.58,
+        0.85,
+        0.86
+      ],
+      "column": "right",
+      "reading_order": 6,
+      "source_page": 47
+    }
+  ]
+}
