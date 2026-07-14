@@ -9051,3 +9051,7 @@ winkelstuck
 écaille latérale
 écailles
 épipygium
+t2
+t3
+t4
+abdominal sternite 6
