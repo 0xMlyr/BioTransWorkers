@@ -203,6 +203,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
     left: auto;
     right: 20px;
     transform: none;
+    max-height: calc(100vh - 40px);
   }
 }
 #bio-term-popup.active { display: flex !important; }
@@ -844,7 +845,7 @@ export function applyRewriter(rewriter, finalUrl, workerOrigin, siteConfig = {},
       </div>
       <div class="welcome-body">
         <p class="welcome-line">当前页面已被 <span style="color:#4caf50">biotrans.mlyr.top</span> 代理</p>
-        <p class="welcome-line">可点击高亮词汇查看翻译</p>
+        <p class="welcome-line">可点击高亮词汇查看翻译、定义、音标等信息</p>
         <p class="welcome-line highlight">本代理站不存储任何数据，版权归原作者及出版商所有</p>
         <p class="welcome-line powered">Powered by MLYR Bio-Trans</p>
       </div>
