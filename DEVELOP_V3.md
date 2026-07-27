@@ -10,8 +10,8 @@
 
 术语翻译看似是"查词典"问题，实际拆解后暴露出两个独立的层级混淆在一起：
 
-- **词形层（lexical layer）**：词的表面形式——拼写、词性、复数/形容词变化、音标、词源、历史沿用写法。
-- **概念层（conceptual layer）**：词指向的实际所指——解剖学结构本身，具有定义、跨语言译名、OBO本体关系（part_of、is_a）、多个数据来源。
+- **词形层（lexical layer）**：词的表面形式——拼写、词性、复数/形容词变化、音标、词源等。
+- **概念层（conceptual layer）**：词指向的实际所指——解剖学结构本身，具有定义、跨语言译名、OBO本体关系（part_of、is_a）、多个数据来源。另外，任何词形层都应对应至少一个概念层，因为词形是概念的表征，不可能存在某一孤立的词形无对应的概念。概念既可以是上述学术性的本体概念，也可以只是一个字段的解释性译词。
 
 **一词多义**（如 `mandible` 同时指昆虫上颚与人体解剖学下颚）与**多词一义**（如 `scape` / `pedunculus` / `torulus` 等九个同义词共同指向同一解剖结构）是同一枚硬币的两面：词形与概念之间，从来不是一一对应，而是多对多关系。v1（一词一 JSON）和 v2（多源数据整合）版本的局限，根源都在于把这两层压进了同一张表/同一个 key。
 
@@ -63,8 +63,6 @@ CREATE TABLE lexicon (
   term        TEXT PRIMARY KEY,   -- 如 "scape", "scapes", "antennal scape"
   lemma       TEXT REFERENCES lexicon(term),  -- 指向 canonical 形式；自身即 canonical 则指向自己
   pos         TEXT,               -- 词性
-  ipa         TEXT,               -- 音标
-  etymology   TEXT,               -- 词源
   language    TEXT                -- 处理非英语同义词，如 "Schaft" 的 language = "de"
 );
 
@@ -72,16 +70,12 @@ CREATE TABLE lexicon (
 CREATE TABLE concepts (
   concept_id       TEXT PRIMARY KEY,  -- 复合形式："HAO:0000234" / "FMA:xxx" / "SELF:xxx"
   domain           TEXT,              -- "insect_morphology" / "human_anatomy" / ...
-  source_ontology  TEXT,              -- "HAO" / "FMA" / "self-defined"
-  confidence_tier  INTEGER
-  -- 注意：definition、image_url 等易变/多源字段不放在这里，见 3.3
 );
 
--- 关联层：词形 ↔ 概念的多对多关系，同时是 v1/v2 中"同义词冗余存储"问题的正解
+-- 关联层：词形 ↔ 概念的多对多关系，防止 v1/v2 中"同义词冗余存储"
 CREATE TABLE term_concept_map (
   term          TEXT REFERENCES lexicon(term),
   concept_id    TEXT REFERENCES concepts(concept_id),
-  relation_type TEXT,  -- exact / narrow / broad / related / historical-conflation（参考 OBO 本体学标准同义词分类）
   PRIMARY KEY (term, concept_id)
 );
 
@@ -134,11 +128,210 @@ concept_payload:{concept_id}:{source_name}
 Value 为不透明 JSON，各源字段自由，不强制对齐，比如：
 
 ```json
+// 示例1 abdomen
 {
-  "definition": "...",
-  "chinese_translation": "柄节",
-  "image_url": "...",
-  "source_citation": "..."
+  "concept_info": {             // 概念元信息
+    "concept_id": "A00000001",       // 概念ID
+    "domain": [                 // 概念所在领域
+      "昆虫学"
+    ],
+    "concept_source": [
+      "hao_core_2023",
+      "aafc_hym_of_the_world"
+    ],
+    "ver": "1.0.0",
+    "date": "20260419"
+  },
+  "concept_detailed": [         // 概念详情（支持同一概念并列多个详情）
+    { // 详情1
+      "metadata": {                // 每一个详情必备元信息
+        "source": "hao_core_2023",
+        "ver": "1.0.0",
+        "date": "20260419"
+      },
+      "detailed": {                // 详情具体内容，内容随意，不限字段
+        "id": "HAO:0000015",
+        "name": "abdomen",
+        "def": "The tagma that is located posterior to the thorax.",
+        "def_refs": [
+          "http://api.hymao.org/api/ref/67791"
+        ],
+        "synonyms": [
+          {
+            "name": "der Hinterleib",
+            "refs": [
+              "http://api.hymao.org/api/ref/78598"
+            ]
+          }
+        ],
+        "is_a": [
+          {
+            "id": "HAO:0000988",
+            "name": "tagma"
+          }
+        ]
+      }
+    },
+    { // 详情2
+      "metadata": {
+        "source": "my_term_202604",
+        "ver": "1.0.0",
+        "date": "20260419"
+      },
+      "detailed": {
+        "original": "abdomen",
+        "translation": "腹部"
+      }
+    },
+    { // 详情3
+      "metadata": {
+        "source": "ISBN 0-660-14933-8 aafc_hym_of_the_world 1894",
+        "ver": "1.0.0",
+        "date": "20260715"
+      },
+      "detailed": {
+        "variants": "adj., abdominal",
+        "definition": "The principal posterior division of the body, posterior to the leg-bearing segments and composed of 10 or fewer apparent segments; in most Symphyta abdominal segment 1 is easily recognized by its median split (cf. metasoma, propodeum).",
+        "source_page": 34
+      }
+    },
+    { // 详情4
+      "metadata": {
+        "source": "hao_core_expand_dsv4",
+        "ver": "1.0.0",
+        "date": "20260713"
+      },
+      "detailed": {
+        "translation": "腹部",
+        "phonetic": "/ˈæbdəmən/"
+      }
+    }
+  ]
+}
+
+// 示例2 mandible
+{
+  "concept_info": {             // 概念元信息
+    "concept_id": "A00000002",       // 概念ID
+    "domain": [                 // 概念所在领域
+      "膜翅目形态学",
+    ],
+    "concept_source": [
+      "hao_core_2023"
+    ],
+    "ver": "1.0.0",
+    "date": "20260419"
+  },
+  "concept_detailed": [         // 概念详情（支持同一概念并列多个详情）
+    { // 详情1
+      "metadata": {                // 每一个详情必备元信息
+        "source": "hao_core_2023",
+        "ver": "1.0.0",
+        "date": "20260419"
+      },
+      "detailed": {
+        "id": "HAO:0000506",
+        "name": "mandible",
+        "def": "The appendage that is encircled by one sclerite that is connected to the cranium proximolaterally and to the maxillo-labial complex proximomedially via conjunctivae and articulates with the cranium via the anterior and posterior cranio-mandibular articulations.",
+        "def_refs": [
+          "http://api.hymao.org/api/ref/67791"
+        ],
+        "is_a": [
+          {
+            "id": "HAO:0000144",
+            "name": "appendage"
+          }
+        ],
+        "relationships": [
+          {
+            "type": "RO:0002220",
+            "target_id": "HAO:0000234",
+            "target_name": "cranium"
+          },
+          {
+            "type": "BFO:0000050",
+            "target_id": "HAO:0000639",
+            "target_name": "mouthparts"
+          }
+        ]
+      }
+    },
+    { // 详情2
+      "metadata": {
+        "source": "hao_core_expand_dsv4",
+        "ver": "1.0.0",
+        "date": "20260713"
+      },
+      "detailed": {
+        "translation": "上颚|大颚",
+        "phonetic": "/ˈmændɪbl/"
+      }
+    }
+  ]
+}
+
+// 示例3 mandible / mandibula
+// 示例3自身的 mandible 和 mandibula 所指为同一个人体解剖结构，前者是临床医学日常用语，而后者是医学解剖学的拉丁语标准命名。按照本体概念，二者的区别仅限于措辞、权威程度或使用场景，而非指向不同的实体结构，故归属同一ID.
+// 示例2的 mandible 和示例3的 mandible 所指为不同领域的不同结构，按照本体概念，分立ID.
+{
+  "concept_info": {             // 概念元信息
+    "concept_id": "D00000001",       // 概念ID
+    "domain": [                 // 概念所在领域
+      "医学",
+      "临床英语",
+      "医学解剖学标准命名",
+      "人体解剖学"
+    ],
+    "concept_source": [
+      "BioDigital Human"
+    ],
+    "ver": "1.0.0",
+    "date": "202607xx"
+  },
+  "concept_detailed": [         // 概念详情（支持同一概念并列多个详情）
+    { // 详情1
+      "metadata": {                // 每一个详情必备元信息
+        "source": "BioDigital Human",
+        "ver": "1.0.0",
+        "date": "202607xx"
+      },
+      "detailed": {
+        "translation": "下颌骨",
+        "name": "mandible",
+        "etymology": "mandibula",
+        "introduce": "The mandible is a region in the lower jaw that forms the chin and contains cavities for the lower 16 adult teeth. The oblique line separates the mandible from two ascending processes called rami. With the exception of the ossicles located in the inner ear, the mandible is the only mobile bone of the skull.",
+        "introduce_ZH": "下颌骨是构成颏部的一个下颌区，包含16颗成人下颌牙的窝洞。下颌骨斜线将下颌骨与两个升突（也称下颌垂直支）分开。除位于内耳的听小骨外，下颌骨是颅骨中唯一能动的骨。"
+      }
+    }
+  ]
+}
+
+// 示例4 unpigmented
+// 这类词汇存在学术翻译需求，在认知论意义上存在对应的抽象概念，但实际操作中词义和概念无差异，仅需提供行业惯用的汉语译法，故单属性存储翻译信息。
+{
+  "concept_info": {             // 概念元信息
+    "concept_id": "Q00000001",       // 概念ID
+    "domain": [                 // 概念所在领域
+      "形态描述"
+    ],
+    "concept_source": [
+      "my_term_202604"
+    ],
+    "ver": "1.0.0",
+    "date": "20260410"
+  },
+  "concept_detailed": [         // 概念详情（支持同一概念并列多个详情）
+    { // 详情1
+      "metadata": {                // 每一个详情必备元信息
+        "source": "my_term_202604",
+        "ver": "1.0.0",
+        "date": "20260410"
+      },
+      "detailed": {
+        "translation": "(未着色的)"
+      }
+    }
+  ]
 }
 ```
 
